@@ -60,3 +60,24 @@ It will show tasks that you can run with Nx.
 - [Join the community](https://nx.dev/community)
 - [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)
 - [Follow us on Twitter](https://twitter.com/nxdevtools)
+
+## Command line
+npx create-nx-workspace
+npx nx serve webapp
+
+nx g @nx/react:library design-system --directory libs/design-system
+
+nx g @nx/react:setup-tailwind --project=design-system
+
+nx g @nx/react:storybook-configuration design-system
+nx run design-system:storybook
+
+nx dep-graph
+
+nx g @nx/react:component --project=design-system Title
+
+nx g @nx/react:library theme --directory libs/theme
+nx g @nx/react:library query --directory libs/query
+nx g @nx/react:library i18n --directory libs/i18n
+
+nx g @nx/js:lib utils --directory libs/utils

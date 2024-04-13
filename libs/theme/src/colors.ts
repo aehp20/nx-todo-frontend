@@ -14,4 +14,8 @@ export const colors = {
   "Blue": "#0000FF",
   "White": "#FFFFFF",
   "Red": "#FF0000",
+  "Eggshell": "#EFEBD6",
+  "Pearl": "#E8E2C3",
+  "DarkLava": "#493432",
+  "DarkSienna": "#2F1B19"
 }

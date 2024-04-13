@@ -27,8 +27,8 @@ export const styles: ThemesProps = {
       "secondary-color-hover": colors.MetallicSeaweedHover,
       "secondary-color-active": colors.MetallicSeaweedActive,
       "secondary-bg-color": colors.Alabaster,
-      "secondary-bg-color-hover": colors.Alabaster,
-      "secondary-bg-color-active": colors.Alabaster,
+      "secondary-bg-color-hover": colors.Eggshell,
+      "secondary-bg-color-active": colors.Pearl,
     }
   },
   [themes.dark]: {
@@ -47,8 +47,8 @@ export const styles: ThemesProps = {
       "secondary-color-hover": colors.ChromeYellowHover,
       "secondary-color-active": colors.ChromeYellowActive,
       "secondary-bg-color": colors.Kurotobi,
-      "secondary-bg-color-hover": colors.Kurotobi,
-      "secondary-bg-color-active": colors.Kurotobi,
+      "secondary-bg-color-hover": colors.DarkLava,
+      "secondary-bg-color-active": colors.DarkSienna,
     }
   }
 }

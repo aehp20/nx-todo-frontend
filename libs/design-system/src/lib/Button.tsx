@@ -14,7 +14,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   icon?: JSX.Element;
 };
 
-export function Button(props: ButtonProps) {
+export default function Button(props: ButtonProps) {
   const { action = "primary", children, disabled = false, className, icon } = props;
 
   const styles = useThemeStyles(componentsName.button);
@@ -121,5 +121,3 @@ export function Button(props: ButtonProps) {
     </button>
   );
 }
-
-export default Button;

@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { Button, ButtonProps } from './Button';
+import Button, { ButtonProps } from './Button';
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 
 import {IconPlus} from './icons/IconPlus';
@@ -25,6 +25,7 @@ export const LightButtons = {
           <Button {...props} icon={<IconPlus />}>Add</Button>
           <Button {...props}>Update</Button>
           <Button {...props}>Delete</Button>
+          <Button {...props}>Save</Button>
           <Button {...props} action='secondary' icon={<IconPlus />}>Add</Button>
           <Button {...props} action='secondary'>Update</Button>
           <Button {...props} action='secondary'>Delete</Button>
@@ -53,6 +54,7 @@ export const DarkButtons = {
           <Button {...props} icon={<IconPlus />}>Add</Button>
           <Button {...props}>Update</Button>
           <Button {...props}>Delete</Button>
+          <Button {...props}>Save</Button>
           <Button {...props} action='secondary' icon={<IconPlus />}>Add</Button>
           <Button {...props} action='secondary'>Update</Button>
           <Button {...props} action='secondary'>Delete</Button>

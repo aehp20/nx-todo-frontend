@@ -9,13 +9,12 @@ import "../styles.css";
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   action?: "primary" | "secondary";
   disabled?: boolean;
-  className?: string;
   children: ReactNode;
   icon?: JSX.Element;
 };
 
 export default function Button(props: ButtonProps) {
-  const { action = "primary", children, disabled = false, className, icon } = props;
+  const { action = "primary", children, disabled = false, icon } = props;
 
   const styles = useThemeStyles(componentsName.button);
 
@@ -104,7 +103,7 @@ export default function Button(props: ButtonProps) {
     <button
       {...props}
       disabled={disabled}
-      className={classNames("h-[42px] rounded-lg px-2 py-1 border hover:duration-750", className)}
+      className={classNames("h-[42px] rounded-lg px-2 py-1 border hover:duration-750")}
       style={{
         background: bgColor,
         color: isPrimaryAction ? primaryColorFromStyle : secondaryColorFromStyle,

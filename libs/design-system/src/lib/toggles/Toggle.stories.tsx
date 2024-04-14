@@ -1,45 +1,44 @@
 import type { Meta } from '@storybook/react';
-import Input, { InputProps } from './Input';
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 
-const meta: Meta<typeof Input> = {
-  component: Input,
-  title: 'Input',
+import Toggle, { ToggleProps } from './Toggle';
+
+const meta: Meta<typeof Toggle> = {
+  component: Toggle,
+  title: 'Toggle',
 };
 export default meta;
 
-export const LightInputs = {
+export const LightToggles = {
   args: {
     action: undefined,
     disabled: undefined,
-    className: undefined,
-    placeholder: "Enter your name",
     onClick: () => { console.log('onClick'); }
   },
-  render: (props: InputProps) => {
+  render: (props: ToggleProps) => {
     return (
       <ThemeProvider theme={themes.light}>
         <div className='flex gap-1'>
-          <Input {...props} />
+          <Toggle {...props} />
+          <Toggle {...props} isChecked />
         </div>
       </ThemeProvider>
     )
   }
 };
 
-export const DarkInputs = {
+export const DarkToggles = {
   args: {
     action: undefined,
     disabled: undefined,
-    className: undefined,
-    placeholder: "Enter your name",
     onClick: () => { console.log('onClick'); }
   },
-  render: (props: InputProps) => {
+  render: (props: ToggleProps) => {
     return (
       <ThemeProvider theme={themes.dark}>
         <div className='flex gap-1'>
-          <Input {...props} />
+          <Toggle {...props} />
+          <Toggle {...props} isChecked />
         </div>
       </ThemeProvider>
     )

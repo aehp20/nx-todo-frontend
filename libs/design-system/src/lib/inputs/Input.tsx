@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useThemeStyles, componentsName } from '@nx-todo-frontend/theme';
 import { getHexadecimalColorWithAlpha } from '@nx-todo-frontend/utils';
 
-import "../styles.css";
+import "../../styles.css";
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   disabled?: boolean;

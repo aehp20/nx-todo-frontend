@@ -21,7 +21,11 @@ export function ThemeProvider(props: ThemeProviderProps) {
 
   const [theme, setTheme] = useState(initialTheme);
 
-  const value = useMemo(()=> ({theme, setTheme, styles: styles[theme]}), [theme, setTheme])
+  const value = useMemo(()=> ({
+    theme,
+    setTheme,
+    styles: styles[theme]
+  }), [theme, setTheme]);
 
   const appStyles = styles[theme]["app"];
   document.body.style.background = appStyles["bg-color"];

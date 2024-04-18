@@ -21,6 +21,8 @@ export const LightToggles = {
         <div className='flex gap-1'>
           <Toggle {...props} />
           <Toggle {...props} isChecked />
+          <Toggle {...props} isDisabled />
+          <Toggle {...props} isChecked isDisabled />
         </div>
       </ThemeProvider>
     )
@@ -39,6 +41,8 @@ export const DarkToggles = {
         <div className='flex gap-1'>
           <Toggle {...props} />
           <Toggle {...props} isChecked />
+          <Toggle {...props} isDisabled />
+          <Toggle {...props} isChecked isDisabled />
         </div>
       </ThemeProvider>
     )

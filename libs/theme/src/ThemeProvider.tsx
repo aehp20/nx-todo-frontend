@@ -1,12 +1,13 @@
 import { ReactNode, createContext, useContext, useMemo, useState } from 'react';
 
-import { StylesProps, styles } from './styles';
+import { StylesProps, StylesPropertiesNameProps, styles, stylesPropertiesName } from './styles';
 import { themes } from './themes';
 
 type ThemeProviderValue = {
   theme: string;
   setTheme: (theme: string) => void;
   styles: StylesProps;
+  stylesPropertiesName: StylesPropertiesNameProps;
 }
 
 type ThemeProviderProps = {
@@ -24,7 +25,8 @@ export function ThemeProvider(props: ThemeProviderProps) {
   const value = useMemo(()=> ({
     theme,
     setTheme,
-    styles: styles[theme]
+    styles: styles[theme],
+    stylesPropertiesName,
   }), [theme, setTheme]);
 
   const appStyles = styles[theme]["app"];
@@ -42,6 +44,9 @@ export function useTheme() {
 }
 
 export function useThemeStyles(componentName: string) {
-  const { styles } = useContext(ThemeContext);
-  return styles[componentName];
+  const { styles, stylesPropertiesName } = useContext(ThemeContext);
+  return {
+    styles: styles[componentName],
+    stylesPropertiesName: stylesPropertiesName[componentName]
+  };
 }

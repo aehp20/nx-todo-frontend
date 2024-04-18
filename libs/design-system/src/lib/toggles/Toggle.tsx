@@ -15,14 +15,21 @@ export default function Toggle(props: ToggleProps) {
 
   const [isChecked, setIsChecked] = useState(initialIsChecked);
 
-  const styles = useThemeStyles(componentsName.toggle);
+  const { styles, stylesPropertiesName } = useThemeStyles(componentsName.toggle);
+  const { BG_COLOR_PARENT,
+    BG_COLOR_PARENT_CHECKED,
+    BG_COLOR_PARENT_HOVER,
+    BG_COLOR_PARENT_ACTIVE,
+    BG_COLOR_PARENT_DISABLED,
+    BG_COLOR_CHILD
+  } = stylesPropertiesName;
 
-  const bgColorParent = styles["bg-color-parent"];
-  const bgColorParentChecked = styles["bg-color-parent-checked"];
-  const bgColorParentHover = styles["bg-color-parent-hover"];
-  const bgColorParentActive = styles["bg-color-parent-active"];
-  const bgColorParentDisabled = styles["bg-color-parent-disabled"];
-  const bgColorChild = styles["bg-color-child"];
+  const bgColorParent = styles[BG_COLOR_PARENT];
+  const bgColorParentChecked = styles[BG_COLOR_PARENT_CHECKED];
+  const bgColorParentHover = styles[BG_COLOR_PARENT_HOVER];
+  const bgColorParentActive = styles[BG_COLOR_PARENT_ACTIVE];
+  const bgColorParentDisabled = styles[BG_COLOR_PARENT_DISABLED];
+  const bgColorChild = styles[BG_COLOR_CHILD];
 
   const bgParent = `bg-${bgColorParent}`;
   const bgParentChecked = `peer-checked:bg-${bgColorParentChecked}`;

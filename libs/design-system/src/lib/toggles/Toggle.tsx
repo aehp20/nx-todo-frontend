@@ -1,9 +1,9 @@
 import { useState } from "react";
+import classNames from "classnames";
 
-import { useTheme, themes } from '@nx-todo-frontend/theme';
+import { useThemeStyles, componentsName } from '@nx-todo-frontend/theme';
 
-import { ToggleWithThemeLight } from "./ToggleWithThemeLight";
-import { ToggleWithThemeDark } from "./ToggleWithThemeDark";
+import "../../styles.css";
 
 export type ToggleProps = React.HTMLAttributes<HTMLInputElement> & {
   isChecked?: boolean;
@@ -20,15 +20,37 @@ export default function Toggle(props: ToggleProps) {
 
   const [isChecked, setIsChecked] = useState(initialIsChecked);
 
-  const { theme } = useTheme();
+  const styles = useThemeStyles(componentsName.toggle);
+
+  const bgColorParent = styles["bg-color-parent"];
+  const bgColorParentChecked = styles["bg-color-parent-checked"];
+  const bgColorChild = styles["bg-color-child"];
+
+  const bgParent = `bg-${bgColorParent}`;
+  const bgParentChecked = `peer-checked:bg-${bgColorParentChecked}`;
+  const bgChild = `before:bg-${bgColorChild}`;
 
   const handleChange = () => {
     setIsChecked(prev => !prev);
   };
 
-  return theme === themes.light ? (
-    <ToggleWithThemeLight isChecked={isChecked} handleChange={handleChange} />
-  ) : theme === themes.dark ? (
-    <ToggleWithThemeDark isChecked={isChecked} handleChange={handleChange} />
-  ) : null;
+  return (
+    <label className={"relative inline-block w-12 h-7"}>
+      <input
+        type="checkbox"
+        checked={isChecked}
+        onChange={handleChange}
+        className="opacity-0 w-0 h-0 peer"
+      />
+      <span className={classNames("absolute cursor-pointer transition-[0.4s] inset-0 rounded-[28px]",
+      "before:absolute before:content-[''] before:w-5 before:h-5 before:left-1 before:bottom-1",
+      "before:transition-[0.4s] before:rounded-[50%]",
+      "peer-checked:before:translate-x-5",
+      "peer-focus:shadow-[0_0_1px_BlueCola]",
+      bgParent,
+      bgChild,
+      bgParentChecked,
+      )}></span>
+    </label>
+  );
 }

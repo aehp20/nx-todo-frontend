@@ -3,6 +3,7 @@ import { componentsName } from "../componentsName";
 import { stylesApp } from './app';
 import { stylesButton } from './button';
 import { stylesInput } from './input';
+import { stylesToggle } from './toggle';
 
 export type StylesProps = {
   [key: string]: Record<string, string>;
@@ -17,10 +18,12 @@ export const styles: ThemesProps = {
     [componentsName.app]: stylesApp[themes.light],
     [componentsName.button]: stylesButton[themes.light],
     [componentsName.input]: stylesInput[themes.light],
+    [componentsName.toggle]: stylesToggle[themes.light],
   },
   [themes.dark]: {
     [componentsName.app]: stylesApp[themes.dark],
     [componentsName.button]: stylesButton[themes.dark],
     [componentsName.input]: stylesInput[themes.dark],
+    [componentsName.toggle]: stylesToggle[themes.dark],
   }
 }

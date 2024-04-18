@@ -1,8 +1,12 @@
 import { Outlet, Link } from "react-router-dom";
 
+import { useI18NContext } from "@nx-todo-frontend/i18n";
+
 export default function Layout() {
+  const { _ } = useI18NContext();
+
   return (
-    <div>
+    <>
       <nav>
         <ul>
           <li>
@@ -13,13 +17,7 @@ export default function Layout() {
           </li>
         </ul>
       </nav>
-
-      <hr />
-
-      {/* An <Outlet> renders whatever child route is currently active,
-          so you can think about this <Outlet> as a placeholder for
-          the child routes we defined above. */}
       <Outlet />
-    </div>
+    </>
   );
 }

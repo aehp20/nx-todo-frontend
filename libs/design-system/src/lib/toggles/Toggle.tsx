@@ -1,9 +1,9 @@
-import { useState } from "react";
-import classNames from "classnames";
+import { useState } from 'react';
+import classNames from 'classnames';
 
 import { useThemeStyles, componentsName } from '@nx-todo-frontend/theme';
 
-import "../../styles.css";
+import '../../styles.css';
 
 export type ToggleProps = React.HTMLAttributes<HTMLInputElement> & {
   isChecked?: boolean;
@@ -11,17 +11,20 @@ export type ToggleProps = React.HTMLAttributes<HTMLInputElement> & {
 };
 
 export default function Toggle(props: ToggleProps) {
-  const { isChecked: initialIsChecked = false, isDisabled = false} = props;
+  const { isChecked: initialIsChecked = false, isDisabled = false } = props;
 
   const [isChecked, setIsChecked] = useState(initialIsChecked);
 
-  const { styles, stylesPropertiesName } = useThemeStyles(componentsName.toggle);
-  const { BG_COLOR_PARENT,
+  const { styles, stylesPropertiesName } = useThemeStyles(
+    componentsName.toggle,
+  );
+  const {
+    BG_COLOR_PARENT,
     BG_COLOR_PARENT_CHECKED,
     BG_COLOR_PARENT_HOVER,
     BG_COLOR_PARENT_ACTIVE,
     BG_COLOR_PARENT_DISABLED,
-    BG_COLOR_CHILD
+    BG_COLOR_CHILD,
   } = stylesPropertiesName;
 
   const bgColorParent = styles[BG_COLOR_PARENT];
@@ -41,11 +44,11 @@ export default function Toggle(props: ToggleProps) {
   const bgChild = `before:bg-${bgColorChild}`;
 
   const handleChange = () => {
-    setIsChecked(prev => !prev);
+    setIsChecked((prev) => !prev);
   };
 
   return (
-    <label className={"relative inline-block w-12 h-7"}>
+    <label className={'relative inline-block w-12 h-7'}>
       <input
         type="checkbox"
         checked={isChecked}
@@ -53,21 +56,25 @@ export default function Toggle(props: ToggleProps) {
         onChange={handleChange}
         className="opacity-0 w-0 h-0 peer"
       />
-      <span className={classNames("absolute cursor-pointer transition-[0.4s] inset-0 rounded-[28px]",
-      "before:absolute before:content-[''] before:w-5 before:h-5 before:left-1 before:bottom-1",
-      "before:transition-[0.4s] before:rounded-[50%]",
-      "peer-checked:before:translate-x-5",
-      "peer-disabled:bg-gray-300 peer-disabled:cursor-auto",
-      "peer-disabled:hover:bg-gray-300",
-      "peer-disabled:cursor-auto",
-      bgParentDisabled,
-      bgParentDisabledHover,
-      bgParentFocus,
-      bgParentHover,
-      bgParentCheckedHover,
-      bgParent,
-      bgChild,
-      bgParentChecked)} />
+      <span
+        className={classNames(
+          'absolute cursor-pointer transition-[0.4s] inset-0 rounded-[28px]',
+          "before:absolute before:content-[''] before:w-5 before:h-5 before:left-1 before:bottom-1",
+          'before:transition-[0.4s] before:rounded-[50%]',
+          'peer-checked:before:translate-x-5',
+          'peer-disabled:bg-gray-300 peer-disabled:cursor-auto',
+          'peer-disabled:hover:bg-gray-300',
+          'peer-disabled:cursor-auto',
+          bgParent,
+          bgParentDisabled,
+          bgParentDisabledHover,
+          bgParentFocus,
+          bgParentHover,
+          bgParentCheckedHover,
+          bgParentChecked,
+          bgChild,
+        )}
+      />
     </label>
   );
 }

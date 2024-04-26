@@ -1,4 +1,4 @@
-const safelist = [
+export const toggleSafelist = [
   'peer-disabled:bg-gray-300',
   'peer-disabled:hover:bg-gray-300',
   'peer-focus:shadow-[0_0_1px_Black]',
@@ -13,5 +13,3 @@ const safelist = [
   'peer-checked:hover:bg-ChromeYellowHover',
   'before:bg-Kurotobi',
 ];
-
-exports.safelist = safelist;

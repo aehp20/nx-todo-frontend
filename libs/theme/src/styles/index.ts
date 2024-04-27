@@ -1,7 +1,7 @@
 import { themes } from '../themes';
 import { componentsName } from '../componentsName';
 import { stylesApp, stylesAppPropertiesName } from './app';
-import { stylesButton } from './button';
+import { stylesButton, stylesButtonPropertiesName } from './button';
 import { stylesInput } from './input';
 import { stylesToggle, stylesTogglePropertiesName } from './toggle';
 
@@ -34,5 +34,6 @@ export const styles: ThemesProps = {
 
 export const stylesPropertiesName: StylesPropertiesNameProps = {
   [componentsName.app]: stylesAppPropertiesName,
+  [componentsName.button]: stylesButtonPropertiesName,
   [componentsName.toggle]: stylesTogglePropertiesName,
 };

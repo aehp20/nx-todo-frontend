@@ -1,21 +1,21 @@
-import { themes } from "../themes";
-import { componentsName } from "../componentsName";
-import { stylesApp } from './app';
+import { themes } from '../themes';
+import { componentsName } from '../componentsName';
+import { stylesApp, stylesAppPropertiesName } from './app';
 import { stylesButton } from './button';
 import { stylesInput } from './input';
 import { stylesToggle, stylesTogglePropertiesName } from './toggle';
 
 export type StylesProps = {
   [key: string]: Record<string, string>;
-}
+};
 
 export type StylesPropertiesNameProps = {
   [key: string]: Record<string, string>;
-}
+};
 
 export type ThemesProps = {
   [key: string]: StylesProps;
-}
+};
 
 export const styles: ThemesProps = {
   [themes.light]: {
@@ -29,9 +29,10 @@ export const styles: ThemesProps = {
     [componentsName.button]: stylesButton[themes.dark],
     [componentsName.input]: stylesInput[themes.dark],
     [componentsName.toggle]: stylesToggle[themes.dark],
-  }
-}
+  },
+};
 
 export const stylesPropertiesName: StylesPropertiesNameProps = {
+  [componentsName.app]: stylesAppPropertiesName,
   [componentsName.toggle]: stylesTogglePropertiesName,
 };

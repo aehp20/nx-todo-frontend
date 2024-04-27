@@ -13,38 +13,42 @@ export const LightToggles = {
   args: {
     action: undefined,
     disabled: undefined,
-    onClick: () => { console.log('onClick'); }
+    onClick: () => {
+      console.log('onClick');
+    },
   },
   render: (props: ToggleProps) => {
     return (
       <ThemeProvider theme={themes.light}>
-        <div className='flex gap-1'>
+        <div className="flex gap-1">
           <Toggle {...props} />
           <Toggle {...props} isChecked />
           <Toggle {...props} isDisabled />
           <Toggle {...props} isChecked isDisabled />
         </div>
       </ThemeProvider>
-    )
-  }
+    );
+  },
 };
 
 export const DarkToggles = {
   args: {
     action: undefined,
     disabled: undefined,
-    onClick: () => { console.log('onClick'); }
+    onClick: () => {
+      console.log('onClick');
+    },
   },
   render: (props: ToggleProps) => {
     return (
       <ThemeProvider theme={themes.dark}>
-        <div className='flex gap-1'>
+        <div className="flex gap-1">
           <Toggle {...props} />
           <Toggle {...props} isChecked />
           <Toggle {...props} isDisabled />
           <Toggle {...props} isChecked isDisabled />
         </div>
       </ThemeProvider>
-    )
-  }
+    );
+  },
 };

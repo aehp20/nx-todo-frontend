@@ -1,10 +1,8 @@
-import classNames from "classnames";
-import { useState } from "react";
+import classNames from 'classnames';
 
 import { useThemeStyles, componentsName } from '@nx-todo-frontend/theme';
-import { getHexadecimalColorWithAlpha } from '@nx-todo-frontend/utils';
 
-import "../../styles.css";
+import '../../styles.css';
 
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   disabled?: boolean;
@@ -12,77 +10,49 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 };
 
 export default function Input(props: InputProps) {
-  const { disabled, type = "text" } = props;
+  const { disabled, type = 'text' } = props;
 
-  const styles = useThemeStyles(componentsName.input);
+  const { styles, stylesPropertiesName } = useThemeStyles(componentsName.input);
 
-  const [isHover, setIsHover] = useState(false);
-  const [isActive, setIsActive] = useState(false);
+  const {
+    BG_COLOR,
+    BG_COLOR_HOVER,
+    BG_COLOR_ACTIVE,
+    BG_COLOR_DISABLED,
+    BORDER_COLOR,
+    BORDER_COLOR_HOVER,
+    BORDER_COLOR_ACTIVE,
+    BORDER_COLOR_DISABLED,
+    COLOR,
+  } = stylesPropertiesName;
 
-  const handleMouseEnter = () => {
-    setIsHover(true);
-  };
-  const handleMouseLeave = () => {
-    setIsHover(false);
-  };
-  const handleKeyDown = () => {
-    setIsActive(true);
-  };
-  const handleKeyUp = () => {
-    setIsActive(false);
-  };
-
-  const bgColorFromStyle = `${styles["bg-color"]}`;
-  const bgColorHoverFromStyle = `${styles["bg-color-hover"]}`;
-  const bgColorActiveFromStyle = `${styles["bg-color-active"]}`;
-  const bgColorDisabled = getHexadecimalColorWithAlpha(bgColorFromStyle)(70);
-
-  let bgColor;
-
-  bgColor = bgColorFromStyle;
-  if (isHover) {
-    bgColor = bgColorHoverFromStyle;
-  } else if (isActive) {
-    bgColor = bgColorActiveFromStyle;
-  } else if (disabled) {
-    bgColor = bgColorDisabled;
-  }
-
-  const borderColorFromStyle = `${styles["border-color"]}`;
-  const borderColorHoverFromStyle = `${styles["border-color-hover"]}`;
-  const borderColorActiveFromStyle = `${styles["border-color-active"]}`;
-  const borderColorDisabled = getHexadecimalColorWithAlpha(borderColorFromStyle)(70);
-
-  let borderColor;
-
-  borderColor = borderColorFromStyle;
-  if (isHover) {
-    borderColor = borderColorHoverFromStyle;
-  } else if (isActive) {
-    borderColor = borderColorActiveFromStyle;
-  } else if (disabled) {
-    borderColor = borderColorDisabled;
-  }
-
-  const color = `${styles["color"]}`;
+  const bgColor = `bg-${styles[BG_COLOR]}`;
+  const bgColorHover = `hover:bg-${styles[BG_COLOR_HOVER]}`;
+  const bgColorActive = `active:bg-${styles[BG_COLOR_ACTIVE]}`;
+  const bgColorDisabled = `disabled:bg-${styles[BG_COLOR_DISABLED]}`;
+  const borderColor = `border-${styles[BORDER_COLOR]}`;
+  const borderColorHover = `hover:border-${styles[BORDER_COLOR_HOVER]}`;
+  const borderColorActive = `active:border-${styles[BORDER_COLOR_ACTIVE]}`;
+  const borderColorDisabled = `disabled:border-${styles[BORDER_COLOR_DISABLED]}`;
+  const color = `text-${styles[COLOR]}`;
 
   return (
     <input
       type={type}
       {...props}
       disabled={disabled}
-      className={classNames("h-[42px] px-1 hover:duration-750 border-2 rounded-lg w-full")}
-      style={{
-        background: bgColor,
-        color: color,
-        borderColor: borderColor
-      }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onKeyDown={handleKeyDown}
-      onKeyUp={handleKeyUp}
-      onFocus={handleKeyDown}
-      onBlur={handleKeyUp}
+      className={classNames(
+        'h-[42px] px-1 hover:duration-750 border-2 rounded-lg w-full',
+        bgColor,
+        bgColorHover,
+        bgColorActive,
+        bgColorDisabled,
+        borderColor,
+        borderColorHover,
+        borderColorActive,
+        borderColorDisabled,
+        color,
+      )}
     />
   );
 }

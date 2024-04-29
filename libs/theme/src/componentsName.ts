@@ -1,7 +1,7 @@
-
 export const componentsName = {
-  "app": "app",
-  "button": "button",
-  "input": "input",
-  "toggle": "toggle",
-}
+  app: 'app',
+  button: 'button',
+  input: 'input',
+  label: 'label',
+  toggle: 'toggle',
+};

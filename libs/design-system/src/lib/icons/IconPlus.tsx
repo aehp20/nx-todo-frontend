@@ -1,4 +1,4 @@
-import { SVGIcon } from "./";
+import { SVGIcon } from './';
 
 export function IconPlus(props: SVGIcon) {
   return (

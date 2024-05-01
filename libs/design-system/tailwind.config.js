@@ -1,11 +1,92 @@
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
 
-const globalColors = require('./src/lib/colors');
-const globalSafelist = require('./src/lib/safelist');
-
+const buttonSafelist = [
+  'bg-MetallicSeaweed',
+  'text-Alabaster',
+  'hover:text-Alabaster',
+  'active:text-Alabaster',
+  'disabled:text-Alabaster',
+  'disabled:bg-MetallicSeaweedDisabled',
+  'bg-Alabaster',
+  'text-MetallicSeaweed',
+  'hover:text-MetallicSeaweedHover',
+  'active:text-MetallicSeaweedActive',
+  'hover:bg-MetallicSeaweedHover',
+  'active:bg-MetallicSeaweedActive',
+  'hover:bg-Eggshell',
+  'active:bg-Pearl',
+  'disabled:text-MetallicSeaweedDisabled',
+  'disabled:bg-Alabaster',
+  'bg-ChromeYellow',
+  'text-Kurotobi',
+  'hover:bg-ChromeYellowHover',
+  'active:bg-ChromeYellowActive',
+  'hover:text-Kurotobi',
+  'active:text-Kurotobi',
+  'disabled:text-Kurotobi',
+  'disabled:bg-ChromeYellowDisabled',
+  'bg-Kurotobi',
+  'text-ChromeYellow',
+  'hover:bg-DarkLava',
+  'active:bg-DarkSienna',
+  'hover:text-ChromeYellowHover',
+  'active:text-ChromeYellowActive',
+  'disabled:text-ChromeYellowDisabled',
+  'disabled:bg-Kurotobi',
+];
+const inputSafelist = [
+  'bg-Alabaster',
+  'hover:bg-Eggshell',
+  'active:bg-Pearl',
+  'disabled:bg-gray-300',
+  'border-MetallicSeaweed',
+  'hover:border-MetallicSeaweedHover',
+  'active:border-MetallicSeaweedActive',
+  'disabled:border-gray-300',
+  'text-MediumJungleGreen',
+  'bg-Kurotobi',
+  'hover:bg-DarkLava',
+  'active:bg-DarkSienna',
+  'disabled:bg-gray-300',
+  'border-ChromeYellow',
+  'hover:border-ChromeYellowHover',
+  'active:border-ChromeYellowActive',
+  'disabled:border-gray-300',
+  'text-Alabaster',
+];
+const labelSafelist = ['text-MetallicSeaweed', 'text-ChromeYellow'];
+const navBarSafelist = [
+  'bg-MetallicSeaweed',
+  'text-Alabaster',
+  'text-teal-200',
+  'hover:text-Alabaster',
+  'bg-ChromeYellow',
+  'text-Kurotobi',
+  'text-white',
+  'hover:text-Kurotobi',
+];
+const toggleSafelist = [
+  'peer-disabled:bg-gray-300',
+  'peer-disabled:hover:bg-gray-300',
+  'peer-focus:shadow-[0_0_1px_Black]',
+  'hover:bg-MetallicSeaweedHover',
+  'peer-checked:hover:bg-MetallicSeaweedHover',
+  'bg-BeauBlue',
+  'before:bg-Alabaster',
+  'peer-checked:bg-MetallicSeaweed',
+  'bg-Caramel',
+  'peer-checked:bg-ChromeYellow',
+  'hover:bg-ChromeYellowHover',
+  'peer-checked:hover:bg-ChromeYellowHover',
+  'before:bg-Kurotobi',
+];
 const safelist = [
-  ...globalSafelist.safelist
+  ...toggleSafelist,
+  ...buttonSafelist,
+  ...labelSafelist,
+  ...inputSafelist,
+  ...navBarSafelist,
 ];
 
 /** @type {import('tailwindcss').Config} */
@@ -20,7 +101,29 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: globalColors.colors
+      colors: {
+        Alabaster: '#F6F4E8',
+        MediumJungleGreen: '#1D3124',
+        MetallicSeaweed: '#1C9099',
+        MetallicSeaweedHover: '#06858F',
+        MetallicSeaweedActive: '#066169',
+        BeauBlue: '#BADDE0',
+        BlueCola: '#0678E0',
+        Kurotobi: '#351E1C',
+        PenguinWhite: '#F5F3EF',
+        ChromeYellow: '#FEAA00',
+        ChromeYellowHover: '#FEBB33',
+        ChromeYellowActive: '#E5A21A',
+        Caramel: '#FEDD99',
+        Black: '#000000',
+        Blue: '#0000FF',
+        White: '#FFFFFF',
+        Red: '#FF0000',
+        Eggshell: '#EFEBD6',
+        Pearl: '#E8E2C3',
+        DarkLava: '#493432',
+        DarkSienna: '#2F1B19',
+      },
     },
   },
   plugins: [],

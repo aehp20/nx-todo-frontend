@@ -4,4 +4,5 @@ export const componentsName = {
   input: 'input',
   label: 'label',
   toggle: 'toggle',
+  navBar: 'navBar',
 };

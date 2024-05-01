@@ -22,4 +22,6 @@ const colors = {
   DarkSienna: '#2F1B19',
 };
 
-exports.colors = colors;
+module.exports = {
+  colors,
+};

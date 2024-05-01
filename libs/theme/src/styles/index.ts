@@ -5,6 +5,7 @@ import { stylesButton, stylesButtonPropertiesName } from './button';
 import { stylesLabel, stylesLabelPropertiesName } from './label';
 import { stylesInput, stylesInputPropertiesName } from './input';
 import { stylesToggle, stylesTogglePropertiesName } from './toggle';
+import { stylesNavBar, stylesNavBarPropertiesName } from './navBar';
 
 export type StylesProps = {
   [key: string]: Record<string, string>;
@@ -25,6 +26,7 @@ export const styles: ThemesProps = {
     [componentsName.label]: stylesLabel[themes.light],
     [componentsName.input]: stylesInput[themes.light],
     [componentsName.toggle]: stylesToggle[themes.light],
+    [componentsName.navBar]: stylesNavBar[themes.light],
   },
   [themes.dark]: {
     [componentsName.app]: stylesApp[themes.dark],
@@ -32,6 +34,7 @@ export const styles: ThemesProps = {
     [componentsName.label]: stylesLabel[themes.dark],
     [componentsName.input]: stylesInput[themes.dark],
     [componentsName.toggle]: stylesToggle[themes.dark],
+    [componentsName.navBar]: stylesNavBar[themes.dark],
   },
 };
 
@@ -41,4 +44,5 @@ export const stylesPropertiesName: StylesPropertiesNameProps = {
   [componentsName.label]: stylesLabelPropertiesName,
   [componentsName.input]: stylesInputPropertiesName,
   [componentsName.toggle]: stylesTogglePropertiesName,
+  [componentsName.navBar]: stylesNavBarPropertiesName,
 };

@@ -7,6 +7,7 @@ import Select, {
 } from 'react-select';
 import classNames from 'classnames';
 
+import { useThemeStyles, componentsName } from '@nx-todo-frontend/theme';
 import { NavArrowDownIcon, XMarkIcon } from '../icons';
 
 import '../../styles.css';
@@ -35,11 +36,6 @@ const MultiValueRemove = (props: MultiValueRemoveProps) => {
   );
 };
 
-const controlStyles = {
-  base: 'border rounded-lg bg-white hover:cursor-pointer',
-  focus: 'border-primary-600 ring-1 ring-primary-500',
-  nonFocus: 'border-gray-300 hover:border-gray-400',
-};
 const placeholderStyles = 'text-gray-500 pl-1 py-0.5';
 const selectInputStyles = 'pl-1 py-0.5';
 const valueContainerStyles = 'p-1 gap-1';
@@ -68,6 +64,38 @@ const noOptionsMessageStyles =
 export type DropdownProps = Props;
 
 export default function Dropdown({ value, options, ...props }: DropdownProps) {
+  const { styles, stylesPropertiesName } = useThemeStyles(
+    componentsName.dropdown,
+  );
+
+  const {
+    BG_COLOR,
+    BG_COLOR_HOVER,
+    BG_COLOR_ACTIVE,
+    BG_COLOR_DISABLED,
+    BORDER_COLOR,
+    BORDER_COLOR_HOVER,
+    BORDER_COLOR_ACTIVE,
+    BORDER_COLOR_DISABLED,
+    COLOR,
+  } = stylesPropertiesName;
+
+  const bgColor = `bg-${styles[BG_COLOR]}`;
+  const bgColorHover = `hover:bg-${styles[BG_COLOR_HOVER]}`;
+  const bgColorActive = `active:bg-${styles[BG_COLOR_ACTIVE]}`;
+  const bgColorDisabled = `disabled:bg-${styles[BG_COLOR_DISABLED]}`;
+  const borderColor = `border-${styles[BORDER_COLOR]}`;
+  const borderColorHover = `hover:border-${styles[BORDER_COLOR_HOVER]}`;
+  const borderColorActive = `active:border-${styles[BORDER_COLOR_ACTIVE]}`;
+  const borderColorDisabled = `disabled:border-${styles[BORDER_COLOR_DISABLED]}`;
+  const color = `text-${styles[COLOR]}`;
+
+  const controlStyles = {
+    base: 'border rounded-lg bg-white hover:cursor-pointer',
+    focus: 'border-primary-600 ring-1 ring-primary-500',
+    nonFocus: `${borderColor} ${borderColorHover}`,
+  };
+
   return (
     <Select
       value={value}

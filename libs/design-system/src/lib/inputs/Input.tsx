@@ -42,7 +42,7 @@ export default function Input(props: InputProps) {
       {...props}
       disabled={disabled}
       className={classNames(
-        'h-[42px] px-1 hover:duration-750 border-2 rounded-lg w-full',
+        'h-[42px] px-1 hover:duration-750 border rounded-lg w-full',
         bgColor,
         bgColorHover,
         bgColorActive,

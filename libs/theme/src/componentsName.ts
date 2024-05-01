@@ -6,4 +6,5 @@ export const componentsName = {
   toggle: 'toggle',
   navBar: 'navBar',
   title: 'title',
+  dropdown: 'dropdown',
 };

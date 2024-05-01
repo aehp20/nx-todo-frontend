@@ -9,7 +9,7 @@ const meta: Meta<typeof Dropdown> = {
 };
 export default meta;
 
-const sampleOptions = [
+const multipleOptions = [
   {
     label: 'Peru',
     options: [
@@ -36,12 +36,30 @@ const sampleOptions = [
   },
 ];
 
+const simpleOptions = [
+  {
+    label: 'Lima',
+    value: 'Lima',
+  },
+  {
+    label: 'Cuzco',
+    value: 'Cuzco',
+  },
+  {
+    label: 'Ancash',
+    value: 'Ancash',
+  },
+];
+
 export const LightDropdown = {
   args: {},
   render: (props: DropdownProps) => {
     return (
       <ThemeProvider theme={themes.light}>
-        <Dropdown options={sampleOptions} />
+        <div className="flex flex-col gap-2">
+          <Dropdown options={simpleOptions} />
+          <Dropdown options={multipleOptions} />
+        </div>
       </ThemeProvider>
     );
   },
@@ -52,7 +70,10 @@ export const DarkDropdown = {
   render: (props: DropdownProps) => {
     return (
       <ThemeProvider theme={themes.dark}>
-        <Dropdown options={sampleOptions} />
+        <div className="flex flex-col gap-2">
+          <Dropdown options={simpleOptions} />
+          <Dropdown options={multipleOptions} />
+        </div>
       </ThemeProvider>
     );
   },

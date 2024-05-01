@@ -1,6 +1,6 @@
 import { themes } from '../themes';
 
-const COLOR = 'BG_COLOR';
+const COLOR = 'COLOR';
 
 export const stylesTitlePropertiesName = {
   COLOR,
@@ -11,6 +11,6 @@ export const stylesTitle = {
     [COLOR]: 'MetallicSeaweed',
   },
   [themes.dark]: {
-    [COLOR]: 'Alabaster',
+    [COLOR]: 'ChromeYellow',
   },
 };

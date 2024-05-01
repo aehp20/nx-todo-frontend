@@ -100,7 +100,6 @@ export default function Dropdown({ value, options, ...props }: DropdownProps) {
     <Select
       value={value}
       options={options}
-      isMulti
       closeMenuOnSelect={false}
       hideSelectedOptions={false}
       unstyled

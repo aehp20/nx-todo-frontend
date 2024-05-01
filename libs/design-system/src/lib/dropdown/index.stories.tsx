@@ -58,7 +58,7 @@ export const LightDropdown = {
       <ThemeProvider theme={themes.light}>
         <div className="flex flex-col gap-2">
           <Dropdown options={simpleOptions} />
-          <Dropdown options={multipleOptions} />
+          <Dropdown options={multipleOptions} isMulti />
         </div>
       </ThemeProvider>
     );
@@ -72,7 +72,7 @@ export const DarkDropdown = {
       <ThemeProvider theme={themes.dark}>
         <div className="flex flex-col gap-2">
           <Dropdown options={simpleOptions} />
-          <Dropdown options={multipleOptions} />
+          <Dropdown options={multipleOptions} isMulti />
         </div>
       </ThemeProvider>
     );

@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react';
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 
 import Button, { ButtonProps } from './Button';
-import IconPlus from '../icons/IconPlus';
+import PlusIcon from '../icons/PlusIcon';
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -24,7 +24,7 @@ export const LightButtons = {
         <div className="flex flex-col gap-1">
           <div className="flex gap-1">
             <Button {...props}>Add</Button>
-            <Button {...props} icon={<IconPlus />}>
+            <Button {...props} icon={<PlusIcon />}>
               Add
             </Button>
             <Button {...props}>Update</Button>
@@ -40,7 +40,7 @@ export const LightButtons = {
             </Button>
           </div>
           <div className="flex gap-1">
-            <Button {...props} action="secondary" icon={<IconPlus />}>
+            <Button {...props} action="secondary" icon={<PlusIcon />}>
               Add
             </Button>
             <Button {...props} action="secondary">
@@ -78,7 +78,7 @@ export const DarkButtons = {
         <div className="flex flex-col gap-1">
           <div className="flex gap-1">
             <Button {...props}>Add</Button>
-            <Button {...props} icon={<IconPlus />}>
+            <Button {...props} icon={<PlusIcon />}>
               Add
             </Button>
             <Button {...props}>Update</Button>
@@ -94,7 +94,7 @@ export const DarkButtons = {
             </Button>
           </div>
           <div className="flex gap-1">
-            <Button {...props} action="secondary" icon={<IconPlus />}>
+            <Button {...props} action="secondary" icon={<PlusIcon />}>
               Add
             </Button>
             <Button {...props} action="secondary">

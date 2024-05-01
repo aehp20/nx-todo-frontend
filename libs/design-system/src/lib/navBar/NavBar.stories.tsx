@@ -3,7 +3,7 @@ import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 import { BrowserRouter } from 'react-router-dom';
 
 import NavBar, { NavBarProps } from './NavBar';
-import { IconClipboardCheck } from '../icons';
+import { ClipboardCheckIcon } from '../icons';
 
 const meta: Meta<typeof NavBar> = {
   component: NavBar,
@@ -13,7 +13,7 @@ export default meta;
 
 const title = (
   <>
-    <IconClipboardCheck width="28" height="28" />
+    <ClipboardCheckIcon width="28" height="28" />
     <span className="font-semibold text-xl tracking-tight">Tailwind CSS</span>
   </>
 );

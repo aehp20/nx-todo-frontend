@@ -1,6 +1,6 @@
-import { SVGIcon } from './';
+import { SVGIcon } from '.';
 
-export default function IconPlus(props: SVGIcon) {
+export default function PlusIcon(props: SVGIcon) {
   return (
     <svg
       viewBox="0 0 448 512"

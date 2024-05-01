@@ -1,6 +1,6 @@
 import { SVGIcon } from '.';
 
-export function IconClipboardCheck(props: SVGIcon) {
+export default function IconClipboardCheck(props: SVGIcon) {
   return (
     <svg
       viewBox="0 0 24 24"

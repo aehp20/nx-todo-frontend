@@ -14,8 +14,8 @@ export default function Layout() {
   );
   const items = [
     { to: '/', label: 'Home' },
-    { to: '/', label: 'Settings' },
-    { to: '/', label: 'About' },
+    { to: '/settings', label: 'Settings' },
+    { to: '/about', label: 'About' },
   ];
 
   return (

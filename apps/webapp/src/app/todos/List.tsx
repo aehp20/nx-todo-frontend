@@ -1,6 +1,7 @@
-import { useTodos } from "@nx-todo-frontend/query";
-import { useMutation, useQuery } from "react-query";
-import { Link, useNavigate } from "react-router-dom";
+import { Page } from '@nx-todo-frontend/design-system';
+import { useTodos } from '@nx-todo-frontend/query';
+import { useMutation, useQuery } from 'react-query';
+import { Link, useNavigate } from 'react-router-dom';
 
 const useTodos2 = () => {
   // const {
@@ -14,12 +15,11 @@ const useTodos2 = () => {
   //     ),
   //   queryKey: ['key-getTodos'],
   // });
-
   // return {todos, error, isLoading};
 };
 
 export default function List() {
-  const {data: todos, error, isLoading} = useTodos();
+  const { data: todos, error, isLoading } = useTodos();
 
   const navigate = useNavigate();
 
@@ -36,7 +36,7 @@ export default function List() {
   // if (error) return <div>An error occurred: {error.message}</div>;
 
   const handleClick = (id: number) => {
-    const result = window.confirm("Do you really want to delete this todo?");
+    const result = window.confirm('Do you really want to delete this todo?');
     // if (result) {
     //   mutation.mutate(id, {
     //     onSuccess: (data) => {
@@ -55,13 +55,15 @@ export default function List() {
   }
 
   return (
-    <div>
+    <Page title="Todo">
       {todos.map((todo) => (
         <div key={todo.id} className="flex gap-1">
-          <Link to={`/update/${todo.id}`}>{todo.name} - {todo.isDone ? "DONE" : "TODO"}</Link>
-          <button onClick={()=>handleClick(todo.id)}>Delete</button>
+          <Link to={`/update/${todo.id}`}>
+            {todo.name} - {todo.isDone ? 'DONE' : 'TODO'}
+          </Link>
+          <button onClick={() => handleClick(todo.id)}>Delete</button>
         </div>
       ))}
-    </div>
+    </Page>
   );
 }

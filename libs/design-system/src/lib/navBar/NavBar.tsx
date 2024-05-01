@@ -13,7 +13,7 @@ export type NavBarProps = {
   items: ItemNavBar[];
 };
 
-export function NavBar(props: NavBarProps) {
+export default function NavBar(props: NavBarProps) {
   const { title, items } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(

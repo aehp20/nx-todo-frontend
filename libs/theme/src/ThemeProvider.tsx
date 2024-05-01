@@ -42,9 +42,10 @@ export function ThemeProvider(props: ThemeProviderProps) {
 
   const appStyles = styles[theme][componentsName.app];
 
-  const { BG_COLOR } = stylesPropertiesName[componentsName.app];
+  const { BG_COLOR, COLOR } = stylesPropertiesName[componentsName.app];
 
   document.body.style.background = appStyles[BG_COLOR];
+  document.body.style.color = appStyles[COLOR];
 
   return (
     <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

@@ -5,4 +5,5 @@ export const componentsName = {
   label: 'label',
   toggle: 'toggle',
   navBar: 'navBar',
+  title: 'title',
 };

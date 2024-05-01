@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react';
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 import { BrowserRouter } from 'react-router-dom';
 
-import { NavBar, NavBarProps } from './NavBar';
+import NavBar, { NavBarProps } from './NavBar';
 import { IconClipboardCheck } from '../icons';
 
 const meta: Meta<typeof NavBar> = {

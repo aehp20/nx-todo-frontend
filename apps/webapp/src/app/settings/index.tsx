@@ -1,11 +1,6 @@
-import { Dropdown, Label, Page } from '@nx-todo-frontend/design-system';
+import { Dropdown, Label, Page, Option } from '@nx-todo-frontend/design-system';
 import { themes, useTheme } from '@nx-todo-frontend/theme';
 import { OnChangeValue } from 'react-select';
-
-interface Option {
-  value: string;
-  label: string;
-}
 
 export default function Settings() {
   const { theme, setTheme } = useTheme();

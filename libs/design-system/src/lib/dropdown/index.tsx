@@ -52,9 +52,14 @@ const indicatorSeparatorStyles = 'bg-gray-500';
 const dropdownIndicatorStyles =
   'p-1 hover:bg-gray-100 text-gray-500 rounded-md hover:text-black';
 
+export type Option = {
+  value: string;
+  label: string;
+};
+
 export type DropdownProps = Props;
 
-export default function Dropdown({ value, options, ...props }: DropdownProps) {
+export function Dropdown({ value, options, ...props }: DropdownProps) {
   const { styles, stylesPropertiesName } = useThemeStyles(
     componentsName.dropdown,
   );

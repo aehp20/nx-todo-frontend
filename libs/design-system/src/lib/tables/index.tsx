@@ -1,6 +1,7 @@
 import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 import { Table as ITable, flexRender } from '@tanstack/react-table';
 import classNames from 'classnames';
+import Pagination from './paginations';
 
 export type TableProps<T> = {
   table: ITable<T>;
@@ -16,7 +17,7 @@ export default function Table<T>(props: TableProps<T>) {
   const borderColor = `border-${styles[BORDER_COLOR]}`;
 
   return (
-    <div className="flex justify-center h-screen">
+    <div className="flex flex-col">
       <table className={classNames('my-auto border', borderColor)}>
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -65,6 +66,7 @@ export default function Table<T>(props: TableProps<T>) {
           ))}
         </tbody>
       </table>
+      <Pagination table={table} />
       <div />
     </div>
   );

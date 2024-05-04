@@ -8,7 +8,7 @@ import '../../styles.css';
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   action?: 'primary' | 'secondary';
   disabled?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   icon?: JSX.Element;
 };
 

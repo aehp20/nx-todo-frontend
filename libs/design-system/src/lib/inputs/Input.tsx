@@ -7,10 +7,11 @@ import '../../styles.css';
 export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   disabled?: boolean;
   type?: string;
+  className?: string;
 };
 
 export default function Input(props: InputProps) {
-  const { disabled, type = 'text' } = props;
+  const { disabled, type = 'text', className } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(componentsName.input);
 
@@ -42,7 +43,8 @@ export default function Input(props: InputProps) {
       {...props}
       disabled={disabled}
       className={classNames(
-        'h-[42px] px-1 hover:duration-750 border rounded-lg w-full',
+        'h-[42px] px-1 hover:duration-750 border rounded-lg',
+        className,
         bgColor,
         bgColorHover,
         bgColorActive,

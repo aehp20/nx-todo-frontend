@@ -1,7 +1,7 @@
 import type { Meta } from '@storybook/react';
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 
-import Dropdown, { DropdownProps } from '.';
+import { Dropdown, DropdownProps } from '.';
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,

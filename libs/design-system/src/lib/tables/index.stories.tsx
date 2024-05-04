@@ -5,6 +5,7 @@ import {
   useReactTable,
   getSortedRowModel,
   SortingState,
+  getPaginationRowModel,
 } from '@tanstack/react-table';
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 
@@ -59,8 +60,14 @@ const CustomTable = () => {
     state: {
       sorting,
     },
+    initialState: {
+      pagination: {
+        pageSize: 5,
+      },
+    },
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
   });
 
   return <Table table={table} />;

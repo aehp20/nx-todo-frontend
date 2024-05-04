@@ -6,4 +6,4 @@ export { default as Toggle } from './lib/toggles/Toggle';
 export { default as NavBar } from './lib/navBar/NavBar';
 export { default as Title } from './lib/title';
 export { default as Page } from './lib/page';
-export { default as Dropdown } from './lib/dropdown';
+export * from './lib/dropdown';

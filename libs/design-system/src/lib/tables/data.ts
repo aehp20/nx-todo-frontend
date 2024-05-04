@@ -41,4 +41,34 @@ export const data = [
     email: 'williamthompson@example.com',
     phone: '222-333-4444',
   },
+  {
+    id: 8,
+    name: 'Pauline Thompson',
+    email: 'Paulinethompson@example.com',
+    phone: '001-333-4444',
+  },
+  {
+    id: 9,
+    name: 'Sabrina Thompson',
+    email: 'Sabrinathompson@example.com',
+    phone: '002-333-4444',
+  },
+  {
+    id: 10,
+    name: 'Segolene Thompson',
+    email: 'Segolenethompson@example.com',
+    phone: '003-333-4444',
+  },
+  {
+    id: 11,
+    name: 'Valentin Thompson',
+    email: 'Valentinthompson@example.com',
+    phone: '004-333-4444',
+  },
+  {
+    id: 12,
+    name: 'Herve Thompson',
+    email: 'Hervethompson@example.com',
+    phone: '005-333-4444',
+  },
 ];

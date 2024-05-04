@@ -8,13 +8,13 @@ const { LightTable, DarkTable } = composeStories(stories);
 describe('LightTable', () => {
   it('should render successfully', () => {
     render(<LightTable />);
-    expect(screen.getByText('name')).not.toBeNull();
+    expect(screen.getByText('NAME')).not.toBeNull();
   });
 });
 
 describe('DarkTable', () => {
   it('should render successfully', () => {
     render(<DarkTable />);
-    expect(screen.getByText('name')).not.toBeNull();
+    expect(screen.getByText('NAME')).not.toBeNull();
   });
 });

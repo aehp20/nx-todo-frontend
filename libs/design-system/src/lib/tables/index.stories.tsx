@@ -3,6 +3,8 @@ import {
   createColumnHelper,
   getCoreRowModel,
   useReactTable,
+  getSortedRowModel,
+  SortingState,
 } from '@tanstack/react-table';
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 
@@ -27,18 +29,20 @@ const columnHelper = createColumnHelper<Person>();
 
 const columns = [
   columnHelper.accessor('id', {
+    header: () => 'ID',
     cell: (info) => info.getValue(),
   }),
   columnHelper.accessor('name', {
+    header: () => 'NAME',
     cell: (info) => info.getValue(),
   }),
   columnHelper.accessor((row) => row.email, {
     id: 'email',
+    header: () => 'EMAIL',
     cell: (info) => <i>{info.getValue()}</i>,
-    header: () => <span>Email</span>,
   }),
   columnHelper.accessor('phone', {
-    header: () => 'Phone',
+    header: () => 'PHONE',
     cell: (info) => info.renderValue(),
   }),
 ];
@@ -46,10 +50,17 @@ const columns = [
 const CustomTable = () => {
   const [data] = useState(() => [...mockData]);
 
+  const [sorting, setSorting] = useState<SortingState>([]);
+
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    state: {
+      sorting,
+    },
+    onSortingChange: setSorting,
+    getSortedRowModel: getSortedRowModel(),
   });
 
   return <Table table={table} />;

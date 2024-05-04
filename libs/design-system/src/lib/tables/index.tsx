@@ -22,22 +22,32 @@ export default function Table<T>(props: TableProps<T>) {
           {table.getHeaderGroups().map((headerGroup) => (
             <tr
               key={headerGroup.id}
-              className={classNames(
-                'border-b font-semibold uppercase',
-                borderColor,
-              )}
+              className={classNames('border-b font-semibold', borderColor)}
             >
               {headerGroup.headers.map((header) => (
                 <th
                   key={header.id}
                   className="px-4 pr-2 py-4 font-medium text-left"
                 >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
+                  {header.isPlaceholder ? null : (
+                    <div
+                      {...{
+                        className: header.column.getCanSort()
+                          ? 'cursor-pointer select-none flex min-w-[36px]'
+                          : '',
+                        onClick: header.column.getToggleSortingHandler(),
+                      }}
+                    >
+                      {flexRender(
                         header.column.columnDef.header,
                         header.getContext(),
                       )}
+                      {{
+                        asc: <span className="pl-2">↑</span>,
+                        desc: <span className="pl-2">↓</span>,
+                      }[header.column.getIsSorted() as string] ?? null}
+                    </div>
+                  )}
                 </th>
               ))}
             </tr>

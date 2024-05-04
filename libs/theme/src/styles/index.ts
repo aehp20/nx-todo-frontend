@@ -8,6 +8,7 @@ import { stylesToggle, stylesTogglePropertiesName } from './toggle';
 import { stylesNavBar, stylesNavBarPropertiesName } from './navBar';
 import { stylesTitle, stylesTitlePropertiesName } from './title';
 import { stylesDropdown, stylesDropdownPropertiesName } from './dropdown';
+import { stylesTable, stylesTablePropertiesName } from './table';
 
 export type StylesProps = {
   [key: string]: Record<string, string>;
@@ -31,6 +32,7 @@ export const styles: ThemesProps = {
     [componentsName.navBar]: stylesNavBar[themes.light],
     [componentsName.title]: stylesTitle[themes.light],
     [componentsName.dropdown]: stylesDropdown[themes.light],
+    [componentsName.table]: stylesTable[themes.light],
   },
   [themes.dark]: {
     [componentsName.app]: stylesApp[themes.dark],
@@ -41,6 +43,7 @@ export const styles: ThemesProps = {
     [componentsName.navBar]: stylesNavBar[themes.dark],
     [componentsName.title]: stylesTitle[themes.dark],
     [componentsName.dropdown]: stylesDropdown[themes.dark],
+    [componentsName.table]: stylesTable[themes.dark],
   },
 };
 
@@ -53,4 +56,5 @@ export const stylesPropertiesName: StylesPropertiesNameProps = {
   [componentsName.navBar]: stylesNavBarPropertiesName,
   [componentsName.title]: stylesTitlePropertiesName,
   [componentsName.dropdown]: stylesDropdownPropertiesName,
+  [componentsName.table]: stylesTablePropertiesName,
 };

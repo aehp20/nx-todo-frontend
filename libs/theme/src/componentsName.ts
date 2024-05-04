@@ -7,4 +7,5 @@ export const componentsName = {
   navBar: 'navBar',
   title: 'title',
   dropdown: 'dropdown',
+  table: 'table',
 };

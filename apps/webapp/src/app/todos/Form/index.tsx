@@ -71,9 +71,10 @@ export default function Form(props: FormProps) {
   return (
     <div className="flex flex-col gap-4 w-1/2">
       <div className="flex flex-col">
-        <Label>Name</Label>
+        <Label htmlFor="name">Name</Label>
         <Input
           type="text"
+          id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Enter a name"

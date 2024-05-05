@@ -7,3 +7,5 @@ export { default as NavBar } from './lib/navBar/NavBar';
 export { default as Title } from './lib/title';
 export { default as Page } from './lib/page';
 export * from './lib/dropdown';
+export { default as Table } from './lib/tables';
+export * from './lib/messages';

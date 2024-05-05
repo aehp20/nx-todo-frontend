@@ -10,10 +10,17 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   disabled?: boolean;
   children?: ReactNode;
   icon?: JSX.Element;
+  className?: string;
 };
 
 export default function Button(props: ButtonProps) {
-  const { action = 'primary', children, disabled = false, icon } = props;
+  const {
+    action = 'primary',
+    children,
+    disabled = false,
+    icon,
+    className,
+  } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(
     componentsName.button,
@@ -93,6 +100,7 @@ export default function Button(props: ButtonProps) {
       disabled={disabled}
       className={classNames(
         'h-[42px] rounded-lg px-2 py-1 border hover:duration-750',
+        className,
         textColor,
         textColorHover,
         textColorActive,

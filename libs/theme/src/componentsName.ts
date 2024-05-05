@@ -8,4 +8,5 @@ export const componentsName = {
   title: 'title',
   dropdown: 'dropdown',
   table: 'table',
+  message: 'message',
 };

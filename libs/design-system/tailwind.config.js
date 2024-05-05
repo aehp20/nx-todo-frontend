@@ -81,12 +81,25 @@ const toggleSafelist = [
   'peer-checked:hover:bg-ChromeYellowHover',
   'before:bg-Kurotobi',
 ];
+const messageSafelist = [
+  'text-gray-800',
+  'border-gray-800',
+  'text-white-800',
+  'border-white-800',
+  'text-red-500',
+  'border-red-500',
+  'text-green-500',
+  'border-green-500',
+  'text-yellow-500',
+  'border-yellow-500',
+];
 const safelist = [
   ...toggleSafelist,
   ...buttonSafelist,
   ...labelSafelist,
   ...inputSafelist,
   ...navBarSafelist,
+  ...messageSafelist,
 ];
 
 /** @type {import('tailwindcss').Config} */

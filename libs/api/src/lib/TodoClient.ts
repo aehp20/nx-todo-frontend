@@ -1,4 +1,5 @@
-import { HTTPClient } from "./HTTPClient";
+import { HTTPClient } from './HTTPClient';
+import { Todo } from './types';
 
 export class TodoClient {
   private httpClient: HTTPClient;
@@ -11,27 +12,23 @@ export class TodoClient {
   async get(): Promise<Response> {
     return await this.httpClient.get(this.todoEndpointPath);
   }
+
+  async getTodo(id: number): Promise<Response> {
+    const endpointPath = `${this.todoEndpointPath}/${id}`;
+    return await this.httpClient.get(endpointPath);
+  }
+
+  post(todo: Todo): Promise<Response> {
+    return this.httpClient.post(this.todoEndpointPath, JSON.stringify(todo));
+  }
+
+  patch(todo: Todo): Promise<Response> {
+    const endpointPath = `${this.todoEndpointPath}/${todo.id}`;
+    return this.httpClient.patch(endpointPath, JSON.stringify(todo));
+  }
+
+  delete(id: number): Promise<Response> {
+    const endpointPath = `${this.todoEndpointPath}/${id}`;
+    return this.httpClient.delete(endpointPath);
+  }
 }
-// fetch(`http://localhost:3000/api/todo/${id}`).then(
-//         (res) => res.json()
-//       ),
-// fetch('http://localhost:3000/api/todo', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(newTodo)
-//     })
-//     fetch(`http://localhost:3000/api/todo/${id}`, {
-//       method: 'PATCH',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(updateTodo)
-//     })
-//     fetch(`http://localhost:3000/api/todo/${id}`, {
-//       method: 'DELETE',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     })

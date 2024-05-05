@@ -1,11 +1,11 @@
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Layout from '../common/Layout';
 import NoMatch from '../common/NoMatch';
-import List from './todos/List';
-import Create from './todos/Create';
-import Update from './todos/Update';
-import Settings from './settings';
 import About from './about';
+import Settings from './settings';
+import Create from './todos/Form/Create';
+import Update from './todos/Form/Update';
+import List from './todos/List';
 
 export default function App() {
   return (

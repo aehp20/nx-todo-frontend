@@ -1,5 +1,5 @@
-import { HTTPClient } from "./HTTPClient";
-import { TodoClient } from "./TodoClient";
+import { HTTPClient } from './HTTPClient';
+import { TodoClient } from './TodoClient';
 
 export class APIClient {
   public todo: TodoClient;

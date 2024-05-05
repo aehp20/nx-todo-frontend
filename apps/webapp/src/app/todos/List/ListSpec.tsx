@@ -1,16 +1,16 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Todo } from '@nx-todo-frontend/api';
+import { Table, Trash } from '@nx-todo-frontend/design-system';
+import { useDeleteTodo } from '@nx-todo-frontend/query';
 import {
+  SortingState,
   createColumnHelper,
   getCoreRowModel,
-  useReactTable,
-  getSortedRowModel,
-  SortingState,
   getPaginationRowModel,
+  getSortedRowModel,
+  useReactTable,
 } from '@tanstack/react-table';
-import { Table, Trash } from '@nx-todo-frontend/design-system';
-import { Todo } from '../types';
 import { useState } from 'react';
-import { useMutation } from 'react-query';
+import { Link } from 'react-router-dom';
 
 export type ListSpecProps = {
   items: Todo[];
@@ -20,8 +20,6 @@ const columnHelper = createColumnHelper<Todo>();
 
 export default function ListSpec(props: ListSpecProps) {
   const { items } = props;
-
-  const navigate = useNavigate();
 
   const [sorting, setSorting] = useState<SortingState>([]);
 
@@ -69,14 +67,7 @@ export default function ListSpec(props: ListSpecProps) {
     getPaginationRowModel: getPaginationRowModel(),
   });
 
-  const mutation = useMutation((id: number) =>
-    fetch(`http://localhost:3000/api/todo/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }),
-  );
+  const mutation = useDeleteTodo();
 
   const handleClick = (id: number) => {
     const result = window.confirm('Do you really want to delete this todo?');
@@ -84,7 +75,7 @@ export default function ListSpec(props: ListSpecProps) {
       mutation.mutate(id, {
         onSuccess: (data) => {
           // ADD A TOAST HERE
-          navigate('/');
+          console.log('DELETED');
         },
       });
     }

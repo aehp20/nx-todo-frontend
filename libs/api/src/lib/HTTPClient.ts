@@ -16,7 +16,7 @@ export class HTTPClient {
     return `${this.urlApp}${endpointPath}`;
   }
 
-  async get(endpointPath: string): Promise<Response> {
+  async get<T>(endpointPath: string): Promise<T> {
     return await fetch(this.getUrl(endpointPath), {
       method: 'GET',
       headers: new Headers(this.config),

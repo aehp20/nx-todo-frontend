@@ -1,9 +1,9 @@
+import { Todo } from '@nx-todo-frontend/api';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TodoSpec } from '../types';
 
 type FormProps = {
-  todo?: TodoSpec;
+  todo?: Todo;
   mutation: any;
   isLoading?: boolean;
   error?: unknown;

@@ -9,11 +9,11 @@ export class TodoClient {
     this.httpClient = httpClient;
   }
 
-  async get(): Promise<Response> {
+  async get(): Promise<Todo[]> {
     return await this.httpClient.get(this.todoEndpointPath);
   }
 
-  async getTodo(id: number): Promise<Response> {
+  async getTodo(id: number): Promise<Todo> {
     const endpointPath = `${this.todoEndpointPath}/${id}`;
     return await this.httpClient.get(endpointPath);
   }

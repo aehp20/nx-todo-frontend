@@ -13,13 +13,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 export type ListSpecProps = {
-  items: Todo[];
+  items?: Todo[];
 };
 
 const columnHelper = createColumnHelper<Todo>();
 
 export default function ListSpec(props: ListSpecProps) {
-  const { items } = props;
+  const { items = [] } = props;
 
   const [sorting, setSorting] = useState<SortingState>([]);
 

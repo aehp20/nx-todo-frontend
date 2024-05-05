@@ -38,7 +38,7 @@ export default function ListSpec(props: ListSpecProps) {
     }),
     columnHelper.accessor('isDone', {
       header: () => 'IS DONE?',
-      cell: (info) => (info.getValue() ? 'YES' : 'NO'),
+      cell: (info) => (info.getValue() ? 'Yes' : 'No'),
     }),
     columnHelper.accessor('isDone', {
       id: 'action',

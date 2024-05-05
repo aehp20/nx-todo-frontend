@@ -1,6 +1,14 @@
 import { Todo } from '@nx-todo-frontend/api';
+import {
+  Button,
+  Dropdown,
+  Input,
+  Label,
+  Option,
+} from '@nx-todo-frontend/design-system';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { OnChangeValue } from 'react-select';
 
 type FormProps = {
   todo?: Todo;
@@ -48,25 +56,40 @@ export default function Form(props: FormProps) {
     return <span>Error: {mutation.error.message}</span>;
   }
 
-  const handleChange = (event) => {
-    setIsDone(event.target.value === 'true');
+  const options = [
+    { label: 'Done', value: 'true' },
+    { label: 'Todo', value: 'false' },
+  ];
+  const selectedValue = options.find((item) => item.value === `${isDone}`);
+
+  const handleChange = (option: OnChangeValue<Option, false>) => {
+    if (option) {
+      setIsDone(option.value === 'true');
+    }
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
-      />
+    <div className="flex flex-col gap-4 w-1/2">
+      <div className="flex flex-col">
+        <Label>Name</Label>
+        <Input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter a name"
+        />
+      </div>
       {todo && (
-        <select value={isDone ? 'true' : 'false'} onChange={handleChange}>
-          <option value="true">Done</option>
-          <option value="false">Todo</option>
-        </select>
+        <div className="flex flex-col">
+          <Label>Is Done?</Label>
+          <Dropdown
+            value={selectedValue}
+            options={options}
+            onChange={(newValue: unknown) => handleChange(newValue as Option)}
+          />
+        </div>
       )}
-      <button onClick={submitData}>Submit</button>
+      <Button onClick={submitData}>Submit</Button>
     </div>
   );
 }

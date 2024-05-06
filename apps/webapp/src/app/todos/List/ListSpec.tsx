@@ -1,6 +1,3 @@
-import { Todo } from '@nx-todo-frontend/api';
-import { Table, Trash } from '@nx-todo-frontend/design-system';
-import { useDeleteTodo } from '@nx-todo-frontend/query';
 import {
   SortingState,
   createColumnHelper,
@@ -11,6 +8,10 @@ import {
 } from '@tanstack/react-table';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+import { Todo } from '@nx-todo-frontend/api';
+import { Confirmation, Table, Trash } from '@nx-todo-frontend/design-system';
+import { useDeleteTodo } from '@nx-todo-frontend/query';
 
 export type ListSpecProps = {
   items?: Todo[];
@@ -42,10 +43,18 @@ export default function ListSpec(props: ListSpecProps) {
       id: 'action',
       header: () => 'Action',
       cell: (info) => (
-        <Trash
-          className="cursor-pointer"
-          onClick={() => handleClick(info.row.original.id)}
-        />
+        <Confirmation
+          title="Delete Todo?"
+          content="Are you sure you want to delete this todo?"
+          onConfirm={() => handleDelete(info.row.original.id)}
+        >
+          {({ displayConfirmation }) => (
+            <Trash
+              className="cursor-pointer"
+              onClick={() => displayConfirmation(true)}
+            />
+          )}
+        </Confirmation>
       ),
     }),
   ];
@@ -69,16 +78,13 @@ export default function ListSpec(props: ListSpecProps) {
 
   const mutation = useDeleteTodo();
 
-  const handleClick = (id: number) => {
-    const result = window.confirm('Do you really want to delete this todo?');
-    if (result) {
-      mutation.mutate(id, {
-        onSuccess: (data) => {
-          // ADD A TOAST HERE
-          console.log('DELETED');
-        },
-      });
-    }
+  const handleDelete = (id: number) => {
+    mutation.mutate(id, {
+      onSuccess: (data) => {
+        // ADD A TOAST HERE
+        console.log('DELETED', data);
+      },
+    });
   };
 
   return <Table table={table} />;

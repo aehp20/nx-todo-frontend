@@ -9,4 +9,5 @@ export const componentsName = {
   dropdown: 'dropdown',
   table: 'table',
   message: 'message',
+  dialog: 'dialog',
 };

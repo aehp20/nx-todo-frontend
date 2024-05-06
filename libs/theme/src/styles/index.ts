@@ -1,15 +1,16 @@
-import { themes } from '../themes';
 import { componentsName } from '../componentsName';
+import { themes } from '../themes';
 import { stylesApp, stylesAppPropertiesName } from './app';
 import { stylesButton, stylesButtonPropertiesName } from './button';
-import { stylesLabel, stylesLabelPropertiesName } from './label';
-import { stylesInput, stylesInputPropertiesName } from './input';
-import { stylesToggle, stylesTogglePropertiesName } from './toggle';
-import { stylesNavBar, stylesNavBarPropertiesName } from './navBar';
-import { stylesTitle, stylesTitlePropertiesName } from './title';
+import { stylesDialog, stylesDialogPropertiesName } from './dialog';
 import { stylesDropdown, stylesDropdownPropertiesName } from './dropdown';
-import { stylesTable, stylesTablePropertiesName } from './table';
+import { stylesInput, stylesInputPropertiesName } from './input';
+import { stylesLabel, stylesLabelPropertiesName } from './label';
 import { stylesMessage, stylesMessagePropertiesName } from './message';
+import { stylesNavBar, stylesNavBarPropertiesName } from './navBar';
+import { stylesTable, stylesTablePropertiesName } from './table';
+import { stylesTitle, stylesTitlePropertiesName } from './title';
+import { stylesToggle, stylesTogglePropertiesName } from './toggle';
 
 export type StylesProps = {
   [key: string]: Record<string, string>;
@@ -35,6 +36,7 @@ export const styles: ThemesProps = {
     [componentsName.dropdown]: stylesDropdown[themes.light],
     [componentsName.table]: stylesTable[themes.light],
     [componentsName.message]: stylesMessage[themes.light],
+    [componentsName.dialog]: stylesDialog[themes.light],
   },
   [themes.dark]: {
     [componentsName.app]: stylesApp[themes.dark],
@@ -47,6 +49,7 @@ export const styles: ThemesProps = {
     [componentsName.dropdown]: stylesDropdown[themes.dark],
     [componentsName.table]: stylesTable[themes.dark],
     [componentsName.message]: stylesMessage[themes.dark],
+    [componentsName.dialog]: stylesDialog[themes.dark],
   },
 };
 
@@ -61,4 +64,5 @@ export const stylesPropertiesName: StylesPropertiesNameProps = {
   [componentsName.dropdown]: stylesDropdownPropertiesName,
   [componentsName.table]: stylesTablePropertiesName,
   [componentsName.message]: stylesMessagePropertiesName,
+  [componentsName.dialog]: stylesDialogPropertiesName,
 };

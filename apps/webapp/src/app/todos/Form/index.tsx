@@ -86,7 +86,7 @@ export default function Form(props: FormProps) {
           <Dropdown
             value={selectedValue}
             options={options}
-            onChange={(newValue: unknown) => handleChange(newValue as Option)}
+            onChange={handleChange}
           />
         </div>
       )}

@@ -1,6 +1,5 @@
 import { Dropdown, Label, Option, Page } from '@nx-todo-frontend/design-system';
 import { themes, useTheme } from '@nx-todo-frontend/theme';
-import { OnChangeValue } from 'react-select';
 
 export default function Settings() {
   const { theme, setTheme } = useTheme();
@@ -18,7 +17,7 @@ export default function Settings() {
 
   const selectedValue = options.find((option) => option.value === theme);
 
-  const handleChange = (option: OnChangeValue<Option, false>) => {
+  const handleChange = (option: Option) => {
     if (option) {
       setTheme(option.value);
     }
@@ -31,7 +30,7 @@ export default function Settings() {
         <Dropdown
           value={selectedValue}
           options={options}
-          onChange={(newValue: unknown) => handleChange(newValue as Option)}
+          onChange={handleChange}
         />
       </div>
     </Page>

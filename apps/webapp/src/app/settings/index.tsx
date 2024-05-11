@@ -1,4 +1,4 @@
-import { Dropdown, Label, Page, Option } from '@nx-todo-frontend/design-system';
+import { Dropdown, Label, Option, Page } from '@nx-todo-frontend/design-system';
 import { themes, useTheme } from '@nx-todo-frontend/theme';
 import { OnChangeValue } from 'react-select';
 

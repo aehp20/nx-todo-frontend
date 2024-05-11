@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { ClipboardCheckIcon, NavBar } from '@nx-todo-frontend/design-system';
+import { useI18NContext } from '@nx-todo-frontend/i18n';
 
 export default function Layout() {
   const { _ } = useI18NContext();
@@ -14,8 +14,8 @@ export default function Layout() {
   );
   const items = [
     { to: '/', label: 'Home' },
+    { to: '/about', label: 'About me' },
     { to: '/settings', label: 'Settings' },
-    { to: '/about', label: 'About' },
   ];
 
   return (

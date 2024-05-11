@@ -9,13 +9,13 @@ export default function Layout() {
   const title = (
     <>
       <ClipboardCheckIcon width="28" height="28" />
-      <span className="font-semibold text-xl tracking-tight">Todo</span>
+      <span className="font-semibold text-xl tracking-tight">{_('Todo')}</span>
     </>
   );
   const items = [
-    { to: '/', label: 'Home' },
-    { to: '/about', label: 'About me' },
-    { to: '/settings', label: 'Settings' },
+    { to: '/', label: _('Home') },
+    { to: '/about', label: _('About me') },
+    { to: '/settings', label: _('Settings') },
   ];
 
   return (

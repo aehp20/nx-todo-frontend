@@ -70,7 +70,7 @@ const CustomTable = () => {
     getPaginationRowModel: getPaginationRowModel(),
   });
 
-  return <Table table={table} />;
+  return <Table table={table} labelItemsPerPage="Items per page" />;
 };
 
 export const LightTable = {

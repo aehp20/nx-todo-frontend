@@ -1,5 +1,6 @@
+import { Todo, TodoCreate, TodoUpdate } from '@nx-todo-frontend/types';
+
 import { HTTPClient } from './HTTPClient';
-import { Todo } from './types';
 
 export class TodoClient {
   private httpClient: HTTPClient;
@@ -18,11 +19,11 @@ export class TodoClient {
     return await this.httpClient.get(endpointPath);
   }
 
-  post(todo: Todo): Promise<Response> {
+  post(todo: TodoCreate): Promise<Response> {
     return this.httpClient.post(this.todoEndpointPath, JSON.stringify(todo));
   }
 
-  patch(todo: Todo): Promise<Response> {
+  patch(todo: TodoUpdate): Promise<Response> {
     const endpointPath = `${this.todoEndpointPath}/${todo.id}`;
     return this.httpClient.patch(endpointPath, JSON.stringify(todo));
   }

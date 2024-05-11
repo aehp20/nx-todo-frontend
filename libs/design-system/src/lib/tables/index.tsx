@@ -5,10 +5,11 @@ import Pagination from './paginations';
 
 export type TableProps<T> = {
   table: ITable<T>;
+  labelItemsPerPage: string;
 };
 
 export default function Table<T>(props: TableProps<T>) {
-  const { table } = props;
+  const { table, labelItemsPerPage } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(componentsName.table);
 
@@ -66,7 +67,7 @@ export default function Table<T>(props: TableProps<T>) {
           ))}
         </tbody>
       </table>
-      <Pagination table={table} />
+      <Pagination table={table} labelItemsPerPage={labelItemsPerPage} />
       <div />
     </div>
   );

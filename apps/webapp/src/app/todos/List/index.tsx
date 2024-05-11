@@ -5,14 +5,17 @@ import {
   PlusIcon,
   SpinnerIcon,
 } from '@nx-todo-frontend/design-system';
+import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { useTodos } from '@nx-todo-frontend/query';
 import { useNavigate } from 'react-router-dom';
 import ListSpec from './ListSpec';
 
 export default function List() {
-  const { data: todos, error, isLoading } = useTodos();
+  const { data, error, isLoading } = useTodos();
 
   const navigate = useNavigate();
+
+  const { _ } = useI18NContext();
 
   if (isLoading) {
     return (
@@ -27,15 +30,15 @@ export default function List() {
   }
 
   return (
-    <Page title="Todo">
+    <Page title={_('Todo')}>
       <Button
         icon={<PlusIcon />}
         onClick={() => navigate('/create')}
         className="mb-2"
       >
-        Add
+        {_('Add')}
       </Button>
-      <ListSpec items={todos} />
+      <ListSpec items={data} />
     </Page>
   );
 }

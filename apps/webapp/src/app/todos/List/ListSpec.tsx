@@ -9,13 +9,14 @@ import {
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Todo } from '@nx-todo-frontend/api';
 import {
   Confirmation,
   Table,
   TrashIcon,
 } from '@nx-todo-frontend/design-system';
+import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { useDeleteTodo } from '@nx-todo-frontend/query';
+import { Todo } from '@nx-todo-frontend/types';
 
 export type ListSpecProps = {
   items?: Todo[];
@@ -28,31 +29,33 @@ export default function ListSpec(props: ListSpecProps) {
 
   const [sorting, setSorting] = useState<SortingState>([]);
 
+  const { _ } = useI18NContext();
+
   const columns = [
     columnHelper.accessor('id', {
-      header: () => 'ID',
+      header: () => _('ID'),
       cell: (info) => info.getValue(),
     }),
     columnHelper.accessor('name', {
-      header: () => 'NAME',
+      header: () => _('NAME'),
       cell: (info) => (
         <Link to={`/update/${info.row.original.id}`}>{info.getValue()}</Link>
       ),
     }),
     columnHelper.accessor('isDone', {
-      header: () => 'IS DONE?',
+      header: () => _('IS DONE?'),
       cell: (info) => (info.getValue() ? 'Yes' : 'No'),
     }),
     columnHelper.accessor('isDone', {
       id: 'action',
-      header: () => 'Action',
+      header: () => _('ACTION'),
       cell: (info) => (
         <Confirmation
-          title="Delete Todo?"
-          content="Are you sure you want to delete this todo?"
+          title={_('Delete Todo?')}
+          content={_('Are you sure you want to delete this todo?')}
           onConfirm={() => handleDelete(info.row.original.id)}
-          labelNoButton="No"
-          labelYesButton="Yes"
+          labelNoButton={_('No')}
+          labelYesButton={_('Yes')}
         >
           {({ displayConfirmation }) => (
             <TrashIcon
@@ -93,5 +96,5 @@ export default function ListSpec(props: ListSpecProps) {
     });
   };
 
-  return <Table table={table} />;
+  return <Table table={table} labelItemsPerPage={_('Items per page')} />;
 }

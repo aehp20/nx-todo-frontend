@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-11 23:01+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:8
+msgid "Aron Elias HERRERA PONTE"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:11
+msgid ""
+"Lead developer with over 10 years' experience, specializing in frontend "
+"development with ReactJS: Web and Mobile."
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:17
+msgid ""
+"As a senior developer my main objective is to design, develop and maintain "
+"web applications. Implement new web technologies that will make the product "
+"even more powerful. Find elegant solutions to usability problems. Build "
+"fast, intuitive and powerful user interfaces and experiences by solving "
+"complex underlying technical challenges."
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:22
+msgid "Coordinates"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:25
+msgid "Paris - France"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:30
+msgid "Full LinkedIn profile"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:45
+msgid "Social networks"
+msgstr ""

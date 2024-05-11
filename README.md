@@ -87,7 +87,7 @@ Run `nx run design-system:storybook` to see the Design System components in stor
 ## i18n
 Find all the typescript files and put them into the "list" file
 ```
-find /Users/home/learn/github/nx-technical-test-phantombuster/apps/phantoms/src -type f \( -name '*.ts' -or -name '*.tsx' \)  -print > list
+find /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src -type f \( -name '*.ts' -or -name '*.tsx' \)  -print > list
 ```
 
 Extract the translation words from the code
@@ -126,7 +126,7 @@ npm run po2jsonFR
 
 Finally, remove the "list" file
 ```
-rm /Users/home/learn/github/nx-technical-test-phantombuster/list
+rm /Users/home/learn/github/nx-todo/nx-todo-frontend/list
 ```
 
 ## e2e

@@ -1,0 +1,61 @@
+# Spanish translations for PACKAGE package
+# Traducciones al español para el paquete PACKAGE.
+# Copyright (C) 2024 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Aron <aronherrera2009@gmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-11 23:01+0200\n"
+"PO-Revision-Date: 2024-05-11 23:02+0200\n"
+"Last-Translator: Aron <aronherrera2009@gmail.com>\n"
+"Language-Team: Spanish <es@tp.org.es>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:8
+msgid "Aron Elias HERRERA PONTE"
+msgstr "Aron Elias HERRERA PONTE"
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:11
+msgid ""
+"Lead developer with over 10 years' experience, specializing in frontend "
+"development with ReactJS: Web and Mobile."
+msgstr ""
+"Desarrollador principal con más de 10 años de experiencia, especializado en frontend "
+"desarrollo con ReactJS: Web y móvil."
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:17
+msgid ""
+"As a senior developer my main objective is to design, develop and maintain "
+"web applications. Implement new web technologies that will make the product "
+"even more powerful. Find elegant solutions to usability problems. Build "
+"fast, intuitive and powerful user interfaces and experiences by solving "
+"complex underlying technical challenges."
+msgstr ""
+"Como desarrollador senior, mi principal objetivo es diseñar, desarrollar y mantener "
+"aplicaciones web. Implementar nuevas tecnologías web que harán que el producto "
+"aún más potente. Encuentre soluciones elegantes a los problemas de usabilidad. Construir "
+"interfaces y experiencias de usuario rápidas, intuitivas y potentes resolviendo "
+"complejos retos técnicos subyacentes."
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:22
+msgid "Coordinates"
+msgstr "Coordenadas"
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:25
+msgid "Paris - France"
+msgstr "Paris - Francia"
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:30
+msgid "Full LinkedIn profile"
+msgstr "Perfil completo en LinkedIn"
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:45
+msgid "Social networks"
+msgstr "Redes sociales"

@@ -11,10 +11,11 @@ import Input from '../../inputs';
 
 export type PaginationProps<T> = {
   table: Table<T>;
+  labelItemsPerPage: string;
 };
 
 export default function Pagination<T>(props: PaginationProps<T>) {
-  const { table } = props;
+  const { table, labelItemsPerPage } = props;
 
   const pageSize = table.getState().pagination.pageSize;
   const value = { label: pageSize, value: pageSize };
@@ -34,7 +35,7 @@ export default function Pagination<T>(props: PaginationProps<T>) {
   return (
     <div className="flex w-full mt-4 items-center gap-2">
       <div className="flex items-center sm:mr-auto sm:mb-0 mb-2">
-        <span className="mr-2">Items per page</span>
+        <span className="mr-2">{labelItemsPerPage}</span>
         <Dropdown
           value={value}
           options={pageSizeOptions}

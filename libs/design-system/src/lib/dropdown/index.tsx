@@ -1,13 +1,13 @@
+import classNames from 'classnames';
 import Select, {
+  ClearIndicatorProps,
+  DropdownIndicatorProps,
+  MultiValueRemoveProps,
   Props,
   components,
-  DropdownIndicatorProps,
-  ClearIndicatorProps,
-  MultiValueRemoveProps,
 } from 'react-select';
-import classNames from 'classnames';
 
-import { useThemeStyles, componentsName } from '@nx-todo-frontend/theme';
+import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 import { NavArrowDownIcon, XMarkIcon } from '../icons';
 
 import '../../styles.css';
@@ -42,8 +42,6 @@ const singleValueStyles = 'leading-7 ml-1';
 const multiValueLabelStyles = 'leading-6 py-0.5';
 const indicatorsContainerStyles = 'p-1 gap-1';
 const groupHeadingStyles = 'ml-3 mt-2 mb-1 text-gray-500 text-sm';
-const noOptionsMessageStyles =
-  'text-gray-500 p-2 bg-gray-50 border border-dashed border-gray-200 rounded-sm';
 const multiValueRemoveStyles =
   'border border-gray-200 bg-gray-100 hover:bg-gray-200 hover:text-gray-800 text-gray-500 hover:border-gray-800 rounded-md';
 const clearIndicatorStyles =
@@ -57,9 +55,20 @@ export type Option = {
   label: string;
 };
 
-export type DropdownProps = Props;
+export type DropdownProps = Omit<Props, 'onChange' | 'noOptionsMessage'> & {
+  customStyles?: Record<string, string>;
+  noOptionsMessage?: string;
+  onChange: (option: Option) => void;
+};
 
-export function Dropdown({ value, options, ...props }: DropdownProps) {
+export function Dropdown({
+  value,
+  options,
+  onChange,
+  customStyles,
+  noOptionsMessage,
+  ...props
+}: DropdownProps) {
   const { styles, stylesPropertiesName } = useThemeStyles(
     componentsName.dropdown,
   );
@@ -75,10 +84,12 @@ export function Dropdown({ value, options, ...props }: DropdownProps) {
   const optionBgColorHover = `bg-${styles[BORDER_COLOR]}`;
   const optionFocusColor = `text-${styles[BG_COLOR]}`;
   const menuBorderColor = `border-${styles[BORDER_COLOR]}`;
+  const noOptionsMessageColor = `text-${styles[BORDER_COLOR]}`;
+  const noOptionsMessageBorderColor = `border-${styles[BORDER_COLOR]}`;
 
   const placeholderStyles = `${placeholderColor} pl-1 py-0.5`;
   const controlStyles = {
-    base: `border rounded-lg ${bgColor} hover:cursor-pointer`,
+    base: `border rounded-lg ${bgColor} hover:cursor-pointer ${customStyles?.control}`,
     focus: 'border-blue-500',
     nonFocus: `${borderColor} ${borderColorHover}`,
   };
@@ -89,13 +100,16 @@ export function Dropdown({ value, options, ...props }: DropdownProps) {
     selected: `after:content-['✔'] after:ml-2`,
   };
   const multiValueStyles = `${valueBgColor} ${valueColor} rounded items-center py-0.5 pl-2 pr-1 gap-1.5`;
+  const noOptionsMessageStyles = `${noOptionsMessageColor} p-2 ${bgColor} border border-dashed ${noOptionsMessageBorderColor} rounded-sm`;
 
   return (
     <Select
       value={value}
       options={options}
+      onChange={(newValue: unknown) => onChange(newValue as Option)}
       closeMenuOnSelect={false}
       hideSelectedOptions={false}
+      noOptionsMessage={() => noOptionsMessage || 'No more options'}
       unstyled
       styles={{
         input: (base) => ({

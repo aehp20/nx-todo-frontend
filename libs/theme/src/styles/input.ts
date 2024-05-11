@@ -9,6 +9,7 @@ const BORDER_COLOR_HOVER = 'BORDER_COLOR_HOVER';
 const BORDER_COLOR_ACTIVE = 'BORDER_COLOR_ACTIVE';
 const BORDER_COLOR_DISABLED = 'BORDER_COLOR_DISABLED';
 const COLOR = 'COLOR';
+const PLACEHOLDER_COLOR = 'PLACEHOLDER_COLOR';
 
 export const stylesInputPropertiesName = {
   BG_COLOR,
@@ -20,6 +21,7 @@ export const stylesInputPropertiesName = {
   BORDER_COLOR_ACTIVE,
   BORDER_COLOR_DISABLED,
   COLOR,
+  PLACEHOLDER_COLOR,
 };
 
 export const stylesInput = {
@@ -33,6 +35,7 @@ export const stylesInput = {
     [BORDER_COLOR_ACTIVE]: 'MetallicSeaweedActive',
     [BORDER_COLOR_DISABLED]: 'gray-300',
     [COLOR]: 'MediumJungleGreen',
+    [PLACEHOLDER_COLOR]: 'MetallicSeaweed',
   },
   [themes.dark]: {
     [BG_COLOR]: 'Kurotobi',
@@ -44,5 +47,6 @@ export const stylesInput = {
     [BORDER_COLOR_ACTIVE]: 'ChromeYellowActive',
     [BORDER_COLOR_DISABLED]: 'gray-300',
     [COLOR]: 'Alabaster',
+    [PLACEHOLDER_COLOR]: 'ChromeYellow',
   },
 };

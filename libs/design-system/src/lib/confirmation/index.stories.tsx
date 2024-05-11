@@ -1,8 +1,8 @@
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 import type { Meta } from '@storybook/react';
 
-import Button from '../buttons/Button';
-import Confirmation, { ConfirmationProps } from './';
+import Button from '../buttons';
+import { Confirmation, ConfirmationProps } from './';
 
 const meta: Meta<typeof Confirmation> = {
   component: Confirmation,
@@ -19,6 +19,8 @@ export const LightConfirmation = {
           title="Delete Article?"
           content="Are you sure you want to delete this article?"
           onConfirm={() => console.log('onConfirm')}
+          labelNoButton="No"
+          labelYesButton="Yes"
         >
           {({ displayConfirmation }) => (
             <Button onClick={() => displayConfirmation(true)}>Delete</Button>
@@ -38,6 +40,8 @@ export const DarkConfirmation = {
           title="Delete Article?"
           content="Are you sure you want to delete this article?"
           onConfirm={() => console.log('onConfirm')}
+          labelNoButton="No"
+          labelYesButton="Yes"
         >
           {({ displayConfirmation }) => (
             <Button onClick={() => displayConfirmation(true)}>Delete</Button>

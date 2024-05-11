@@ -1,17 +1,17 @@
+import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 import type { Meta } from '@storybook/react';
 import {
+  SortingState,
   createColumnHelper,
   getCoreRowModel,
-  useReactTable,
-  getSortedRowModel,
-  SortingState,
   getPaginationRowModel,
+  getSortedRowModel,
+  useReactTable,
 } from '@tanstack/react-table';
-import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 
-import { data as mockData } from './data';
-import Table, { TableProps } from '.';
 import { useState } from 'react';
+import Table, { TableProps } from '.';
+import { data as mockData } from './data';
 
 const meta: Meta<typeof Table> = {
   component: Table,

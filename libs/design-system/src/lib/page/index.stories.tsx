@@ -1,5 +1,5 @@
-import type { Meta } from '@storybook/react';
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
+import type { Meta } from '@storybook/react';
 
 import Page, { PageProps } from '.';
 

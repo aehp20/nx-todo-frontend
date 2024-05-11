@@ -1,21 +1,30 @@
-import { Dispatch, ReactNode, SetStateAction, createContext, useContext, useEffect, useMemo, useState } from "react";
-import Translator from "./I18NTranslator";
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+import Translator from './I18NTranslator';
 
 type I18NProviderProps = {
   locale: string;
   urlApp: string;
-  folderPath: string
+  folderPath: string;
   children: ReactNode;
-}
+};
 
 type I18NContextProps = {
   locale: string;
   setLocale: Dispatch<SetStateAction<string>>;
-  _: (...originalArguments: any[]) => string,
-  _n: (...originalArguments: any[]) => string,
-  _c: (...originalArguments: any[]) => string,
-  _cn: (...originalArguments: any[]) => string
-}
+  _: (...originalArguments: unknown[]) => string;
+  _n: (...originalArguments: unknown[]) => string;
+  _c: (...originalArguments: unknown[]) => string;
+  _cn: (...originalArguments: unknown[]) => string;
+};
 
 const I18NContext = createContext({} as I18NContextProps);
 
@@ -37,28 +46,32 @@ export function I18NProvider(props: I18NProviderProps) {
     fetchData(locale);
   }, [locale]);
 
-  const value = useMemo(()=> {
+  const value = useMemo(() => {
     if (translator) {
-      const { _, _n, _c, _cn} = translator;
+      const { _, _n, _c, _cn } = translator;
       return {
         locale,
         setLocale,
         _,
         _n,
         _c,
-        _cn
+        _cn,
       };
     }
     return null;
   }, [translator, locale, setLocale]);
 
-  return value ? <I18NContext.Provider value={value}>{children}</I18NContext.Provider> : <div>Loading...</div>;
+  return value ? (
+    <I18NContext.Provider value={value}>{children}</I18NContext.Provider>
+  ) : (
+    <div>Loading...</div>
+  );
 }
 
 export function useI18NContext() {
   const context = useContext(I18NContext);
   if (context === undefined) {
-    throw new Error("Context must be used within a Provider");
+    throw new Error('Context must be used within a Provider');
   }
   return context;
 }

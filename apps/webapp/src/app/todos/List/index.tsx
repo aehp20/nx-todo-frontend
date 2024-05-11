@@ -3,7 +3,7 @@ import {
   Error,
   Page,
   PlusIcon,
-  Spinner,
+  SpinnerIcon,
 } from '@nx-todo-frontend/design-system';
 import { useTodos } from '@nx-todo-frontend/query';
 import { useNavigate } from 'react-router-dom';
@@ -17,7 +17,7 @@ export default function List() {
   if (isLoading) {
     return (
       <div className="flex justify-center my-2">
-        <Spinner />
+        <SpinnerIcon />
       </div>
     );
   }

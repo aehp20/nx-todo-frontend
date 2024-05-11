@@ -1,14 +1,13 @@
 import { Table } from '@tanstack/react-table';
-import { OnChangeValue } from 'react-select';
+import Button from '../../buttons';
 import { Dropdown, Option } from '../../dropdown';
-import Button from '../../buttons/Button';
 import {
-  FastArrowLeft,
-  FastArrowRight,
-  NavArrowLeft,
-  NavArrowRight,
+  FastArrowLeftIcon,
+  FastArrowRightIcon,
+  NavArrowLeftIcon,
+  NavArrowRightIcon,
 } from '../../icons';
-import Input from '../../inputs/Input';
+import Input from '../../inputs';
 
 export type PaginationProps<T> = {
   table: Table<T>;
@@ -26,7 +25,7 @@ export default function Pagination<T>(props: PaginationProps<T>) {
     { label: '20', value: 20 },
   ];
 
-  const handleChange = (option: OnChangeValue<Option, false>) => {
+  const handleChange = (option: Option) => {
     if (option) {
       table.setPageSize(Number(option.value));
     }
@@ -39,17 +38,17 @@ export default function Pagination<T>(props: PaginationProps<T>) {
         <Dropdown
           value={value}
           options={pageSizeOptions}
-          onChange={(newValue: unknown) => handleChange(newValue as Option)}
+          onChange={handleChange}
         />
       </div>
       <div className="flex gap-2">
         <Button
-          icon={<FastArrowLeft />}
+          icon={<FastArrowLeftIcon />}
           onClick={() => table.setPageIndex(0)}
           disabled={!table.getCanPreviousPage()}
         />
         <Button
-          icon={<NavArrowLeft />}
+          icon={<NavArrowLeftIcon />}
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         />
@@ -64,12 +63,12 @@ export default function Pagination<T>(props: PaginationProps<T>) {
           }}
         />
         <Button
-          icon={<NavArrowRight />}
+          icon={<NavArrowRightIcon />}
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         />
         <Button
-          icon={<FastArrowRight />}
+          icon={<FastArrowRightIcon />}
           onClick={() => table.setPageIndex(table.getPageCount() - 1)}
           disabled={!table.getCanNextPage()}
         />

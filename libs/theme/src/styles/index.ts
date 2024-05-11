@@ -2,13 +2,16 @@ import { componentsName } from '../componentsName';
 import { themes } from '../themes';
 import { stylesApp, stylesAppPropertiesName } from './app';
 import { stylesButton, stylesButtonPropertiesName } from './button';
+import { stylesCard, stylesCardPropertiesName } from './card';
 import { stylesDialog, stylesDialogPropertiesName } from './dialog';
 import { stylesDropdown, stylesDropdownPropertiesName } from './dropdown';
 import { stylesInput, stylesInputPropertiesName } from './input';
 import { stylesLabel, stylesLabelPropertiesName } from './label';
+import { stylesLink, stylesLinkPropertiesName } from './link';
 import { stylesMessage, stylesMessagePropertiesName } from './message';
 import { stylesNavBar, stylesNavBarPropertiesName } from './navBar';
 import { stylesTable, stylesTablePropertiesName } from './table';
+import { stylesTextDelete, stylesTextDeletePropertiesName } from './textDelete';
 import { stylesTitle, stylesTitlePropertiesName } from './title';
 import { stylesToggle, stylesTogglePropertiesName } from './toggle';
 
@@ -37,6 +40,9 @@ export const styles: ThemesProps = {
     [componentsName.table]: stylesTable[themes.light],
     [componentsName.message]: stylesMessage[themes.light],
     [componentsName.dialog]: stylesDialog[themes.light],
+    [componentsName.card]: stylesCard[themes.light],
+    [componentsName.textDelete]: stylesTextDelete[themes.light],
+    [componentsName.link]: stylesLink[themes.light],
   },
   [themes.dark]: {
     [componentsName.app]: stylesApp[themes.dark],
@@ -50,6 +56,9 @@ export const styles: ThemesProps = {
     [componentsName.table]: stylesTable[themes.dark],
     [componentsName.message]: stylesMessage[themes.dark],
     [componentsName.dialog]: stylesDialog[themes.dark],
+    [componentsName.card]: stylesCard[themes.dark],
+    [componentsName.textDelete]: stylesTextDelete[themes.dark],
+    [componentsName.link]: stylesLink[themes.dark],
   },
 };
 
@@ -65,4 +74,7 @@ export const stylesPropertiesName: StylesPropertiesNameProps = {
   [componentsName.table]: stylesTablePropertiesName,
   [componentsName.message]: stylesMessagePropertiesName,
   [componentsName.dialog]: stylesDialogPropertiesName,
+  [componentsName.card]: stylesCardPropertiesName,
+  [componentsName.textDelete]: stylesTextDeletePropertiesName,
+  [componentsName.link]: stylesLinkPropertiesName,
 };

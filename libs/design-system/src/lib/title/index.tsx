@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
 import classNames from 'classnames';
+import { ReactNode } from 'react';
 
-import { useThemeStyles, componentsName } from '@nx-todo-frontend/theme';
+import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 
 import '../../styles.css';
 

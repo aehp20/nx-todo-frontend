@@ -54,6 +54,8 @@ const inputSafelist = [
   'active:border-ChromeYellowActive',
   'disabled:border-gray-300',
   'text-Alabaster',
+  'placeholder:text-MetallicSeaweed',
+  'placeholder:text-ChromeYellow',
 ];
 const labelSafelist = ['text-MetallicSeaweed', 'text-ChromeYellow'];
 const navBarSafelist = [
@@ -93,6 +95,34 @@ const messageSafelist = [
   'text-yellow-500',
   'border-yellow-500',
 ];
+const cardSafelist = [
+  'bg-white',
+  'bg-Bole',
+  'bg-Liver',
+  'border-gray-400',
+  'hover:bg-gray-100',
+  'hover:bg-Liver',
+  'ring-gray-400',
+  'hover:ring-gray-400',
+  'divide-white',
+];
+const textDeleteSafelist = [
+  'text-red-600',
+  'text-orange-300'
+];
+const linkSafelist = [
+  'link:text-black',
+  'visited:text-black'
+];
+const gridSafelist = [
+  'grid-cols-2',
+  'grid-cols-3',
+  'grid-cols-4',
+  'gap-4',
+];
+const dropdownSafelist = [
+  'w-[250px]',
+];
 const safelist = [
   ...toggleSafelist,
   ...buttonSafelist,
@@ -100,6 +130,11 @@ const safelist = [
   ...inputSafelist,
   ...navBarSafelist,
   ...messageSafelist,
+  ...cardSafelist,
+  ...textDeleteSafelist,
+  ...linkSafelist,
+  ...gridSafelist,
+  ...dropdownSafelist,
 ];
 
 /** @type {import('tailwindcss').Config} */
@@ -136,6 +171,8 @@ module.exports = {
         Pearl: '#E8E2C3',
         DarkLava: '#493432',
         DarkSienna: '#2F1B19',
+        Liver: '#884d49',
+        Bole: '#774440',
       },
     },
   },

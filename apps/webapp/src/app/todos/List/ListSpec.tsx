@@ -10,7 +10,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Todo } from '@nx-todo-frontend/api';
-import { Confirmation, Table, Trash } from '@nx-todo-frontend/design-system';
+import {
+  Confirmation,
+  Table,
+  TrashIcon,
+} from '@nx-todo-frontend/design-system';
 import { useDeleteTodo } from '@nx-todo-frontend/query';
 
 export type ListSpecProps = {
@@ -47,9 +51,11 @@ export default function ListSpec(props: ListSpecProps) {
           title="Delete Todo?"
           content="Are you sure you want to delete this todo?"
           onConfirm={() => handleDelete(info.row.original.id)}
+          labelNoButton="No"
+          labelYesButton="Yes"
         >
           {({ displayConfirmation }) => (
-            <Trash
+            <TrashIcon
               className="cursor-pointer"
               onClick={() => displayConfirmation(true)}
             />

@@ -10,4 +10,7 @@ export const componentsName = {
   table: 'table',
   message: 'message',
   dialog: 'dialog',
+  card: 'card',
+  textDelete: 'textDelete',
+  link: 'link',
 };

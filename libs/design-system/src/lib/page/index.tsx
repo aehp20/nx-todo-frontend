@@ -1,24 +1,33 @@
 import { ReactNode } from 'react';
 import { useTitle } from 'react-use';
 
+import { Link } from 'react-router-dom';
 import Title from '../title';
 
 export type PageProps = {
   children: ReactNode;
   title: string;
+  backLink?: {
+    to: string;
+    content: ReactNode;
+  };
 };
 
 export default function Page(props: PageProps) {
-  const { children, title } = props;
+  const { children, title, backLink } = props;
 
   useTitle(title);
 
   return (
     <>
-      <header className="px-4 py-2">
-        <Title>{title}</Title>
+      <header className="px-6 py-3">
+        {backLink ? (
+          <Link to={backLink.to}>{backLink.content}</Link>
+        ) : (
+          <Title>{title}</Title>
+        )}
       </header>
-      <main className="px-4 py-1">{children}</main>
+      <main className="px-6 pt-1 pb-6">{children}</main>
     </>
   );
 }

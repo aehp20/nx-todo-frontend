@@ -20,4 +20,6 @@ export const colors = {
   Pearl: '#E8E2C3',
   DarkLava: '#493432',
   DarkSienna: '#2F1B19',
+  Liver: '#884d49',
+  Bole: '#774440',
 };

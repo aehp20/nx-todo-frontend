@@ -62,22 +62,76 @@ It will show tasks that you can run with Nx.
 - [Follow us on Twitter](https://twitter.com/nxdevtools)
 
 ## Command line
-npx create-nx-workspace
-npx nx serve webapp
-
-nx g @nx/react:library design-system --directory libs/design-system
-
+mkdir nx-todo-frontend
+npx create-nx-workspace@latest nx-todo-frontend --preset=react-monorepo
+Application name · webapp
+nx g @nx/react:library design-system --directory libs/design-system --unitTestRunner=jest --bundler=none
 nx g @nx/react:setup-tailwind --project=design-system
-
-nx g @nx/react:storybook-configuration design-system
+nx g @nx/react:storybook-configuration --project=design-system
 nx run design-system:storybook
 
-nx dep-graph
+nx g @nx/react:library theme --directory libs/theme --unitTestRunner=jest --bundler=none
+nx g @nx/react:library query --directory libs/query --unitTestRunner=jest --bundler=none
+nx g @nx/react:library i18n --directory libs/i18n --unitTestRunner=jest --bundler=none
 
-nx g @nx/react:component --project=design-system Title
+nx g @nx/js:lib api --directory libs/api --unitTestRunner=jest --bundler=none
+nx g @nx/js:lib hooks --directory libs/hooks --unitTestRunner=jest --bundler=none
+nx g @nx/js:lib types --directory libs/types --unitTestRunner=jest --bundler=none
+nx g @nx/js:lib utils --directory libs/utils --unitTestRunner=jest --bundler=none
 
-nx g @nx/react:library theme --directory libs/theme
-nx g @nx/react:library query --directory libs/query
-nx g @nx/react:library i18n --directory libs/i18n
+nx g @nx/jest:configuration --project=webapp
 
-nx g @nx/js:lib utils --directory libs/utils
+## Design System
+Run `nx run design-system:storybook` to see the Design System components in storybook app.
+
+## i18n
+Find all the typescript files and put them into the "list" file
+```
+find /Users/home/learn/github/nx-technical-test-phantombuster/apps/phantoms/src -type f \( -name '*.ts' -or -name '*.tsx' \)  -print > list
+```
+
+Extract the translation words from the code
+```
+mkdir locale
+xgettext --files-from=list -c -d translations -p locale --language=JavaScript --from-code=utf-8 --keyword=_ --keyword=_:1 --keyword=_n:1,2 --keyword=_c:1c,2 --keyword=_cn:1c,2,3
+```
+
+Move the generated PO file to POT file
+```
+mv locale/translations.po locale/translations.pot
+```
+
+Creating the PO files translation by language
+```
+msginit -i locale/translations.pot --locale=en_EN -o locale/en.po
+msginit -i locale/translations.pot --locale=fr_FR -o locale/fr.po
+msginit -i locale/translations.pot --locale=es_ES -o locale/es.po
+```
+
+Updating the PO files translation by language
+```
+msgmerge locale/en.po locale/translations.pot -o locale/en.po
+msgmerge locale/fr.po locale/translations.pot -o locale/fr.po
+msgmerge locale/es.po locale/translations.pot -o locale/es.po
+```
+
+Manually updating the PO files translation by language
+
+Generate the JSON files translation by language
+```
+npm run po2jsonEN
+npm run po2jsonES
+npm run po2jsonFR
+```
+
+Finally, remove the "list" file
+```
+rm /Users/home/learn/github/nx-technical-test-phantombuster/list
+```
+
+## e2e
+
+To open UI mode, run the following command in your terminal:
+```
+nx e2e webapp --ui
+```

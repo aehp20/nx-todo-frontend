@@ -1,7 +1,7 @@
-import type { Meta } from '@storybook/react';
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
+import type { Meta } from '@storybook/react';
 
-import { Dropdown, DropdownProps } from '.';
+import { Dropdown, DropdownProps, Option } from '.';
 
 const meta: Meta<typeof Dropdown> = {
   component: Dropdown,
@@ -51,14 +51,29 @@ const simpleOptions = [
   },
 ];
 
+const handleChange = (option: Option) => {
+  if (option) {
+    console.log(option);
+  }
+};
+
 export const LightDropdown = {
   args: {},
   render: (props: DropdownProps) => {
     return (
       <ThemeProvider theme={themes.light}>
         <div className="flex flex-col gap-2">
-          <Dropdown options={simpleOptions} />
-          <Dropdown options={multipleOptions} isMulti />
+          <Dropdown
+            options={simpleOptions}
+            onChange={handleChange}
+            noOptionsMessage="No options"
+          />
+          <Dropdown
+            options={multipleOptions}
+            isMulti
+            onChange={handleChange}
+            noOptionsMessage="No options"
+          />
         </div>
       </ThemeProvider>
     );
@@ -71,8 +86,17 @@ export const DarkDropdown = {
     return (
       <ThemeProvider theme={themes.dark}>
         <div className="flex flex-col gap-2">
-          <Dropdown options={simpleOptions} />
-          <Dropdown options={multipleOptions} isMulti />
+          <Dropdown
+            options={simpleOptions}
+            onChange={handleChange}
+            noOptionsMessage="No options"
+          />
+          <Dropdown
+            options={multipleOptions}
+            isMulti
+            onChange={handleChange}
+            noOptionsMessage="No options"
+          />
         </div>
       </ThemeProvider>
     );

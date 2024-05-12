@@ -62,6 +62,8 @@ It will show tasks that you can run with Nx.
 - [Follow us on Twitter](https://twitter.com/nxdevtools)
 
 ## Command line
+
+```
 mkdir nx-todo-frontend
 npx create-nx-workspace@latest nx-todo-frontend --preset=react-monorepo
 Application name · webapp
@@ -80,6 +82,7 @@ nx g @nx/js:lib types --directory libs/types --unitTestRunner=jest --bundler=non
 nx g @nx/js:lib utils --directory libs/utils --unitTestRunner=jest --bundler=none
 
 nx g @nx/jest:configuration --project=webapp
+```
 
 ## Design System
 Run `nx run design-system:storybook` to see the Design System components in storybook app.

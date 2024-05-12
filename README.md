@@ -138,3 +138,8 @@ To open UI mode, run the following command in your terminal:
 ```
 nx e2e webapp --ui
 ```
+
+Use the codegen command to run the test generator followed by the URL of the website you want to generate tests for.
+```
+npx playwright codegen http://localhost:4200/
+```

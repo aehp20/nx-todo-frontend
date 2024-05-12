@@ -7,6 +7,7 @@ import { useTodo, useUpdateTodo } from '@nx-todo-frontend/query';
 import { TodoCreate } from '@nx-todo-frontend/types';
 
 import Form from '.';
+import { useToast } from '../../../common/useToast';
 
 export default function Update() {
   const navigate = useNavigate();
@@ -14,6 +15,8 @@ export default function Update() {
   const id = useParamsId();
 
   const { _ } = useI18NContext();
+
+  const { successToast } = useToast();
 
   const mutation = useUpdateTodo();
 
@@ -34,7 +37,7 @@ export default function Update() {
   if (mutation.isLoading) {
     return (
       <div className="flex justify-center my-2">
-        <SpinnerIcon /> {_('Submitting...')}
+        <SpinnerIcon /> {_('Saving...')}
       </div>
     );
   }
@@ -48,9 +51,8 @@ export default function Update() {
       { id, name: todo.name, isDone: todo.isDone },
       {
         onSuccess: (data) => {
-          console.log('onSuccess data:', data);
-          // ADD A TOAST HERE
           navigate('/');
+          successToast(_('The update action has been completed successfully.'));
         },
       },
     );

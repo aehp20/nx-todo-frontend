@@ -18,6 +18,8 @@ import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { useDeleteTodo } from '@nx-todo-frontend/query';
 import { Todo } from '@nx-todo-frontend/types';
 
+import { useToast } from '../../../common/useToast';
+
 export type ListSpecProps = {
   items?: Todo[];
 };
@@ -30,6 +32,8 @@ export default function ListSpec(props: ListSpecProps) {
   const [sorting, setSorting] = useState<SortingState>([]);
 
   const { _ } = useI18NContext();
+
+  const { successToast } = useToast();
 
   const columns = [
     columnHelper.accessor('id', {
@@ -89,9 +93,8 @@ export default function ListSpec(props: ListSpecProps) {
 
   const handleDelete = (id: number) => {
     mutation.mutate(id, {
-      onSuccess: (data) => {
-        // ADD A TOAST HERE
-        console.log('DELETED', data);
+      onSuccess: (_data) => {
+        successToast(_('The delete action has been completed successfully.'));
       },
     });
   };

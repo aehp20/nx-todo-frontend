@@ -87,13 +87,13 @@ Run `nx run design-system:storybook` to see the Design System components in stor
 ## i18n
 Find all the typescript files and put them into the "list" file
 ```
-find /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src -type f \( -name '*.ts' -or -name '*.tsx' \)  -print > list
+find /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src -type f \( -name '*.ts' -or -name '*.tsx' \)  -print > list.txt
 ```
 
 Extract the translation words from the code
 ```
 mkdir locale
-xgettext --files-from=list -c -d translations -p locale --language=JavaScript --from-code=utf-8 --keyword=_ --keyword=_:1 --keyword=_n:1,2 --keyword=_c:1c,2 --keyword=_cn:1c,2,3
+xgettext --files-from=list.txt -c -d translations -p locale --language=Python --from-code=utf-8 --keyword=_ --keyword=_:1 --keyword=_n:1,2 --keyword=_c:1c,2 --keyword=_cn:1c,2,3
 ```
 
 Move the generated PO file to POT file
@@ -126,7 +126,7 @@ npm run po2jsonFR
 
 Finally, remove the "list" file
 ```
-rm /Users/home/learn/github/nx-todo/nx-todo-frontend/list
+rm /Users/home/learn/github/nx-todo/nx-todo-frontend/list.txt
 ```
 
 ## e2e

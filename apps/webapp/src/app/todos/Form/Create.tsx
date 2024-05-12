@@ -6,18 +6,21 @@ import { useCreateTodo } from '@nx-todo-frontend/query';
 import { TodoCreate } from '@nx-todo-frontend/types';
 
 import Form from '.';
+import { useToast } from '../../../common/useToast';
 
 export default function Create() {
   const navigate = useNavigate();
 
   const { _ } = useI18NContext();
 
+  const { successToast } = useToast();
+
   const mutation = useCreateTodo();
 
   if (mutation.isLoading) {
     return (
       <div className="flex justify-center my-2">
-        <SpinnerIcon /> {_('Submitting...')}
+        <SpinnerIcon /> {_('Saving...')}
       </div>
     );
   }
@@ -31,9 +34,8 @@ export default function Create() {
       { name: todo.name, isDone: todo.isDone },
       {
         onSuccess: (data) => {
-          console.log('onSuccess data:', data);
-          // ADD A TOAST HERE
           navigate('/');
+          successToast(_('The create action has been completed successfully.'));
         },
       },
     );

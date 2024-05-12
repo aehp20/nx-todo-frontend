@@ -69,7 +69,7 @@ export default function Form(props: FormProps) {
         />
       </div>
       <div>
-        <Button onClick={handleClick}>{_('Submit')}</Button>
+        <Button onClick={handleClick}>{_('Save')}</Button>
       </div>
     </div>
   );

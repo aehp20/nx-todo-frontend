@@ -12,7 +12,7 @@ export default function NoMatch() {
         <div className="flex flex-col text-center gap-2">
           <div className="font-bold">{_('Nothing to see here!')}</div>
           <p>
-            <Link to="/">{_('Click here to go the Dashboard page')}</Link>
+            <Link to="/">{_('Click here to go the Home page')}</Link>
           </p>
         </div>
       </Card>

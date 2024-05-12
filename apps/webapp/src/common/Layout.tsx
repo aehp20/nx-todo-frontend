@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import { ClipboardCheckIcon, NavBar } from '@nx-todo-frontend/design-system';
@@ -21,7 +22,9 @@ export default function Layout() {
   return (
     <>
       <NavBar title={title} items={items} />
-      <Outlet />
+      <Suspense fallback={_('Loading...')}>
+        <Outlet />
+      </Suspense>
     </>
   );
 }

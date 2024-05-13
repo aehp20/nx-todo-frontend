@@ -15,7 +15,11 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
-const httpClient = new HTTPClient('http://localhost:3000');
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+const API_VERSION_PATH = import.meta.env.VITE_API_VERSION_PATH;
+const I18N_URL = import.meta.env.VITE_I18N_URL;
+
+const httpClient = new HTTPClient(BACKEND_URL, API_VERSION_PATH);
 
 root.render(
   <StrictMode>
@@ -24,7 +28,7 @@ root.render(
         <ThemeProvider theme={themes.light}>
           <I18NProvider
             locale="es"
-            urlApp="http://localhost:4200"
+            urlApp={I18N_URL}
             folderPath="/translations/"
           >
             <App />

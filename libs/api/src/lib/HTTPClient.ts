@@ -1,11 +1,14 @@
 export class HTTPClient {
   private urlApp: string;
+  private apiVersionPath: string;
+
   private config = {
     'Content-Type': 'application/json',
   };
 
-  constructor(urlApp: string) {
+  constructor(urlApp: string, apiVersionPath: string) {
     this.urlApp = urlApp;
+    this.apiVersionPath = apiVersionPath;
   }
 
   getConfig() {
@@ -13,7 +16,7 @@ export class HTTPClient {
   }
 
   getUrl(endpointPath: string): string {
-    return `${this.urlApp}${endpointPath}`;
+    return `${this.urlApp}${this.apiVersionPath}${endpointPath}`;
   }
 
   async get<T>(endpointPath: string): Promise<T> {

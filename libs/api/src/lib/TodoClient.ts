@@ -4,32 +4,32 @@ import { HTTPClient } from './HTTPClient';
 
 export class TodoClient {
   private httpClient: HTTPClient;
-  private todoEndpointPath = '/api/todo';
+  private endpointPath = '/todo';
 
   constructor(httpClient: HTTPClient) {
     this.httpClient = httpClient;
   }
 
   async get(): Promise<Todo[]> {
-    return await this.httpClient.get(this.todoEndpointPath);
+    return await this.httpClient.get(this.endpointPath);
   }
 
   async getTodo(id: number): Promise<Todo> {
-    const endpointPath = `${this.todoEndpointPath}/${id}`;
+    const endpointPath = `${this.endpointPath}/${id}`;
     return await this.httpClient.get(endpointPath);
   }
 
   post(todo: TodoCreate): Promise<Response> {
-    return this.httpClient.post(this.todoEndpointPath, JSON.stringify(todo));
+    return this.httpClient.post(this.endpointPath, JSON.stringify(todo));
   }
 
   patch(todo: TodoUpdate): Promise<Response> {
-    const endpointPath = `${this.todoEndpointPath}/${todo.id}`;
+    const endpointPath = `${this.endpointPath}/${todo.id}`;
     return this.httpClient.patch(endpointPath, JSON.stringify(todo));
   }
 
   delete(id: number): Promise<Response> {
-    const endpointPath = `${this.todoEndpointPath}/${id}`;
+    const endpointPath = `${this.endpointPath}/${id}`;
     return this.httpClient.delete(endpointPath);
   }
 }

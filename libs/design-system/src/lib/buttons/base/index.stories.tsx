@@ -2,7 +2,7 @@ import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 import type { Meta } from '@storybook/react';
 
 import Button, { ButtonProps } from '.';
-import PlusIcon from '../icons/PlusIcon';
+import PlusIcon from '../../icons/PlusIcon';
 
 const meta: Meta<typeof Button> = {
   component: Button,

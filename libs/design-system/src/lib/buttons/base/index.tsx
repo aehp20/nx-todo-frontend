@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 
 import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 
-import '../../styles.css';
+import '../../../styles.css';
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   action?: 'primary' | 'secondary';

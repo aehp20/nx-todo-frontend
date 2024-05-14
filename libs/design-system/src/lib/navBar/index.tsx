@@ -1,12 +1,13 @@
 import classNames from 'classnames';
-import { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { ReactNode, useState } from 'react';
 
 import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 
-import '../../styles.css';
+import { LargeMenu } from './large';
+import { SmallMenu } from './small';
+import { ItemNavBar } from './types';
 
-export type ItemNavBar = { to: string; label: string };
+import '../../styles.css';
 
 export type NavBarProps = {
   title: ReactNode;
@@ -16,50 +17,39 @@ export type NavBarProps = {
 export default function NavBar(props: NavBarProps) {
   const { title, items } = props;
 
+  const [isOpen, setIsOpen] = useState(false);
+
   const { styles, stylesPropertiesName } = useThemeStyles(
     componentsName.navBar,
   );
 
-  const { BG_COLOR, COLOR_TITLE, COLOR_ITEM, COLOR_ITEM_HOVER } =
-    stylesPropertiesName;
+  const { BG_COLOR } = stylesPropertiesName;
 
   const bgColor = `bg-${styles[BG_COLOR]}`;
-  const colorTitle = `text-${styles[COLOR_TITLE]}`;
-  const colorItem = `text-${styles[COLOR_ITEM]}`;
-  const colorItemHover = `hover:text-${styles[COLOR_ITEM_HOVER]}`;
 
   return (
-    <nav
-      className={classNames(
-        'flex items-center justify-between flex-wrap p-6 w-full',
-        bgColor,
-      )}
-    >
-      <div
+    <>
+      <nav className={classNames('flex md:hidden', bgColor)}>
+        <SmallMenu
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          items={items}
+          title={title}
+        />
+      </nav>
+      <nav
         className={classNames(
-          'flex items-center flex-shrink-0 mr-4 gap-2',
-          colorTitle,
+          'hidden md:flex items-center justify-between flex-wrap p-6 w-full',
+          bgColor,
         )}
       >
-        {title}
-      </div>
-      <div className="flex-grow flex items-center w-auto">
-        <div className="flex gap-4">
-          {items.map(({ to, label }) => (
-            <Link
-              key={label}
-              to={to}
-              className={classNames(
-                'block inline-block mt-0',
-                colorItem,
-                colorItemHover,
-              )}
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </nav>
+        <LargeMenu
+          title={title}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          items={items}
+        />
+      </nav>
+    </>
   );
 }

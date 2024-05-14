@@ -5,6 +5,7 @@ export type SVGIcon = SVGProps<SVGSVGElement>;
 export { default as ClipboardCheckIcon } from './ClipboardCheckIcon';
 export { default as FastArrowLeftIcon } from './FastArrowLeftIcon';
 export { default as FastArrowRightIcon } from './FastArrowRightIcon';
+export { default as MenuIcon } from './MenuIcon';
 export { default as MoreHorizIcon } from './MoreHorizIcon';
 export { default as NavArrowDownIcon } from './NavArrowDownIcon';
 export { default as NavArrowLeftIcon } from './NavArrowLeftIcon';

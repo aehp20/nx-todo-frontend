@@ -1,5 +1,5 @@
 import { Table } from '@tanstack/react-table';
-import Button from '../../buttons';
+import { Button } from '../../buttons';
 import { Dropdown, Option } from '../../dropdown';
 import {
   FastArrowLeftIcon,

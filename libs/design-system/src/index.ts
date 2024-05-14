@@ -1,4 +1,4 @@
-export { default as Button } from './lib/buttons';
+export * from './lib/buttons';
 export * from './lib/cards';
 export * from './lib/confirmation';
 export * from './lib/dropdown';

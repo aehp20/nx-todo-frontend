@@ -1,4 +1,4 @@
-import { buttonSafelist } from './buttons/index.safelist';
+import { buttonSafelist } from './buttons/base/index.safelist';
 import { inputSafelist } from './inputs/index.safelist';
 import { labelSafelist } from './labels/index.safelist';
 import { navBarSafelist } from './navBar/index.safelist';

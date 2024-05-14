@@ -1,7 +1,8 @@
 import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 import { Table as ITable, flexRender } from '@tanstack/react-table';
 import classNames from 'classnames';
-import Pagination from './paginations';
+import { ItemsPerPage } from './itemsPerPage';
+import Pagination from './pagination';
 
 export type TableProps<T> = {
   table: ITable<T>;
@@ -67,8 +68,14 @@ export default function Table<T>(props: TableProps<T>) {
           ))}
         </tbody>
       </table>
-      <Pagination table={table} labelItemsPerPage={labelItemsPerPage} />
-      <div />
+      <div className="flex flex-col md:flex-row mt-2 gap-2">
+        <ItemsPerPage
+          pageSize={table.getState().pagination.pageSize}
+          setPageSize={table.setPageSize}
+          label={labelItemsPerPage}
+        />
+        <Pagination table={table} />
+      </div>
     </div>
   );
 }

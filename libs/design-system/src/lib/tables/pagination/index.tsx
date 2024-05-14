@@ -1,6 +1,6 @@
 import { Table } from '@tanstack/react-table';
+
 import { Button } from '../../buttons';
-import { Dropdown, Option } from '../../dropdown';
 import {
   FastArrowLeftIcon,
   FastArrowRightIcon,
@@ -11,37 +11,13 @@ import Input from '../../inputs';
 
 export type PaginationProps<T> = {
   table: Table<T>;
-  labelItemsPerPage: string;
 };
 
 export default function Pagination<T>(props: PaginationProps<T>) {
-  const { table, labelItemsPerPage } = props;
-
-  const pageSize = table.getState().pagination.pageSize;
-  const value = { label: pageSize, value: pageSize };
-  const pageSizeOptions = [
-    { label: '5', value: 5 },
-    { label: '10', value: 10 },
-    { label: '15', value: 15 },
-    { label: '20', value: 20 },
-  ];
-
-  const handleChange = (option: Option) => {
-    if (option) {
-      table.setPageSize(Number(option.value));
-    }
-  };
+  const { table } = props;
 
   return (
-    <div className="flex w-full mt-4 items-center gap-2">
-      <div className="flex items-center sm:mr-auto sm:mb-0 mb-2">
-        <span className="mr-2">{labelItemsPerPage}</span>
-        <Dropdown
-          value={value}
-          options={pageSizeOptions}
-          onChange={handleChange}
-        />
-      </div>
+    <div className="flex w-full items-center justify-center md:justify-end gap-2">
       <div className="flex gap-2">
         <Button
           icon={<FastArrowLeftIcon />}

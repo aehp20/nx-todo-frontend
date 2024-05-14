@@ -23,14 +23,18 @@ export default function CardWithActions(props: CardWithActionsProps) {
 
   return (
     <Card className={classNames('p-0', className)}>
-      <Actions
-        nodeRef={nodeRef}
-        actions={actions}
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        styles={styles}
-        stylesPropertiesName={stylesPropertiesName}
-      />
+      <div className="relative">
+        <div className="absolute right-0 top-[-6px]">
+          <Actions
+            nodeRef={nodeRef}
+            actions={actions}
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            styles={styles}
+            stylesPropertiesName={stylesPropertiesName}
+          />
+        </div>
+      </div>
       <div className="flex flex-col">{children}</div>
     </Card>
   );

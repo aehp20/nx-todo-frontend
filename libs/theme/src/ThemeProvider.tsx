@@ -1,13 +1,21 @@
-import { ReactNode, createContext, useContext, useMemo, useState } from 'react';
-
 import {
-  StylesProps,
+  ReactNode,
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
+
+import { componentsName } from './componentsName';
+import {
   StylesPropertiesNameProps,
+  StylesProps,
   styles,
   stylesPropertiesName,
 } from './styles';
 import { themes } from './themes';
-import { componentsName } from './componentsName';
+import { getThemeFromLocalStorage, setThemeFromLocalStorage } from './utils';
 
 type ThemeProviderValue = {
   theme: string;
@@ -28,16 +36,21 @@ const ThemeContext = createContext<ThemeProviderValue>(
 export function ThemeProvider(props: ThemeProviderProps) {
   const { theme: initialTheme = themes.light, children } = props;
 
-  const [theme, setTheme] = useState(initialTheme);
+  const [theme, setTheme] = useState(getThemeFromLocalStorage(initialTheme));
+
+  const handleTheme = useCallback((theme: string) => {
+    setThemeFromLocalStorage(theme);
+    setTheme(theme);
+  }, []);
 
   const value = useMemo(
     () => ({
       theme,
-      setTheme,
+      setTheme: handleTheme,
       styles: styles[theme],
       stylesPropertiesName,
     }),
-    [theme, setTheme],
+    [theme, handleTheme],
   );
 
   const appStyles = styles[theme][componentsName.app];

@@ -1,14 +1,14 @@
 import {
-  Dispatch,
   ReactNode,
-  SetStateAction,
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useMemo,
   useState,
 } from 'react';
 import Translator from './I18NTranslator';
+import { getLocaleFromLocalStorage, setLocaleFromLocalStorage } from './utils';
 
 type I18NProviderProps = {
   locale: string;
@@ -19,7 +19,7 @@ type I18NProviderProps = {
 
 type I18NContextProps = {
   locale: string;
-  setLocale: Dispatch<SetStateAction<string>>;
+  setLocale: (locale: string) => void;
   _: (...originalArguments: unknown[]) => string;
   _n: (...originalArguments: unknown[]) => string;
   _c: (...originalArguments: unknown[]) => string;
@@ -31,8 +31,15 @@ const I18NContext = createContext({} as I18NContextProps);
 export function I18NProvider(props: I18NProviderProps) {
   const { locale: originalLocale, urlApp, folderPath, children } = props;
 
-  const [locale, setLocale] = useState<string>(originalLocale);
+  const [locale, setLocale] = useState<string>(
+    getLocaleFromLocalStorage(originalLocale),
+  );
   const [translator, setTranslator] = useState<Translator>();
+
+  const handleLocale = useCallback((locale: string) => {
+    setLocaleFromLocalStorage(locale);
+    setLocale(locale);
+  }, []);
 
   useEffect(() => {
     async function fetchData(locale: string) {
@@ -51,7 +58,7 @@ export function I18NProvider(props: I18NProviderProps) {
       const { _, _n, _c, _cn } = translator;
       return {
         locale,
-        setLocale,
+        setLocale: handleLocale,
         _,
         _n,
         _c,
@@ -59,7 +66,7 @@ export function I18NProvider(props: I18NProviderProps) {
       };
     }
     return null;
-  }, [translator, locale, setLocale]);
+  }, [translator, locale, handleLocale]);
 
   return value ? (
     <I18NContext.Provider value={value}>{children}</I18NContext.Provider>

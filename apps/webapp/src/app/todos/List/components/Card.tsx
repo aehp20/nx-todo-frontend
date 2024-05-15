@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import {
   ActionItem,
   CardWithActions,
@@ -27,7 +29,9 @@ export function Card(props: CardProps) {
   return (
     <CardWithActions actions={actions}>
       <div className="flex flex-col gap-2">
-        <div className="font-bold">{name}</div>
+        <div className="font-bold">
+          <Link to={`/update/${id}`}>{name}</Link>
+        </div>
         <div>
           {id} - {_('IS DONE?')} {isDone ? _('Yes') : _('No')}
         </div>

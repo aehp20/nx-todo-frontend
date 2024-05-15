@@ -6,6 +6,7 @@ import {
   Input,
   Label,
   Option,
+  Title,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { Todo, TodoCreate } from '@nx-todo-frontend/types';
@@ -47,7 +48,8 @@ export default function Form(props: FormProps) {
   }, [todo]);
 
   return (
-    <div className="flex flex-col gap-4 w-1/2">
+    <div className="flex flex-col gap-4 w-full md:w-1/2">
+      <Title>{_('Todo')}</Title>
       <div className="flex flex-col">
         <Label htmlFor="name">{_('Name')}</Label>
         <Input

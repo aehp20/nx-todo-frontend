@@ -1,6 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 
-import { Error, Page, SpinnerIcon } from '@nx-todo-frontend/design-system';
+import {
+  Error,
+  NavArrowLeftIcon,
+  Page,
+  SpinnerIcon,
+  Title,
+} from '@nx-todo-frontend/design-system';
 import { useParamsId } from '@nx-todo-frontend/hooks';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { useTodo, useUpdateTodo } from '@nx-todo-frontend/query';
@@ -58,8 +64,17 @@ export default function Update() {
     );
   };
 
+  const backLink = {
+    to: '/',
+    content: (
+      <div className="flex items-center">
+        <NavArrowLeftIcon /> <Title>{_('Back to Home page')}</Title>
+      </div>
+    ),
+  };
+
   return (
-    <Page title={_('Update Todo')}>
+    <Page title={_('Update Todo')} backLink={backLink}>
       <Form todo={todo} onSubmit={submitData} />
     </Page>
   );

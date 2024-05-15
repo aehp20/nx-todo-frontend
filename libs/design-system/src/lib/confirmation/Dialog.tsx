@@ -31,7 +31,7 @@ export default function Dialog(props: Props) {
     <div className="fixed inset-0 z-50 overflow-auto flex backdrop-opacity-10 backdrop-invert bg-gray/30">
       <div
         className={classNames(
-          'relative p-8 w-full max-w-md m-auto flex-col flex rounded-lg',
+          'relative p-8 w-full max-w-xs md:max-w-md m-auto flex-col flex rounded-lg',
           bgColor,
         )}
       >

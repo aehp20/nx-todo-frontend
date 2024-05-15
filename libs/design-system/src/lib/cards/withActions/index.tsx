@@ -5,11 +5,12 @@ import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 
 import Card from '../base';
 import { Actions } from './components/Actions';
+import { ActionItem } from './types';
 
 export type CardWithActionsProps = {
   children: ReactNode;
   className?: string;
-  actions: ReactNode[];
+  actions: ActionItem[];
 };
 
 export default function CardWithActions(props: CardWithActionsProps) {

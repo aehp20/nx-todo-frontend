@@ -1,16 +1,19 @@
-import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
-import { Table as ITable, flexRender } from '@tanstack/react-table';
 import classNames from 'classnames';
+
+import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
+import { Table as ITable, Row, flexRender } from '@tanstack/react-table';
+
 import { ItemsPerPage } from './itemsPerPage';
 import Pagination from './pagination';
 
 export type TableProps<T> = {
   table: ITable<T>;
+  ComponentOnList: React.FunctionComponent<{ row: Row<T> }>;
   labelItemsPerPage: string;
 };
 
 export default function Table<T>(props: TableProps<T>) {
-  const { table, labelItemsPerPage } = props;
+  const { table, ComponentOnList, labelItemsPerPage } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(componentsName.table);
 
@@ -20,7 +23,14 @@ export default function Table<T>(props: TableProps<T>) {
 
   return (
     <div className="flex flex-col">
-      <table className={classNames('my-auto border', borderColor)}>
+      <div className="md:hidden flex flex-col gap-2">
+        {table.getRowModel().rows.map((row, index) => {
+          return <ComponentOnList key={index} row={row} />;
+        })}
+      </div>
+      <table
+        className={classNames('hidden md:table my-auto border', borderColor)}
+      >
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr

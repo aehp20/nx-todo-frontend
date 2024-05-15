@@ -1,13 +1,12 @@
-import { ReactNode } from 'react';
-
 import classNames from 'classnames';
 import { MoreHorizIcon } from '../../../icons';
+import { ActionItem } from '../types';
 import { useOnClickOutside } from '../useOnClickOutside';
 import { Menu } from './Menu';
 
 type ActionsProps = {
   nodeRef: React.RefObject<HTMLDivElement>;
-  actions: ReactNode[];
+  actions: ActionItem[];
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   styles: Record<string, string>;

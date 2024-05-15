@@ -1,6 +1,9 @@
+import { useState } from 'react';
+
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 import type { Meta } from '@storybook/react';
 import {
+  Row,
   SortingState,
   createColumnHelper,
   getCoreRowModel,
@@ -9,8 +12,9 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 
-import { useState } from 'react';
 import Table, { TableProps } from '.';
+import { CardWithActions } from '../cards';
+import TextDelete from '../texts';
 import { data as mockData } from './data';
 
 const meta: Meta<typeof Table> = {
@@ -70,7 +74,38 @@ const CustomTable = () => {
     getPaginationRowModel: getPaginationRowModel(),
   });
 
-  return <Table table={table} labelItemsPerPage="Items per page" />;
+  const actions = [
+    { onClick: () => console.log('Rename'), content: 'Rename' },
+    { onClick: () => console.log('Duplicate'), content: 'Duplicate' },
+    {
+      onClick: () => console.log('Delete'),
+      content: <TextDelete>Delete</TextDelete>,
+    },
+  ];
+
+  const ComponentOnList = (props: { row: Row<Person> }) => {
+    const { row } = props;
+    const { id, name, email, phone } = row.original;
+
+    return (
+      <CardWithActions actions={actions}>
+        <div className="flex flex-col gap-2">
+          <div className="font-bold">{name}</div>
+          <div>
+            {id} {email} {phone}
+          </div>
+        </div>
+      </CardWithActions>
+    );
+  };
+
+  return (
+    <Table
+      table={table}
+      ComponentOnList={ComponentOnList}
+      labelItemsPerPage="Items per page"
+    />
+  );
 };
 
 export const LightTable = {

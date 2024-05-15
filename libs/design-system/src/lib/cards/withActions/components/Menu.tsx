@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import { ReactNode } from 'react';
+import { ActionItem } from '../types';
 
 type MenuProps = {
-  actions: ReactNode[];
+  actions: ActionItem[];
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   styles: Record<string, string>;
@@ -28,16 +28,22 @@ export function Menu(props: MenuProps) {
         bgColor,
       )}
     >
-      <ul className="py-2" aria-labelledby="dropdownButton">
+      <ul aria-labelledby="dropdownButton">
         {actions.map((action, index) => (
           <li
             key={index}
-            className={classNames('block px-4 py-2 text-sm', bgColorHover)}
+            className={classNames(
+              'block px-4 py-2 text-sm first:rounded-t-lg last:rounded-b-lg',
+              bgColorHover,
+            )}
             onClick={(_e) => {
+              if (action.onClick) {
+                action.onClick();
+              }
               setIsOpen(false);
             }}
           >
-            {action}
+            {action.content}
           </li>
         ))}
       </ul>

@@ -24,7 +24,7 @@ export function ItemsPerPage(props: ItemsPerPageProps) {
   };
 
   return (
-    <div className="flex items-center w-full">
+    <div className="flex items-center justify-center md:justify-start w-full">
       <span className="mr-2 whitespace-nowrap">{label}</span>
       <Dropdown
         value={value}

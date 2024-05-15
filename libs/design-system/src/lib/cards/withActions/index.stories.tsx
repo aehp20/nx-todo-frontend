@@ -2,6 +2,7 @@ import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 import type { Meta } from '@storybook/react';
 
 import CardWithActions, { CardWithActionsProps } from '.';
+import { ActionItem } from './types';
 
 const meta: Meta<typeof CardWithActions> = {
   component: CardWithActions,
@@ -9,10 +10,10 @@ const meta: Meta<typeof CardWithActions> = {
 };
 export default meta;
 
-const actions = [
-  <div onClick={() => console.log('Item')}>Item</div>,
-  <div onClick={() => console.log('Item 2')}>Item 2</div>,
-  <div onClick={() => console.log('Item 3')}>Item 3</div>,
+const actions: ActionItem[] = [
+  { content: 'Item 1', onClick: () => console.log('Item 1') },
+  { content: 'Item 2', onClick: () => console.log('Item 2') },
+  { content: 'Item 3', onClick: () => console.log('Item 3') },
 ];
 
 export const LightCardWithActions = {

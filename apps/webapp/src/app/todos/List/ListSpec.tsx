@@ -1,4 +1,5 @@
 import {
+  Row,
   SortingState,
   createColumnHelper,
   getCoreRowModel,
@@ -19,6 +20,8 @@ import { useDeleteTodo } from '@nx-todo-frontend/query';
 import { Todo } from '@nx-todo-frontend/types';
 
 import { useToast } from '../../../common/useToast';
+import { Card } from './components/Card';
+import { Dialog } from './components/Dialog';
 
 export type ListSpecProps = {
   items?: Todo[];
@@ -48,7 +51,7 @@ export default function ListSpec(props: ListSpecProps) {
     }),
     columnHelper.accessor('isDone', {
       header: () => _('IS DONE?'),
-      cell: (info) => (info.getValue() ? 'Yes' : 'No'),
+      cell: (info) => (info.getValue() ? _('Yes') : _('No')),
     }),
     columnHelper.accessor('isDone', {
       id: 'action',
@@ -99,5 +102,36 @@ export default function ListSpec(props: ListSpecProps) {
     });
   };
 
-  return <Table table={table} labelItemsPerPage={_('Items per page')} />;
+  const ComponentOnList = generateComponentOnList(handleDelete);
+
+  return (
+    <Table
+      table={table}
+      ComponentOnList={ComponentOnList}
+      labelItemsPerPage={_('Items per page')}
+    />
+  );
+}
+
+function generateComponentOnList(handleDelete: (id: number) => void) {
+  const ComponentOnList = (props: { row: Row<Todo> }) => {
+    const { row } = props;
+    const { id } = row.original;
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+      <>
+        <Card todo={row.original} setIsOpen={setIsOpen} />
+        <Dialog
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          id={id}
+          handleDelete={handleDelete}
+        />
+      </>
+    );
+  };
+
+  return ComponentOnList;
 }

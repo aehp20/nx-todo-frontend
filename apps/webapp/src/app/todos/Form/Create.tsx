@@ -49,7 +49,7 @@ export default function Create() {
   };
 
   const backLink = {
-    to: '/',
+    to: '/todos',
     content: (
       <div className="flex items-center">
         <NavArrowLeftIcon /> <Title>{_('Back to Home page')}</Title>

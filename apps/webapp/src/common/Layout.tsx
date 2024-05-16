@@ -4,6 +4,8 @@ import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
+import ErrorBoundary from './ErrorBoundary';
+
 export default function Layout() {
   const { _ } = useI18NContext();
 
@@ -15,6 +17,7 @@ export default function Layout() {
   );
   const items = [
     { to: '/', label: _('Home') },
+    { to: '/todos', label: _('Todos') },
     { to: '/about', label: _('About me') },
     { to: '/settings', label: _('Settings') },
   ];
@@ -23,7 +26,9 @@ export default function Layout() {
     <>
       <NavBar title={title} items={items} />
       <Suspense fallback={_('Loading...')}>
-        <Outlet />
+        <ErrorBoundary>
+          <Outlet />
+        </ErrorBoundary>
       </Suspense>
     </>
   );

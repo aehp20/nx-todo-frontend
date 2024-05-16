@@ -11,6 +11,7 @@ export { default as MoreHorizIcon } from './MoreHorizIcon';
 export { default as NavArrowDownIcon } from './NavArrowDownIcon';
 export { default as NavArrowLeftIcon } from './NavArrowLeftIcon';
 export { default as NavArrowRightIcon } from './NavArrowRightIcon';
+export { default as OpenSelectHandGestureIcon } from './OpenSelectHandGestureIcon';
 export { default as PhantomBusterIcon } from './PhantomBusterIcon';
 export { default as PlusIcon } from './PlusIcon';
 export { default as RefreshDoubleIcon } from './RefreshDoubleIcon';

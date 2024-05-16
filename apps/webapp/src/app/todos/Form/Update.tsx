@@ -66,7 +66,7 @@ export default function Update() {
   };
 
   const backLink = {
-    to: '/',
+    to: '/todos',
     content: (
       <div className="flex items-center">
         <NavArrowLeftIcon /> <Title>{_('Back to Home page')}</Title>

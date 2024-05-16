@@ -1,6 +1,6 @@
 import { TodoCreate } from '@nx-todo-frontend/types';
 
-import { useMutation, useQueryClient } from 'react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
 import { useAPIContext } from '../APIProvider';
 

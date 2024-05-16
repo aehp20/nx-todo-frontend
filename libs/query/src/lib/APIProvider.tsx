@@ -1,7 +1,8 @@
 import { APIClient, HTTPClient } from '@nx-todo-frontend/api';
 
 import { createContext, ReactNode, useContext, useMemo } from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const APIContext = createContext({} as APIClient);
 

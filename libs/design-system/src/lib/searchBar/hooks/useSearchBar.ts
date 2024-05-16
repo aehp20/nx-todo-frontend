@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+
 import { FilterConfig, Query, QueryValueType } from '../types';
 
 export function useSearchBar(

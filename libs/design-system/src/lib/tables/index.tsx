@@ -1,7 +1,8 @@
+import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
+
 import classNames from 'classnames';
 
-import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
-import { Table as ITable, Row, flexRender } from '@tanstack/react-table';
+import { flexRender, Row, Table as ITable } from '@tanstack/react-table';
 
 import { ItemsPerPage } from './itemsPerPage';
 import Pagination from './pagination';

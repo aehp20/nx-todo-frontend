@@ -1,8 +1,11 @@
 import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
+
 import classNames from 'classnames';
 import { ReactNode } from 'react';
+
 import { BurgerButton } from '../../buttons';
 import { ItemNavBar } from '../types';
+
 import Menu from './Menu';
 
 type SmallMenuProps = {

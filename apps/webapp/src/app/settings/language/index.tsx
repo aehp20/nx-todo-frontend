@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-
 import { Dropdown, Label, Option } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
+
+import { useEffect, useState } from 'react';
 
 export function LanguageField() {
   const { _, locale, setLocale } = useI18NContext();

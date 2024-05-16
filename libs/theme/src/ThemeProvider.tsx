@@ -1,6 +1,6 @@
 import {
-  ReactNode,
   createContext,
+  ReactNode,
   useCallback,
   useContext,
   useMemo,
@@ -9,10 +9,10 @@ import {
 
 import { componentsName } from './componentsName';
 import {
-  StylesPropertiesNameProps,
-  StylesProps,
   styles,
   stylesPropertiesName,
+  StylesPropertiesNameProps,
+  StylesProps,
 } from './styles';
 import { themes } from './themes';
 import { getThemeFromLocalStorage, setThemeFromLocalStorage } from './utils';

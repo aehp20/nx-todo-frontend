@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 import { Card } from '../cards';
+
 import { FilterField } from './components/FilterField';
 import { useSearchBar } from './hooks/useSearchBar';
 import { FilterConfig, Query } from './types';

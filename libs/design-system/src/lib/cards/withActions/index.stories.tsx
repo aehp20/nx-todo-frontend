@@ -1,8 +1,9 @@
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
+
 import type { Meta } from '@storybook/react';
 
-import CardWithActions, { CardWithActionsProps } from '.';
 import { ActionItem } from './types';
+import CardWithActions, { CardWithActionsProps } from '.';
 
 const meta: Meta<typeof CardWithActions> = {
   component: CardWithActions,

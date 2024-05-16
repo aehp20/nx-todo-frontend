@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+
 import { ActionItem } from '../types';
 
 type MenuProps = {

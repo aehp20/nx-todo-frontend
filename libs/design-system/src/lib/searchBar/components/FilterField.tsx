@@ -1,5 +1,6 @@
 import { Option } from '../../dropdown';
 import { FilterConfig, Query, QueryValueType } from '../types';
+
 import DropdownField from './DropdownField';
 import InputTextField from './InputTextField';
 

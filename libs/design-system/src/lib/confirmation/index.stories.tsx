@@ -1,8 +1,10 @@
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
+
 import type { Meta } from '@storybook/react';
 
 import { Button } from '../buttons';
-import { Confirmation, ConfirmationProps } from './';
+
+import { Confirmation, ConfirmationProps } from '.';
 
 const meta: Meta<typeof Confirmation> = {
   component: Confirmation,

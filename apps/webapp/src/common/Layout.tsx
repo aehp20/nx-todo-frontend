@@ -1,8 +1,8 @@
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
-
 import { ClipboardCheckIcon, NavBar } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
+
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
 export default function Layout() {
   const { _ } = useI18NContext();

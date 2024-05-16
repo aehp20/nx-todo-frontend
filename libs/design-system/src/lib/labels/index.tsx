@@ -1,6 +1,6 @@
-import classNames from 'classnames';
-
 import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
+
+import classNames from 'classnames';
 
 import '../../styles.css';
 

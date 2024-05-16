@@ -1,7 +1,9 @@
 import classNames from 'classnames';
+
 import { MoreHorizIcon } from '../../../icons';
 import { ActionItem } from '../types';
 import { useOnClickOutside } from '../useOnClickOutside';
+
 import { Menu } from './Menu';
 
 type ActionsProps = {

@@ -1,6 +1,9 @@
-import { Todo } from '@nx-todo-frontend/api';
+import { Todo } from '@nx-todo-frontend/types';
+
 import { useMutation, useQueryClient } from 'react-query';
+
 import { useAPIContext } from '../APIProvider';
+
 import { todoKeys } from './queries';
 
 export function useUpdateTodo() {

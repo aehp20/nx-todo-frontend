@@ -1,21 +1,23 @@
+import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
+
 import { useState } from 'react';
 
-import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 import type { Meta } from '@storybook/react';
 import {
-  Row,
-  SortingState,
   createColumnHelper,
   getCoreRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  Row,
+  SortingState,
   useReactTable,
 } from '@tanstack/react-table';
 
-import Table, { TableProps } from '.';
 import { CardWithActions } from '../cards';
 import TextDelete from '../texts';
+
 import { data as mockData } from './data';
+import Table, { TableProps } from '.';
 
 const meta: Meta<typeof Table> = {
   component: Table,

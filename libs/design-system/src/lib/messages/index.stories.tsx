@@ -1,7 +1,8 @@
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
+
 import type { Meta } from '@storybook/react';
 
-import { Error, Message, MessageProps } from './';
+import { Error, Message, MessageProps } from '.';
 
 const meta: Meta<typeof Message> = {
   component: Message,

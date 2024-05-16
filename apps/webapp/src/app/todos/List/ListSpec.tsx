@@ -1,16 +1,4 @@
 import {
-  Row,
-  SortingState,
-  createColumnHelper,
-  getCoreRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from '@tanstack/react-table';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-
-import {
   Confirmation,
   Table,
   TrashIcon,
@@ -19,7 +7,21 @@ import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { useDeleteTodo } from '@nx-todo-frontend/query';
 import { Todo } from '@nx-todo-frontend/types';
 
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import {
+  createColumnHelper,
+  getCoreRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  Row,
+  SortingState,
+  useReactTable,
+} from '@tanstack/react-table';
+
 import { useToast } from '../../../common/useToast';
+
 import { Card } from './components/Card';
 import { Dialog } from './components/Dialog';
 

@@ -1,8 +1,9 @@
-import { useNavigate } from 'react-router-dom';
-
 import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 
+import { useNavigate } from 'react-router-dom';
+
 import { ItemNavBar } from '../types';
+
 import { MenuSpec } from './MenuSpec';
 
 type MenuProps = {

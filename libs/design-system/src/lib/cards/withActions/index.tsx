@@ -1,9 +1,10 @@
+import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
+
 import classNames from 'classnames';
 import { ReactNode, useRef, useState } from 'react';
 
-import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
-
 import Card from '../base';
+
 import { Actions } from './components/Actions';
 import { ActionItem } from './types';
 

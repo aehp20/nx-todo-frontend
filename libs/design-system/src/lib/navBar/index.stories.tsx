@@ -1,9 +1,12 @@
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
-import type { Meta } from '@storybook/react';
+
 import { BrowserRouter } from 'react-router-dom';
 
-import NavBar, { NavBarProps } from '.';
+import type { Meta } from '@storybook/react';
+
 import { ClipboardCheckIcon } from '../icons';
+
+import NavBar, { NavBarProps } from '.';
 
 const meta: Meta<typeof NavBar> = {
   component: NavBar,

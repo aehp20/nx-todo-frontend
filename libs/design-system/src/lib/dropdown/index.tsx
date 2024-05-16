@@ -1,13 +1,14 @@
+import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
+
 import classNames from 'classnames';
 import Select, {
   ClearIndicatorProps,
+  components,
   DropdownIndicatorProps,
   MultiValueRemoveProps,
   Props,
-  components,
 } from 'react-select';
 
-import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 import { NavArrowDownIcon, XMarkIcon } from '../icons';
 
 import '../../styles.css';

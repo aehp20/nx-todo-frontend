@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
-
 import { Card, Page } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
+
+import { Link } from 'react-router-dom';
 
 export default function NoMatch() {
   const { _ } = useI18NContext();

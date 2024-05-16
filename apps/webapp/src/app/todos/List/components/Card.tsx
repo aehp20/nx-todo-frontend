@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import {
   ActionItem,
   CardWithActions,
@@ -7,6 +5,8 @@ import {
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { Todo } from '@nx-todo-frontend/types';
+
+import { Link } from 'react-router-dom';
 
 type CardProps = {
   todo: Todo;

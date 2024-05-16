@@ -1,7 +1,7 @@
+import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
+
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
-
-import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 
 import '../../styles.css';
 

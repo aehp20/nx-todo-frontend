@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
+
 import { Button } from '../buttons';
+
 import Dialog from './Dialog';
 
 export type ConfirmationDialogProps = {

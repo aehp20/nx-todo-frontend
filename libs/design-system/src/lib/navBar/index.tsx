@@ -1,7 +1,7 @@
+import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
+
 import classNames from 'classnames';
 import { ReactNode, useState } from 'react';
-
-import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 
 import { LargeMenu } from './large';
 import { SmallMenu } from './small';

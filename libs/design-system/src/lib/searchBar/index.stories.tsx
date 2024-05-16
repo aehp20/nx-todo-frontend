@@ -1,8 +1,9 @@
 import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
+
 import type { Meta } from '@storybook/react';
 
-import { SearchBar, SearchBarProps } from '.';
 import { FilterConfig, Query } from './types';
+import { SearchBar, SearchBarProps } from '.';
 
 const meta: Meta<typeof SearchBar> = {
   component: SearchBar,

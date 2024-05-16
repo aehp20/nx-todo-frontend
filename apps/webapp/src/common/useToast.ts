@@ -1,6 +1,6 @@
-import { toast } from 'react-toastify';
-
 import { useTheme } from '@nx-todo-frontend/theme';
+
+import { toast } from 'react-toastify';
 
 export function useToast() {
   const { theme: originalTheme } = useTheme();

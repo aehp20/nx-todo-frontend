@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import { useTitle } from 'react-use';
 
-import { Link } from 'react-router-dom';
 import Title from '../title';
 
 export type PageProps = {

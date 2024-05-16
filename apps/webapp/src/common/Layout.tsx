@@ -10,7 +10,7 @@ export default function Layout() {
   const title = (
     <>
       <ClipboardCheckIcon width="28" height="28" />
-      <span className="font-semibold text-xl tracking-tight">{_('Todo')}</span>
+      <span className="font-semibold text-xl tracking-tight">{_('Todos')}</span>
     </>
   );
   const items = [

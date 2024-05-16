@@ -88,6 +88,13 @@ nx g @nx/jest:configuration --project=webapp
 Run `nx run design-system:storybook` to see the Design System components in storybook app.
 
 ## i18n
+Initial setup
+```
+mkdir locale
+rm -rf /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/public/translations/*
+rm -rf /Users/home/learn/github/nx-todo/nx-todo-frontend/locale/*.json
+```
+
 Find all the typescript files and put them into the "list" file
 ```
 find /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src -type f \( -name '*.ts' -or -name '*.tsx' \)  -print > list.txt
@@ -95,7 +102,6 @@ find /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src -type f \
 
 Extract the translation words from the code
 ```
-mkdir locale
 xgettext --files-from=list.txt -c -d translations -p locale --language=Python --from-code=utf-8 --keyword=_ --keyword=_:1 --keyword=_n:1,2 --keyword=_c:1c,2 --keyword=_cn:1c,2,3
 ```
 

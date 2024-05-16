@@ -26,7 +26,7 @@ export default function Form(props: FormProps) {
 
   const options = [
     { label: _('Done'), value: 'true' },
-    { label: _('Todo'), value: 'false' },
+    { label: _('To do'), value: 'false' },
   ];
   const selectedValue = options.find((item) => item.value === `${isDone}`);
 
@@ -58,6 +58,7 @@ export default function Form(props: FormProps) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder={_('Enter a name')}
+          autoFocus
         />
       </div>
       <div className="flex flex-col">

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-16 09:57+0200\n"
+"POT-Creation-Date: 2024-05-16 23:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/index.tsx:11
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:19
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:22
 msgid "Settings"
 msgstr ""
 
@@ -51,6 +51,59 @@ msgstr ""
 
 #: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/theme/index.tsx:31
 msgid "Theme"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:8
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:19
+msgid "Home"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:12
+msgid ""
+"Welcome to our Todo List application using React! React, a JavaScript "
+"library developed by Facebook, is widely recognized for its efficiency and "
+"flexibility when it comes to building interactive user interfaces. In this "
+"application, we use essential React concepts, including components, state "
+"management, props, event handling, and styling."
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:17
+msgid "The importance of a Todo List application"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:21
+msgid ""
+"A Todo List app serves as an ideal project to grasp the fundamentals of a "
+"new programming language or framework quickly. It provides a practical "
+"context for learning essential concepts while working towards a tangible "
+"outcome."
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:26
+msgid "The objective"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:29
+msgid "The goal is to create a simple Todo List application with features."
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:32
+msgid "Here's what we'll be aiming for:"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:35
+msgid "Adding New Todos: Enable users to add new tasks to the list."
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:40
+msgid ""
+"Editing and Deleting Todos: Provide functionality to modify or remove "
+"existing tasks."
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:46
+msgid ""
+"Marking Todos as Completed: Allow users to indicate when tasks are finished."
 msgstr ""
 
 #: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:8
@@ -109,15 +162,15 @@ msgstr ""
 msgid "Enter a name"
 msgstr ""
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:64
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:65
 msgid "Is Done?"
 msgstr ""
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:70
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:71
 msgid "Select an element"
 msgstr ""
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:74
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:75
 msgid "Save"
 msgstr ""
 
@@ -208,19 +261,32 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:13
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/ErrorBoundary/ErrorBoundaryUI.tsx:17
+msgid "Error"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/ErrorBoundary/ErrorBoundaryUI.tsx:20
+msgid "Whoops, something went wrong."
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/ErrorBoundary/ErrorBoundaryUI.tsx:22
+msgid "Please either refresh the page or return home to try again."
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/ErrorBoundary/ErrorBoundaryUI.tsx:31
+msgid "Return to home"
+msgstr ""
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:15
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:20
 msgid "Todos"
 msgstr ""
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:17
-msgid "Home"
-msgstr ""
-
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:18
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:21
 msgid "About me"
 msgstr ""
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:25
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:28
 msgid "Loading..."
 msgstr ""
 

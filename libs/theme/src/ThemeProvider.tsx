@@ -15,7 +15,7 @@ import {
   StylesProps,
 } from './styles';
 import { themes } from './themes';
-import { getThemeFromLocalStorage, setThemeFromLocalStorage } from './utils';
+import { getThemeCookie, setThemeCookie } from './utils';
 
 type ThemeProviderValue = {
   theme: string;
@@ -36,10 +36,10 @@ const ThemeContext = createContext<ThemeProviderValue>(
 export function ThemeProvider(props: ThemeProviderProps) {
   const { theme: initialTheme = themes.light, children } = props;
 
-  const [theme, setTheme] = useState(getThemeFromLocalStorage(initialTheme));
+  const [theme, setTheme] = useState(getThemeCookie(initialTheme));
 
   const handleTheme = useCallback((theme: string) => {
-    setThemeFromLocalStorage(theme);
+    setThemeCookie(theme);
     setTheme(theme);
   }, []);
 

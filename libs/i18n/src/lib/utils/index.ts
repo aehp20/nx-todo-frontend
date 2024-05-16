@@ -1,14 +1,16 @@
-const I18N_LOCAL_STORAGE_KEY = 'MY_APP_I18N_LOCALE';
+import Cookies from 'js-cookie';
 
-export const getLocaleFromLocalStorage = (defaultLocale: string) => {
-  const value = localStorage.getItem(I18N_LOCAL_STORAGE_KEY);
+const I18N_COOKIE_NAME = 'NX_TODOS_I18N';
+
+export const getLocaleCookie = (defaultLocale: string) => {
+  const value = Cookies.get(I18N_COOKIE_NAME);
   if (value) {
     return value;
   }
-  setLocaleFromLocalStorage(defaultLocale);
+  setLocaleCookie(defaultLocale);
   return defaultLocale;
 };
 
-export const setLocaleFromLocalStorage = (locale: string) => {
-  localStorage.setItem(I18N_LOCAL_STORAGE_KEY, locale);
+export const setLocaleCookie = (locale: string) => {
+  Cookies.set(I18N_COOKIE_NAME, locale, { expires: 365, path: '/' });
 };

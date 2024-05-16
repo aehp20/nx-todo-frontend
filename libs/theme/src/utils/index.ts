@@ -1,14 +1,16 @@
-const THEME_LOCAL_STORAGE_KEY = 'MY_APP_THEME';
+import Cookies from 'js-cookie';
 
-export const getThemeFromLocalStorage = (defaultTheme: string) => {
-  const value = localStorage.getItem(THEME_LOCAL_STORAGE_KEY);
+const THEME_COOKIE_NAME = 'NX_TODOS_THEME';
+
+export const getThemeCookie = (defaultTheme: string) => {
+  const value = Cookies.get(THEME_COOKIE_NAME);
   if (value) {
     return value;
   }
-  setThemeFromLocalStorage(defaultTheme);
+  setThemeCookie(defaultTheme);
   return defaultTheme;
 };
 
-export const setThemeFromLocalStorage = (theme: string) => {
-  localStorage.setItem(THEME_LOCAL_STORAGE_KEY, theme);
+export const setThemeCookie = (theme: string) => {
+  Cookies.set(THEME_COOKIE_NAME, theme, { expires: 365, path: '/' });
 };

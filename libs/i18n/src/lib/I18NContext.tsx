@@ -9,7 +9,7 @@ import {
 } from 'react';
 
 import Translator from './I18NTranslator';
-import { getLocaleFromLocalStorage, setLocaleFromLocalStorage } from './utils';
+import { getLocaleCookie, setLocaleCookie } from './utils';
 
 type I18NProviderProps = {
   locale: string;
@@ -32,13 +32,11 @@ const I18NContext = createContext({} as I18NContextProps);
 export function I18NProvider(props: I18NProviderProps) {
   const { locale: originalLocale, urlApp, folderPath, children } = props;
 
-  const [locale, setLocale] = useState<string>(
-    getLocaleFromLocalStorage(originalLocale),
-  );
+  const [locale, setLocale] = useState<string>(getLocaleCookie(originalLocale));
   const [translator, setTranslator] = useState<Translator>();
 
   const handleLocale = useCallback((locale: string) => {
-    setLocaleFromLocalStorage(locale);
+    setLocaleCookie(locale);
     setLocale(locale);
   }, []);
 

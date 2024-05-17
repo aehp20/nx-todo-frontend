@@ -14,7 +14,7 @@ export const LightTitle = {
   args: {},
   render: (props: TitleProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex gap-1">
           <Title>Todo</Title>
         </div>
@@ -27,7 +27,7 @@ export const DarkTitle = {
   args: {},
   render: (props: TitleProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex gap-1">
           <Title>Todo</Title>
         </div>

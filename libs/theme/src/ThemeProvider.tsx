@@ -27,6 +27,7 @@ type ThemeProviderValue = {
 type ThemeProviderProps = {
   theme?: string;
   children: ReactNode;
+  enabledResetTheme?: boolean;
 };
 
 const ThemeContext = createContext<ThemeProviderValue>(
@@ -34,9 +35,15 @@ const ThemeContext = createContext<ThemeProviderValue>(
 );
 
 export function ThemeProvider(props: ThemeProviderProps) {
-  const { theme: initialTheme = themes.light, children } = props;
+  const {
+    theme: initialTheme = themes.light,
+    enabledResetTheme = false,
+    children,
+  } = props;
 
-  const [theme, setTheme] = useState(getThemeCookie(initialTheme));
+  const [theme, setTheme] = useState(
+    getThemeCookie(initialTheme, enabledResetTheme),
+  );
 
   const handleTheme = useCallback((theme: string) => {
     setThemeCookie(theme);

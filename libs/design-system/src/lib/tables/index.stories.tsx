@@ -16,8 +16,8 @@ import {
 import { CardWithActions } from '../cards';
 import TextDelete from '../texts';
 
-import { data as mockData } from './data';
 import Table, { TableProps } from '.';
+import { data as mockData } from './data';
 
 const meta: Meta<typeof Table> = {
   component: Table,
@@ -114,7 +114,7 @@ export const LightTable = {
   args: {},
   render: (props: TableProps<Person>) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <CustomTable />
       </ThemeProvider>
     );
@@ -125,7 +125,7 @@ export const DarkTable = {
   args: {},
   render: (props: TableProps<Person>) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <CustomTable />
       </ThemeProvider>
     );

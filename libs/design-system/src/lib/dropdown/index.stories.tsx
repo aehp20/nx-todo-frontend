@@ -62,7 +62,7 @@ export const LightDropdown = {
   args: {},
   render: (props: DropdownProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex flex-col gap-2">
           <Dropdown
             options={simpleOptions}
@@ -85,7 +85,7 @@ export const DarkDropdown = {
   args: {},
   render: (props: DropdownProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex flex-col gap-2">
           <Dropdown
             options={simpleOptions}

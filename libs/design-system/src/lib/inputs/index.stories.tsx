@@ -21,7 +21,7 @@ export const LightInputs = {
   },
   render: (props: InputProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex gap-1">
           <Input {...props} />
           <Input {...props} disabled />
@@ -43,7 +43,7 @@ export const DarkInputs = {
   },
   render: (props: InputProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex gap-1">
           <Input {...props} />
           <Input {...props} disabled />

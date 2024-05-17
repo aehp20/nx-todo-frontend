@@ -22,7 +22,7 @@ export const LightButtons = {
   },
   render: (props: ButtonProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <div className="flex gap-1">
             <Button {...props}>Add</Button>
@@ -76,7 +76,7 @@ export const DarkButtons = {
   },
   render: (props: ButtonProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <div className="flex gap-1">
             <Button {...props}>Add</Button>

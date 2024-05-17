@@ -14,7 +14,7 @@ export const LightTextDelete = {
   args: {},
   render: (props: TextDeleteProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <TextDelete>Delete</TextDelete>
         </div>
@@ -27,7 +27,7 @@ export const DarkTextDelete = {
   args: {},
   render: (props: TextDeleteProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <TextDelete>Delete</TextDelete>
         </div>

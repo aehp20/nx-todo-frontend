@@ -16,7 +16,7 @@ export const LightConfirmation = {
   args: {},
   render: (props: ConfirmationProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <Confirmation
           title="Delete Article?"
           content="Are you sure you want to delete this article?"
@@ -37,7 +37,7 @@ export const DarkConfirmation = {
   args: {},
   render: (props: ConfirmationProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <Confirmation
           title="Delete Article?"
           content="Are you sure you want to delete this article?"

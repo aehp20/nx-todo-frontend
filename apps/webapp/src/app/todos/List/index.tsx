@@ -14,6 +14,7 @@ import ListSpec from './ListSpec';
 
 export default function List() {
   const { data, error, isLoading } = useTodos();
+  console.log('data: ', data);
 
   const navigate = useNavigate();
 

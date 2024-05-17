@@ -14,7 +14,7 @@ export const LightMessages = {
   args: {},
   render: (props: MessageProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <Message>This is a default message without type props</Message>
           <Message type="info">This is an info message</Message>
@@ -34,7 +34,7 @@ export const DarkMessages = {
   args: {},
   render: (props: MessageProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <Message>This is a default message without type props</Message>
           <Message type="info">This is an info message</Message>

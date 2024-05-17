@@ -2,8 +2,8 @@ import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 
 import type { Meta } from '@storybook/react';
 
-import { FilterConfig, Query } from './types';
 import { SearchBar, SearchBarProps } from '.';
+import { FilterConfig, Query } from './types';
 
 const meta: Meta<typeof SearchBar> = {
   component: SearchBar,
@@ -61,7 +61,7 @@ export const LightSearchBar = {
   args: {},
   render: (props: SearchBarProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <App />
       </ThemeProvider>
     );
@@ -72,7 +72,7 @@ export const DarkSearchBar = {
   args: {},
   render: (props: SearchBarProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <App />
       </ThemeProvider>
     );

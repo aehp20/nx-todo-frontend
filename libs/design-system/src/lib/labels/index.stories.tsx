@@ -14,7 +14,7 @@ export const LightLabels = {
   args: {},
   render: (props: LabelProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <div className="flex gap-1">
             <Label htmlFor="username">Username</Label>
@@ -30,7 +30,7 @@ export const DarkLabels = {
   args: {},
   render: (props: LabelProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <div className="flex gap-1">
             <Label htmlFor="username">Username</Label>

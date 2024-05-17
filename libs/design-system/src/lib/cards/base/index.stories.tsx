@@ -14,7 +14,7 @@ export const LightCard = {
   args: {},
   render: (props: CardProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <Card>Hello</Card>
         </div>
@@ -27,7 +27,7 @@ export const DarkCard = {
   args: {},
   render: (props: CardProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <Card>Hello</Card>
         </div>

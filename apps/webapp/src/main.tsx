@@ -25,7 +25,7 @@ root.render(
   <StrictMode>
     <BrowserRouter>
       <APIProvider httpClient={httpClient}>
-        <ThemeProvider theme={themes.light}>
+        <ThemeProvider theme={themes.light} enabledResetTheme>
           <I18NProvider
             locale="es"
             urlApp={I18N_URL}

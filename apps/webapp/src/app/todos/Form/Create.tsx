@@ -1,9 +1,8 @@
 import {
+  BackLink,
   Error,
-  NavArrowLeftIcon,
   Page,
   SpinnerIcon,
-  Title,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { useCreateTodo } from '@nx-todo-frontend/query';
@@ -48,17 +47,11 @@ export default function Create() {
     );
   };
 
-  const backLink = {
-    to: '/todos',
-    content: (
-      <div className="flex items-center">
-        <NavArrowLeftIcon /> <Title>{_('Back to Home page')}</Title>
-      </div>
-    ),
-  };
-
   return (
-    <Page title={_('Create Todo')} backLink={backLink}>
+    <Page
+      title={_('Create Todo')}
+      backLink={<BackLink to="/todos" content={_('Back to Home page')} />}
+    >
       <Form onSubmit={submitData} />
     </Page>
   );

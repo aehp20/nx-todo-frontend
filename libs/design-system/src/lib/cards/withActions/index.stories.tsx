@@ -2,8 +2,8 @@ import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
 
 import type { Meta } from '@storybook/react';
 
-import { ActionItem } from './types';
 import CardWithActions, { CardWithActionsProps } from '.';
+import { ActionItem } from './types';
 
 const meta: Meta<typeof CardWithActions> = {
   component: CardWithActions,
@@ -21,7 +21,7 @@ export const LightCardWithActions = {
   args: {},
   render: (props: CardWithActionsProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <CardWithActions actions={actions}>Hello</CardWithActions>
         </div>
@@ -34,7 +34,7 @@ export const DarkCardWithActions = {
   args: {},
   render: (props: CardWithActionsProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <CardWithActions actions={actions}>Hello</CardWithActions>
         </div>

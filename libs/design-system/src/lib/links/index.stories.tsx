@@ -14,7 +14,7 @@ export const LightLinks = {
   args: {},
   render: (props: LinkProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <Link
             href="https://www.linkedin.com/in/aronherreraponte/"
@@ -33,7 +33,7 @@ export const DarkLinks = {
   args: {},
   render: (props: LinkProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex flex-col gap-1">
           <Link
             href="https://www.linkedin.com/in/aronherreraponte/"

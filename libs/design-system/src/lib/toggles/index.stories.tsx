@@ -20,7 +20,7 @@ export const LightToggles = {
   },
   render: (props: ToggleProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex gap-1">
           <Toggle {...props} />
           <Toggle {...props} isChecked />
@@ -42,7 +42,7 @@ export const DarkToggles = {
   },
   render: (props: ToggleProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex gap-1">
           <Toggle {...props} />
           <Toggle {...props} isChecked />

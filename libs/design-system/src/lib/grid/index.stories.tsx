@@ -37,7 +37,7 @@ export const LightGrid = {
   args: {},
   render: (props: GridProps<Item>) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <Grid nbColumns={2} gap={4} items={items} Component={MyComponent} />
       </ThemeProvider>
     );
@@ -48,7 +48,7 @@ export const DarkGrid = {
   args: {},
   render: (props: GridProps<Item>) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <Grid nbColumns={2} gap={4} items={items} Component={MyComponent} />
       </ThemeProvider>
     );

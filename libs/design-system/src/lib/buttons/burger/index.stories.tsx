@@ -20,7 +20,7 @@ export const LightBurgerButton = {
   },
   render: (props: BurgerButtonProps) => {
     return (
-      <ThemeProvider theme={themes.light}>
+      <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="flex gap-1">
           <BurgerButton isOpen={false} onClick={() => console.log('onClick')} />
           <BurgerButton isOpen onClick={() => console.log('onClick')} />
@@ -40,7 +40,7 @@ export const DarkBurgerButton = {
   },
   render: (props: BurgerButtonProps) => {
     return (
-      <ThemeProvider theme={themes.dark}>
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="flex gap-1">
           <BurgerButton isOpen={false} onClick={() => console.log('onClick')} />
           <BurgerButton isOpen onClick={() => console.log('onClick')} />

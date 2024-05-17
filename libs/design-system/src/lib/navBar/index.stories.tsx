@@ -34,7 +34,7 @@ export const LightNavBar = {
   render: (props: NavBarProps) => {
     return (
       <BrowserRouter>
-        <ThemeProvider theme={themes.light}>
+        <ThemeProvider theme={themes.light} enabledResetTheme>
           <NavBar {...props} />
         </ThemeProvider>
       </BrowserRouter>
@@ -50,7 +50,7 @@ export const DarkNavBar = {
   render: (props: NavBarProps) => {
     return (
       <BrowserRouter>
-        <ThemeProvider theme={themes.dark}>
+        <ThemeProvider theme={themes.dark} enabledResetTheme>
           <NavBar {...props} />
         </ThemeProvider>
       </BrowserRouter>

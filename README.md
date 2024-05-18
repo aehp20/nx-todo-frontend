@@ -80,6 +80,7 @@ nx g @nx/js:lib api --directory libs/api --unitTestRunner=jest --bundler=none
 nx g @nx/js:lib hooks --directory libs/hooks --unitTestRunner=jest --bundler=none
 nx g @nx/js:lib types --directory libs/types --unitTestRunner=jest --bundler=none
 nx g @nx/js:lib utils --directory libs/utils --unitTestRunner=jest --bundler=none
+nx g @nx/js:lib models --directory libs/models --unitTestRunner=jest --bundler=none
 
 nx g @nx/jest:configuration --project=webapp
 ```
@@ -93,6 +94,7 @@ Initial setup
 mkdir locale
 rm -rf /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/public/translations/*
 rm -rf /Users/home/learn/github/nx-todo/nx-todo-frontend/locale/*.json
+rm /Users/home/learn/github/nx-todo/nx-todo-frontend/list.txt
 ```
 
 Find all the typescript files and put them into the "list" file

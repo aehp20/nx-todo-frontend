@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -19,6 +21,7 @@
       "@nx-todo-frontend/design-system": ["libs/design-system/src/index.ts"],
       "@nx-todo-frontend/hooks": ["libs/hooks/src/index.ts"],
       "@nx-todo-frontend/i18n": ["libs/i18n/src/index.ts"],
+      "@nx-todo-frontend/models": ["libs/models/src/index.ts"],
       "@nx-todo-frontend/query": ["libs/query/src/index.ts"],
       "@nx-todo-frontend/theme": ["libs/theme/src/index.ts"],
       "@nx-todo-frontend/types": ["libs/types/src/index.ts"],

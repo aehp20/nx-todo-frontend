@@ -4,8 +4,8 @@ import {
   TrashIcon,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
+import { Todo } from '@nx-todo-frontend/models';
 import { useDeleteTodo } from '@nx-todo-frontend/query';
-import { Todo } from '@nx-todo-frontend/types';
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -51,9 +51,9 @@ export default function ListSpec(props: ListSpecProps) {
         <Link to={`/update/${info.row.original.id}`}>{info.getValue()}</Link>
       ),
     }),
-    columnHelper.accessor('isDone', {
+    columnHelper.accessor('isDoneStringFormat', {
       header: () => _('IS DONE?'),
-      cell: (info) => (info.getValue() ? _('Yes') : _('No')),
+      cell: (info) => _(info.getValue()),
     }),
     columnHelper.accessor('isDone', {
       id: 'action',

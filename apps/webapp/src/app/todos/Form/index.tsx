@@ -1,5 +1,6 @@
 import {
   Button,
+  Card,
   Dropdown,
   Input,
   Label,
@@ -7,12 +8,12 @@ import {
   Title,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
-import { Todo, TodoCreate } from '@nx-todo-frontend/types';
+import { Todo } from '@nx-todo-frontend/models';
 
 import { useCallback, useEffect, useState } from 'react';
 
 type FormProps = {
-  onSubmit: (todo: TodoCreate) => void;
+  onSubmit: (todo: Todo) => void;
   todo?: Todo;
 };
 
@@ -37,7 +38,7 @@ export default function Form(props: FormProps) {
   };
 
   const handleClick = useCallback(() => {
-    onSubmit({ name, isDone });
+    onSubmit(new Todo({ name, isDone }));
   }, [onSubmit, name, isDone]);
 
   useEffect(() => {
@@ -48,9 +49,10 @@ export default function Form(props: FormProps) {
   }, [todo]);
 
   return (
-    <div className="flex flex-col gap-4 w-full md:w-1/2">
+    <div className="flex flex-col gap-4 w-full">
       <Title>{_('Todo')}</Title>
-      <div className="flex flex-col">
+      {todo && <Card>Hello</Card>}
+      <div className="flex flex-col w-full md:w-1/2">
         <Label htmlFor="name">{_('Name')}</Label>
         <Input
           type="text"
@@ -61,7 +63,7 @@ export default function Form(props: FormProps) {
           autoFocus
         />
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full md:w-1/2">
         <Label htmlFor="isDone">{_('Is Done?')}</Label>
         <Dropdown
           inputId="isDone"

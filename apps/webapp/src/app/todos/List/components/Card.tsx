@@ -4,7 +4,7 @@ import {
   TextDelete,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
-import { Todo } from '@nx-todo-frontend/types';
+import { Todo } from '@nx-todo-frontend/models';
 
 import { Link } from 'react-router-dom';
 

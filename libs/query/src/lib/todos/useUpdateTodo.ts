@@ -1,4 +1,4 @@
-import { Todo } from '@nx-todo-frontend/types';
+import { Todo } from '@nx-todo-frontend/models';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 

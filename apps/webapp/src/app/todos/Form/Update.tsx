@@ -6,8 +6,8 @@ import {
 } from '@nx-todo-frontend/design-system';
 import { useParamsId } from '@nx-todo-frontend/hooks';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
+import { Todo } from '@nx-todo-frontend/models';
 import { useTodo, useUpdateTodo } from '@nx-todo-frontend/query';
-import { TodoCreate } from '@nx-todo-frontend/types';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -52,16 +52,16 @@ export default function Update() {
     return <Error error={mutation.error.message} className="m-2" />;
   }
 
-  const submitData = (todo: TodoCreate) => {
-    mutation.mutate(
-      { id, name: todo.name, isDone: todo.isDone },
-      {
-        onSuccess: (data) => {
-          navigate('/');
+  const submitData = (todo: Todo) => {
+    todo.id = id;
+    mutation.mutate(todo, {
+      onSuccess: ({ ok }) => {
+        if (ok) {
+          navigate('/todos');
           successToast(_('The update action has been completed successfully.'));
-        },
+        }
       },
-    );
+    });
   };
 
   return (

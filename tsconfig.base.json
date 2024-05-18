@@ -24,7 +24,6 @@
       "@nx-todo-frontend/models": ["libs/models/src/index.ts"],
       "@nx-todo-frontend/query": ["libs/query/src/index.ts"],
       "@nx-todo-frontend/theme": ["libs/theme/src/index.ts"],
-      "@nx-todo-frontend/types": ["libs/types/src/index.ts"],
       "@nx-todo-frontend/utils": ["libs/utils/src/index.ts"]
     }
   },

@@ -1,4 +1,4 @@
-import { TodoCreate } from '@nx-todo-frontend/types';
+import { Todo } from '@nx-todo-frontend/models';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
@@ -10,7 +10,7 @@ export function useCreateTodo() {
   const api = useAPIContext();
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (todo: TodoCreate) => api.todo.post(todo),
+    mutationFn: (todo: Todo) => api.todo.post(todo),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: todoKeys.all,

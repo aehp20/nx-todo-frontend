@@ -1,4 +1,6 @@
-import { Todo, TodoCreate, TodoUpdate } from '@nx-todo-frontend/types';
+import { ClassTransformerGroup, Todo } from '@nx-todo-frontend/models';
+
+import { instanceToPlain } from 'class-transformer';
 
 import { HTTPClient } from './HTTPClient';
 
@@ -19,13 +21,27 @@ export class TodoClient {
     return await this.httpClient.get(endpointPath);
   }
 
-  post(todo: TodoCreate): Promise<Response> {
-    return this.httpClient.post(this.endpointPath, JSON.stringify(todo));
+  post(todo: Todo): Promise<Response> {
+    return this.httpClient.post(
+      this.endpointPath,
+      JSON.stringify(
+        instanceToPlain(todo, {
+          groups: [ClassTransformerGroup.CREATE],
+        }),
+      ),
+    );
   }
 
-  patch(todo: TodoUpdate): Promise<Response> {
+  patch(todo: Todo): Promise<Response> {
     const endpointPath = `${this.endpointPath}/${todo.id}`;
-    return this.httpClient.patch(endpointPath, JSON.stringify(todo));
+    return this.httpClient.patch(
+      endpointPath,
+      JSON.stringify(
+        instanceToPlain(todo, {
+          groups: [ClassTransformerGroup.UPDATE],
+        }),
+      ),
+    );
   }
 
   delete(id: number): Promise<Response> {

@@ -48,12 +48,24 @@ export class Todo {
   }
 
   @Expose({ groups: [ClassTransformerGroup.MAIN] })
+  public get createdAtDateTimeFormat(): string {
+    return dayjs(this.createdAt).format('L LTS');
+  }
+
+  @Expose({ groups: [ClassTransformerGroup.MAIN] })
   public get updatedAtDateFormat(): string {
     return dayjs(this.updatedAt).format('L');
   }
 
-  constructor(model: Partial<Todo> = {}, locale: string) {
-    dayjs.locale(locale);
+  @Expose({ groups: [ClassTransformerGroup.MAIN] })
+  public get updatedAtDateTimeFormat(): string {
+    return dayjs(this.updatedAt).format('L LTS');
+  }
+
+  constructor(model: Partial<Todo> = {}, locale?: string) {
+    if (locale) {
+      dayjs.locale(locale);
+    }
     Object.assign(this, model);
   }
 }

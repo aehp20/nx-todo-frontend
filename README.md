@@ -99,12 +99,14 @@ rm /Users/home/learn/github/nx-todo/nx-todo-frontend/list.txt
 
 Find all the typescript files and put them into the "list" file
 ```
-find /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src -type f \( -name '*.ts' -or -name '*.tsx' \)  -print > list.txt
+cd /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src
+find . -type f \( -name '*.ts' -or -name '*.tsx' \) -print > ../../../list.txt
+cd ../../..
 ```
 
 Extract the translation words from the code
 ```
-xgettext --files-from=list.txt -c -d translations -p locale --language=Python --from-code=utf-8 --keyword=_ --keyword=_:1 --keyword=_n:1,2 --keyword=_c:1c,2 --keyword=_cn:1c,2,3
+xgettext --files-from=list.txt -c -d translations -p locale --language=Python --from-code=utf-8 --keyword=_ --keyword=_:1 --keyword=_n:1,2 --keyword=_c:1c,2 --keyword=_cn:1c,2,3 -D /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src
 ```
 
 Move the generated PO file to POT file

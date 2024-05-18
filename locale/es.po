@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-18 18:54+0200\n"
+"POT-Creation-Date: 2024-05-19 01:21+0200\n"
 "PO-Revision-Date: 2024-05-11 23:02+0200\n"
 "Last-Translator: Aron <aronherrera2009@gmail.com>\n"
 "Language-Team: Spanish <es@tp.org.es>\n"
@@ -18,48 +18,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/index.tsx:11
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:22
+#: app/settings/index.tsx:11 common/Layout.tsx:22
 msgid "Settings"
 msgstr "Configuración"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/language/index.tsx:13
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/language/index.tsx:35
+#: app/settings/language/index.tsx:13 app/settings/language/index.tsx:35
 msgid "English"
 msgstr "Inglés"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/language/index.tsx:17
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/language/index.tsx:38
+#: app/settings/language/index.tsx:17 app/settings/language/index.tsx:38
 msgid "French"
 msgstr "Francés"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/language/index.tsx:21
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/language/index.tsx:37
+#: app/settings/language/index.tsx:21 app/settings/language/index.tsx:37
 msgid "Spanish"
 msgstr "Español"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/language/index.tsx:46
+#: app/settings/language/index.tsx:46
 msgid "Language"
 msgstr "Idioma"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/theme/index.tsx:12
+#: app/settings/theme/index.tsx:12
 msgid "Light"
 msgstr "Luminoso"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/theme/index.tsx:16
+#: app/settings/theme/index.tsx:16
 msgid "Dark"
 msgstr "Oscuro"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/settings/theme/index.tsx:31
+#: app/settings/theme/index.tsx:31
 msgid "Theme"
 msgstr "Tema"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:8
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:19
+#: app/home/index.tsx:8 common/Layout.tsx:19
 msgid "Home"
 msgstr "Página de inicio"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:12
+#: app/home/index.tsx:12
 msgid ""
 "Welcome to our Todo List application using React! React, a JavaScript "
 "library developed by Facebook, is widely recognized for its efficiency and "
@@ -73,11 +68,11 @@ msgstr ""
 "interactivas. En esta aplicación, usamos conceptos esenciales de React, "
 "incluyendo componentes, gestión de estado, props, manejo de eventos y estilo."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:17
+#: app/home/index.tsx:17
 msgid "The importance of a Todo List application"
 msgstr "La importancia de una aplicación de Lista de Tareas"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:21
+#: app/home/index.tsx:21
 msgid ""
 "A Todo List app serves as an ideal project to grasp the fundamentals of a "
 "new programming language or framework quickly. It provides a practical "
@@ -89,27 +84,27 @@ msgstr ""
 "rápidamente. Proporciona un contexto práctico para aprender conceptos "
 "esenciales mientras se trabaja hacia un resultado tangible."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:26
+#: app/home/index.tsx:26
 msgid "The objective"
 msgstr "El objetivo"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:29
+#: app/home/index.tsx:29
 msgid "The goal is to create a simple Todo List application with features."
 msgstr ""
 "El objetivo es crear una sencilla aplicación de Lista de Tareas con "
 "funciones."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:32
+#: app/home/index.tsx:32
 msgid "Here's what we'll be aiming for:"
 msgstr "Esto es lo que pretendemos:"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:35
+#: app/home/index.tsx:35
 msgid "Adding New Todos: Enable users to add new tasks to the list."
 msgstr ""
 "Añadir nuevas tareas: Permitir a los usuarios añadir nuevas tareas a la "
 "lista."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:40
+#: app/home/index.tsx:40
 msgid ""
 "Editing and Deleting Todos: Provide functionality to modify or remove "
 "existing tasks."
@@ -117,18 +112,18 @@ msgstr ""
 "Editar y eliminar tareas: Proporcionar funcionalidad para modificar o "
 "eliminar tareas existentes."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/home/index.tsx:46
+#: app/home/index.tsx:46
 msgid ""
 "Marking Todos as Completed: Allow users to indicate when tasks are finished."
 msgstr ""
 "Marcar las tareas como completados: Permitir a los usuarios indicar cuando "
 "las tareas están terminadas."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:8
+#: app/about/index.tsx:8
 msgid "Aron Elias HERRERA PONTE"
 msgstr "Aron Elias HERRERA PONTE"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:11
+#: app/about/index.tsx:11
 msgid ""
 "Lead developer with over 10 years' experience, specializing in frontend "
 "development with ReactJS: Web and Mobile."
@@ -136,7 +131,7 @@ msgstr ""
 "Desarrollador principal con más de 10 años de experiencia, especializado en "
 "frontend desarrollo con ReactJS: Web y móvil."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:17
+#: app/about/index.tsx:17
 msgid ""
 "As a senior developer my main objective is to design, develop and maintain "
 "web applications. Implement new web technologies that will make the product "
@@ -150,187 +145,178 @@ msgstr ""
 "de usabilidad. Construir interfaces y experiencias de usuario rápidas, "
 "intuitivas y potentes resolviendo complejos retos técnicos subyacentes."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:22
+#: app/about/index.tsx:22
 msgid "Coordinates"
 msgstr "Coordenadas"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:25
+#: app/about/index.tsx:25
 msgid "Paris - France"
 msgstr "Paris - Francia"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:30
+#: app/about/index.tsx:30
 msgid "Full LinkedIn profile"
 msgstr "Perfil completo en LinkedIn"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/about/index.tsx:45
+#: app/about/index.tsx:45
 msgid "Social networks"
 msgstr "Redes sociales"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:29
+#: app/todos/Form/index.tsx:29
 msgid "Done"
 msgstr "Hecho"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:30
+#: app/todos/Form/index.tsx:30
 msgid "To do"
 msgstr "A hacer"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:53
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/index.tsx:35
+#: app/todos/Form/index.tsx:53 app/todos/List/index.tsx:35
 msgid "Todo"
 msgstr "Tarea"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:59
+#: app/todos/Form/index.tsx:59
 msgid "Created at:"
 msgstr "Creado en:"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:62
+#: app/todos/Form/index.tsx:62
 msgid "Updated at:"
 msgstr "Actualizado en:"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:69
+#: app/todos/Form/index.tsx:69
 msgid "Name"
 msgstr "Nombre"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:75
+#: app/todos/Form/index.tsx:75
 msgid "Enter a name"
 msgstr "Escriba un nombre"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:80
+#: app/todos/Form/index.tsx:80
 msgid "Is Done?"
 msgstr "¿Está hecho?"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:86
+#: app/todos/Form/index.tsx:86
 msgid "Select an element"
 msgstr "Seleccione un elemento"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:90
+#: app/todos/Form/index.tsx:90
 msgid "Save"
 msgstr "Guardar"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Update.tsx:34
+#: app/todos/Form/Update.tsx:34
 msgid "Fetching todo..."
 msgstr "Buscando tarea..."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Update.tsx:46
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:29
+#: app/todos/Form/Update.tsx:46 app/todos/Form/Create.tsx:29
 msgid "Saving..."
 msgstr "Guardando..."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Update.tsx:61
+#: app/todos/Form/Update.tsx:61
 msgid "The update action has been completed successfully."
 msgstr "La acción de actualización se ha completado con éxito."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Update.tsx:69
+#: app/todos/Form/Update.tsx:69
 msgid "Update Todo"
 msgstr "Actualizar Tarea"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Update.tsx:70
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:52
+#: app/todos/Form/Update.tsx:70 app/todos/Form/Create.tsx:52
 msgid "Back to Home page"
 msgstr "Ir a la página de inicio"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:43
+#: app/todos/Form/Create.tsx:43
 msgid "The create action has been completed successfully."
 msgstr "La acción de crear se ha completado con éxito."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:51
+#: app/todos/Form/Create.tsx:51
 msgid "Create Todo"
 msgstr "Crear Tarea"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/index.tsx:41
+#: app/todos/List/index.tsx:41
 msgid "Add"
 msgstr "Añadir"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/ListSpec.tsx:45
+#: app/todos/List/ListSpec.tsx:45
 msgid "ID"
 msgstr "ID"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/ListSpec.tsx:49
+#: app/todos/List/ListSpec.tsx:49
 msgid "NAME"
 msgstr "NOMBRE"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/ListSpec.tsx:55
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/components/Card.tsx:36
+#: app/todos/List/ListSpec.tsx:55 app/todos/List/components/Card.tsx:36
 msgid "IS DONE?"
 msgstr "¿ESTÁ HECHO?"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/ListSpec.tsx:60
+#: app/todos/List/ListSpec.tsx:60
 msgid "ACTION"
 msgstr "ACCIÓN"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/ListSpec.tsx:63
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/components/Dialog.tsx:18
+#: app/todos/List/ListSpec.tsx:63 app/todos/List/components/Dialog.tsx:18
 msgid "Delete Todo?"
 msgstr "¿Borrar Tarea?"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/ListSpec.tsx:64
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/components/Dialog.tsx:25
+#: app/todos/List/ListSpec.tsx:64 app/todos/List/components/Dialog.tsx:25
 msgid "Are you sure you want to delete this todo?"
 msgstr "¿Seguro que quieres borrar esta tarea?"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/ListSpec.tsx:66
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/components/Card.tsx:36
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/components/Dialog.tsx:22
+#: app/todos/List/ListSpec.tsx:66 app/todos/List/components/Card.tsx:36
+#: app/todos/List/components/Dialog.tsx:22
 msgid "No"
 msgstr "No"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/ListSpec.tsx:67
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/components/Card.tsx:36
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/components/Dialog.tsx:23
+#: app/todos/List/ListSpec.tsx:67 app/todos/List/components/Card.tsx:36
+#: app/todos/List/components/Dialog.tsx:23
 msgid "Yes"
 msgstr "Si"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/ListSpec.tsx:102
+#: app/todos/List/ListSpec.tsx:102
 msgid "The delete action has been completed successfully."
 msgstr "La acción de eliminación se ha completado correctamente."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/ListSpec.tsx:113
+#: app/todos/List/ListSpec.tsx:113
 msgid "Items per page"
 msgstr "Elementos por página"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/components/Card.tsx:25
+#: app/todos/List/components/Card.tsx:25
 msgid "Delete"
 msgstr "Borrar"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/ErrorBoundary/ErrorBoundaryUI.tsx:17
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:17
 msgid "Error"
 msgstr "Error"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/ErrorBoundary/ErrorBoundaryUI.tsx:20
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:20
 msgid "Whoops, something went wrong."
 msgstr "Ups, algo ha salido mal."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/ErrorBoundary/ErrorBoundaryUI.tsx:22
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:22
 msgid "Please either refresh the page or return home to try again."
 msgstr ""
 "Por favor, actualice la página o vuelva a la página de inicio para "
 "intentarlo de nuevo."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/ErrorBoundary/ErrorBoundaryUI.tsx:31
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:31
 msgid "Return to home"
 msgstr "Volver a la página de inicio"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:15
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:20
+#: common/Layout.tsx:15 common/Layout.tsx:20
 msgid "Todos"
 msgstr "Tareas"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:21
+#: common/Layout.tsx:21
 msgid "About me"
 msgstr "Acerca de mí"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/Layout.tsx:28
+#: common/Layout.tsx:28
 msgid "Loading..."
 msgstr "Cargando..."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/NoMatch.tsx:10
+#: common/NoMatch.tsx:10
 msgid "Page does not exist"
 msgstr "La página no existe"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/NoMatch.tsx:13
+#: common/NoMatch.tsx:13
 msgid "Nothing to see here!"
 msgstr "Aquí no hay nada que ver."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/NoMatch.tsx:15
+#: common/NoMatch.tsx:15
 msgid "Click here to go the Home page"
 msgstr "Haga clic aquí para ir a la página de inicio"

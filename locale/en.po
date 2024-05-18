@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-18 17:38+0200\n"
+"POT-Creation-Date: 2024-05-18 18:54+0200\n"
 "PO-Revision-Date: 2024-05-11 23:01+0200\n"
 "Last-Translator: Aron <aronherrera2009@gmail.com>\n"
 "Language-Team: English\n"
@@ -160,36 +160,44 @@ msgstr "Full LinkedIn profile"
 msgid "Social networks"
 msgstr "Social networks"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:28
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:29
 msgid "Done"
 msgstr "Done"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:29
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:30
 msgid "To do"
 msgstr "To do"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:52
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:53
 #: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/index.tsx:35
 msgid "Todo"
 msgstr "Todo"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:54
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:59
+msgid "Created at:"
+msgstr "Created at:"
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:62
+msgid "Updated at:"
+msgstr "Updated at:"
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:69
 msgid "Name"
 msgstr "Name"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:60
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:75
 msgid "Enter a name"
 msgstr "Enter a name"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:65
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:80
 msgid "Is Done?"
 msgstr "Is Done?"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:71
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:86
 msgid "Select an element"
 msgstr "Select an element"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:75
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:90
 msgid "Save"
 msgstr "Save"
 
@@ -211,15 +219,15 @@ msgid "Update Todo"
 msgstr "Update Todo"
 
 #: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Update.tsx:70
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:53
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:52
 msgid "Back to Home page"
 msgstr "Back to Home page"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:44
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:43
 msgid "The create action has been completed successfully."
 msgstr "The create action has been completed successfully."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:52
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:51
 msgid "Create Todo"
 msgstr "Create Todo"
 

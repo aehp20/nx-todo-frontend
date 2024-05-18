@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-18 17:38+0200\n"
+"POT-Creation-Date: 2024-05-18 18:54+0200\n"
 "PO-Revision-Date: 2024-05-11 23:02+0200\n"
 "Last-Translator: Aron <aronherrera2009@gmail.com>\n"
 "Language-Team: Spanish <es@tp.org.es>\n"
@@ -166,36 +166,44 @@ msgstr "Perfil completo en LinkedIn"
 msgid "Social networks"
 msgstr "Redes sociales"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:28
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:29
 msgid "Done"
 msgstr "Hecho"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:29
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:30
 msgid "To do"
 msgstr "A hacer"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:52
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:53
 #: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/List/index.tsx:35
 msgid "Todo"
 msgstr "Tarea"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:54
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:59
+msgid "Created at:"
+msgstr "Creado en:"
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:62
+msgid "Updated at:"
+msgstr "Actualizado en:"
+
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:69
 msgid "Name"
 msgstr "Nombre"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:60
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:75
 msgid "Enter a name"
 msgstr "Escriba un nombre"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:65
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:80
 msgid "Is Done?"
 msgstr "¿Está hecho?"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:71
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:86
 msgid "Select an element"
 msgstr "Seleccione un elemento"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:75
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/index.tsx:90
 msgid "Save"
 msgstr "Guardar"
 
@@ -217,15 +225,15 @@ msgid "Update Todo"
 msgstr "Actualizar Tarea"
 
 #: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Update.tsx:70
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:53
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:52
 msgid "Back to Home page"
 msgstr "Ir a la página de inicio"
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:44
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:43
 msgid "The create action has been completed successfully."
 msgstr "La acción de crear se ha completado con éxito."
 
-#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:52
+#: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/app/todos/Form/Create.tsx:51
 msgid "Create Todo"
 msgstr "Crear Tarea"
 
@@ -294,7 +302,9 @@ msgstr "Ups, algo ha salido mal."
 
 #: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/ErrorBoundary/ErrorBoundaryUI.tsx:22
 msgid "Please either refresh the page or return home to try again."
-msgstr "Por favor, actualice la página o vuelva a la página de inicio para intentarlo de nuevo."
+msgstr ""
+"Por favor, actualice la página o vuelva a la página de inicio para "
+"intentarlo de nuevo."
 
 #: /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/src/common/ErrorBoundary/ErrorBoundaryUI.tsx:31
 msgid "Return to home"

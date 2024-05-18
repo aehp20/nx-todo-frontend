@@ -51,7 +51,20 @@ export default function Form(props: FormProps) {
   return (
     <div className="flex flex-col gap-4 w-full">
       <Title>{_('Todo')}</Title>
-      {todo && <Card>Hello</Card>}
+      {todo && (
+        <div className="flex w-full md:w-1/2">
+          <Card>
+            <div className="flex flex-col gap-2">
+              <div>
+                {_('Created at:')} {todo.createdAtDateTimeFormat}
+              </div>
+              <div>
+                {_('Updated at:')} {todo.updatedAtDateTimeFormat}
+              </div>
+            </div>
+          </Card>
+        </div>
+      )}
       <div className="flex flex-col w-full md:w-1/2">
         <Label htmlFor="name">{_('Name')}</Label>
         <Input

@@ -37,7 +37,7 @@ export default function SearchBarSpec() {
       label: _('Search by status'),
       options,
       value: selectedOption,
-      placeholder: _('Select a launch type'),
+      placeholder: _('Select a status'),
     },
   ];
 

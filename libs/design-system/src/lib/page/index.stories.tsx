@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import type { Meta } from '@storybook/react';
 
 import BackLink from '../backLink';
+import { Button } from '../buttons';
 
 import Page, { PageProps } from '.';
 
@@ -20,6 +21,21 @@ export const LightPage = {
     return (
       <ThemeProvider theme={themes.light} enabledResetTheme>
         <Page title="Todo page">Content</Page>
+      </ThemeProvider>
+    );
+  },
+};
+
+const actions = <Button>Add</Button>;
+
+export const LightWithActions = {
+  args: {},
+  render: (props: PageProps) => {
+    return (
+      <ThemeProvider theme={themes.light} enabledResetTheme>
+        <Page title="Todo page" actions={actions}>
+          Content
+        </Page>
       </ThemeProvider>
     );
   },
@@ -49,6 +65,19 @@ export const DarkPage = {
     return (
       <ThemeProvider theme={themes.dark} enabledResetTheme>
         <Page title="Todo page">Content</Page>
+      </ThemeProvider>
+    );
+  },
+};
+
+export const DarkWithActions = {
+  args: {},
+  render: (props: PageProps) => {
+    return (
+      <ThemeProvider theme={themes.dark} enabledResetTheme>
+        <Page title="Todo page" actions={actions}>
+          Content
+        </Page>
       </ThemeProvider>
     );
   },

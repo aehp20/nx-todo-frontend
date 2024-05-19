@@ -32,14 +32,14 @@ export default function List() {
   }
 
   return (
-    <Page title={_('Todo')}>
-      <Button
-        icon={<PlusIcon />}
-        onClick={() => navigate('/create')}
-        className="mb-2"
-      >
-        {_('Add')}
-      </Button>
+    <Page
+      title={_('Todo')}
+      actions={
+        <Button icon={<PlusIcon />} onClick={() => navigate('/create')}>
+          {_('Add')}
+        </Button>
+      }
+    >
       <ListSpec items={data} />
     </Page>
   );

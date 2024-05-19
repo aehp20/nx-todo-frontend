@@ -15,12 +15,18 @@ export class HTTPClient {
     return this.config;
   }
 
-  getUrl(endpointPath: string): string {
-    return `${this.urlApp}${this.apiVersionPath}${endpointPath}`;
+  getUrl(endpointPath: string, params?: Record<string, string>): URL {
+    const url = new URL(`${this.urlApp}${this.apiVersionPath}${endpointPath}`);
+    const urlSearchParams = new URLSearchParams(params);
+    url.search = urlSearchParams.toString();
+    return url;
   }
 
-  async get<T>(endpointPath: string): Promise<T> {
-    return await fetch(this.getUrl(endpointPath), {
+  async get<T>(
+    endpointPath: string,
+    params?: Record<string, string>,
+  ): Promise<T> {
+    return await fetch(this.getUrl(endpointPath, params), {
       method: 'GET',
       headers: new Headers(this.config),
     }).then((res) => res.json());

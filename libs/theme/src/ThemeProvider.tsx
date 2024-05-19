@@ -72,7 +72,7 @@ export function ThemeProvider(props: ThemeProviderProps) {
   );
 }
 
-export function useTheme() {
+export function useThemeContext() {
   return useContext(ThemeContext);
 }
 

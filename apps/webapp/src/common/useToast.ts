@@ -1,9 +1,9 @@
-import { useTheme } from '@nx-todo-frontend/theme';
+import { useThemeContext } from '@nx-todo-frontend/theme';
 
 import { toast } from 'react-toastify';
 
 export function useToast() {
-  const { theme: originalTheme } = useTheme();
+  const { theme: originalTheme } = useThemeContext();
 
   const successToast = (message: string) => {
     toast.success(message, {

@@ -1,4 +1,8 @@
-import { ClassTransformerGroup, Todo } from '@nx-todo-frontend/models';
+import {
+  ClassTransformerGroup,
+  Todo,
+  TodoList,
+} from '@nx-todo-frontend/models';
 
 import { instanceToPlain } from 'class-transformer';
 
@@ -12,8 +16,8 @@ export class TodoClient {
     this.httpClient = httpClient;
   }
 
-  async get(): Promise<Todo[]> {
-    return await this.httpClient.get(this.endpointPath);
+  async get(params?: Record<string, string>): Promise<TodoList> {
+    return await this.httpClient.get(this.endpointPath, params);
   }
 
   async getTodo(id: number): Promise<Todo> {

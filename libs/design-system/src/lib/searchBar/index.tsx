@@ -8,6 +8,7 @@ import { FilterConfig, Query } from './types';
 
 export * from './types';
 export * from './utils/isOption';
+export * from './utils/isString';
 
 export type SearchBarProps = {
   updateQuery: (query: Query) => void;

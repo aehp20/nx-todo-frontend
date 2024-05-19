@@ -4,7 +4,7 @@ import {
   TrashIcon,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
-import { Todo } from '@nx-todo-frontend/models';
+import { Todo, TodoList } from '@nx-todo-frontend/models';
 import { useDeleteTodo } from '@nx-todo-frontend/query';
 
 import { useState } from 'react';
@@ -26,13 +26,13 @@ import { Card } from './Card';
 import { Dialog } from './Dialog';
 
 export type TableSpecProps = {
-  items?: Todo[];
+  data?: TodoList;
 };
 
 const columnHelper = createColumnHelper<Todo>();
 
 export default function TableSpec(props: TableSpecProps) {
-  const { items = [] } = props;
+  const { data } = props;
 
   const [sorting, setSorting] = useState<SortingState>([]);
 
@@ -78,7 +78,7 @@ export default function TableSpec(props: TableSpecProps) {
   ];
 
   const table = useReactTable({
-    data: items,
+    data: data?.items || [],
     columns,
     getCoreRowModel: getCoreRowModel(),
     state: {

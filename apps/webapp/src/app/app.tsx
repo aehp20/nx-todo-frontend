@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Layout = lazy(() => import('../common/Layout'));
 const Create = lazy(() => import('./todos/Form/Create'));
 const Update = lazy(() => import('./todos/Form/Update'));
-const List = lazy(() => import('./todos/List'));
+const ListTodo = lazy(() => import('./todos/List'));
 const Home = lazy(() => import('./home'));
 const About = lazy(() => import('./about'));
 const Settings = lazy(() => import('./settings'));
@@ -19,7 +19,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/todos" element={<List />} />
+          <Route path="/todos" element={<ListTodo />} />
           <Route path="/create" element={<Create />} />
           <Route path="/update/:id" element={<Update />} />
           <Route path="/settings" element={<Settings />} />

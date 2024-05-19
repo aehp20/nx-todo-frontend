@@ -28,5 +28,9 @@ export function APIProvider(props: APIProviderProps) {
 }
 
 export function useAPIContext() {
-  return useContext(APIContext);
+  const context = useContext(APIContext);
+  if (context === undefined) {
+    throw new Error('Context must be used within a Provider');
+  }
+  return context;
 }

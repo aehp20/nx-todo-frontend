@@ -1,9 +1,9 @@
 import { Dropdown, Label, Option } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
-import { themes, useTheme } from '@nx-todo-frontend/theme';
+import { themes, useThemeContext } from '@nx-todo-frontend/theme';
 
 export function ThemeField() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useThemeContext();
 
   const { _ } = useI18NContext();
 

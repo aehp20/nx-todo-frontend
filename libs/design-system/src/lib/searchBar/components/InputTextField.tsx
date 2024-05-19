@@ -21,7 +21,7 @@ export default function InputTextField(props: InputTextFieldProps) {
         id={name}
         value={value}
         placeholder={placeholder}
-        className="w-[250px]"
+        className="w-full md:w-[250px]"
         onChange={(e) => onChange(name, e.target.value)}
       />
     </div>

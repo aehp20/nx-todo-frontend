@@ -21,7 +21,7 @@ export default function DropdownField(props: DropdownFieldProps) {
         value={value}
         options={options}
         placeholder={placeholder}
-        customStyles={{ control: 'w-[250px]' }}
+        customStyles={{ control: 'w-full md:w-[250px]' }}
         isClearable
         onChange={(value) => onChange(name, value)}
       />

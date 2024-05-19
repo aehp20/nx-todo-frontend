@@ -21,7 +21,7 @@ const SearchBar = memo(function SearchBar(props: SearchBarProps) {
 
   return (
     <Card>
-      <div className="flex gap-2">
+      <div className="flex flex-col md:flex-row gap-2">
         {filtersConfig
           .map((filtersConfig, index) => (
             <FilterField

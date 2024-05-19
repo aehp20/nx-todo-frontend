@@ -2,7 +2,7 @@ import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 
 import classNames from 'classnames';
 
-import { flexRender, Row, Table as ITable } from '@tanstack/react-table';
+import { Table as ITable, Row, flexRender } from '@tanstack/react-table';
 
 import { ItemsPerPage } from './itemsPerPage';
 import Pagination from './pagination';
@@ -23,7 +23,7 @@ export default function Table<T>(props: TableProps<T>) {
   const borderColor = `border-${styles[BORDER_COLOR]}`;
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-4">
       <div className="md:hidden flex flex-col gap-2">
         {table.getRowModel().rows.map((row, index) => {
           return <ComponentOnList key={index} row={row} />;
@@ -79,7 +79,7 @@ export default function Table<T>(props: TableProps<T>) {
           ))}
         </tbody>
       </table>
-      <div className="flex flex-col md:flex-row mt-2 gap-2">
+      <div className="flex flex-col md:flex-row gap-2">
         <ItemsPerPage
           pageSize={table.getState().pagination.pageSize}
           setPageSize={table.setPageSize}

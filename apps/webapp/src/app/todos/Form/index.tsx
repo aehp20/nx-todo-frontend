@@ -1,6 +1,5 @@
 import {
   Button,
-  Card,
   Dropdown,
   Input,
   Label,
@@ -12,16 +11,19 @@ import { Todo } from '@nx-todo-frontend/models';
 
 import { useCallback, useEffect, useState } from 'react';
 
+import { Summary } from './components/Summary';
+
 type FormProps = {
   onSubmit: (todo: Todo) => void;
   todo?: Todo;
+  isNew?: boolean;
 };
 
 export default function Form(props: FormProps) {
-  const { onSubmit, todo } = props;
+  const { onSubmit, todo, isNew } = props;
 
   const [name, setName] = useState(todo ? todo.name : '');
-  const [isDone, setIsDone] = useState(todo ? todo.isDone : false);
+  const [isDone, setIsDone] = useState(todo ? todo.isDone : undefined);
 
   const { _ } = useI18NContext();
 
@@ -51,18 +53,9 @@ export default function Form(props: FormProps) {
   return (
     <div className="flex flex-col gap-4 w-full">
       <Title>{_('Todo')}</Title>
-      {todo && (
+      {!isNew && (
         <div className="flex w-full md:w-1/2">
-          <Card>
-            <div className="flex flex-col gap-2">
-              <div>
-                {_('Created at:')} {todo.createdAtDateTimeFormat}
-              </div>
-              <div>
-                {_('Updated at:')} {todo.updatedAtDateTimeFormat}
-              </div>
-            </div>
-          </Card>
+          <Summary todo={todo} />
         </div>
       )}
       <div className="flex flex-col w-full md:w-1/2">

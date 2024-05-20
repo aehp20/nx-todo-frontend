@@ -16,13 +16,16 @@ export class TodoClient {
     this.httpClient = httpClient;
   }
 
-  async get(params?: Record<string, string>): Promise<TodoList> {
-    return await this.httpClient.get(this.endpointPath, params);
+  async get(
+    signal: AbortSignal,
+    params?: Record<string, string>,
+  ): Promise<TodoList> {
+    return await this.httpClient.get(this.endpointPath, signal, params);
   }
 
-  async getTodo(id: number): Promise<Todo> {
+  async getTodo(signal: AbortSignal, id: number): Promise<Todo> {
     const endpointPath = `${this.endpointPath}/${id}`;
-    return await this.httpClient.get(endpointPath);
+    return await this.httpClient.get(endpointPath, signal);
   }
 
   post(todo: Todo): Promise<Response> {

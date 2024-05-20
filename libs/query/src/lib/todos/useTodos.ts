@@ -12,7 +12,8 @@ export function useTodos(params?: Record<string, string>) {
   const { locale } = useI18NContext();
   return useQuery({
     queryKey: todoKeys.byParams(params),
-    queryFn: () => api.todo.get(params),
+    queryFn: ({ signal }) => api.todo.get(signal, params),
+    enabled: !!params,
     select: (data): TodoList => {
       const todoList: TodoList = {
         items: data.items.map((item) => new Todo(item, locale)),

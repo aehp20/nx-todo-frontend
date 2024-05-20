@@ -1,5 +1,6 @@
 import {
   Confirmation,
+  Loading,
   Table,
   TrashIcon,
 } from '@nx-todo-frontend/design-system';
@@ -27,12 +28,13 @@ import { Dialog } from './Dialog';
 
 export type TableSpecProps = {
   data?: TodoList;
+  isLoading: boolean;
 };
 
 const columnHelper = createColumnHelper<Todo>();
 
 export default function TableSpec(props: TableSpecProps) {
-  const { data } = props;
+  const { data, isLoading } = props;
 
   const [sorting, setSorting] = useState<SortingState>([]);
 
@@ -107,11 +109,14 @@ export default function TableSpec(props: TableSpecProps) {
   const ComponentOnList = generateComponentOnList(handleDelete);
 
   return (
-    <Table
-      table={table}
-      ComponentOnList={ComponentOnList}
-      labelItemsPerPage={_('Items per page')}
-    />
+    <div className="relative">
+      {isLoading && <Loading />}
+      <Table
+        table={table}
+        ComponentOnList={ComponentOnList}
+        labelItemsPerPage={_('Items per page')}
+      />
+    </div>
   );
 }
 

@@ -5,25 +5,16 @@ import {
   SpinnerIcon,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
-import { Todo } from '@nx-todo-frontend/models';
-import { useCreateTodo } from '@nx-todo-frontend/query';
-
-import { useNavigate } from 'react-router-dom';
-
-import { useToast } from '../../../common/useToast';
 
 import Form from '.';
+import { useCreate } from './hooks/useCreate';
 
 export default function Create() {
-  const navigate = useNavigate();
-
   const { _ } = useI18NContext();
 
-  const { successToast } = useToast();
+  const { submitData, isSubmitting, errorOnSubmit } = useCreate();
 
-  const mutation = useCreateTodo();
-
-  if (mutation.isLoading) {
+  if (isSubmitting) {
     return (
       <div className="flex justify-center my-2">
         <SpinnerIcon /> {_('Saving...')}
@@ -31,27 +22,16 @@ export default function Create() {
     );
   }
 
-  if (mutation.isError) {
-    return <Error error={mutation.error.message} className="m-2" />;
+  if (errorOnSubmit) {
+    return <Error error={errorOnSubmit.message} className="m-2" />;
   }
-
-  const submitData = (todo: Todo) => {
-    mutation.mutate(todo, {
-      onSuccess: ({ ok }) => {
-        if (ok) {
-          navigate('/todos');
-          successToast(_('The create action has been completed successfully.'));
-        }
-      },
-    });
-  };
 
   return (
     <Page
       title={_('Create Todo')}
       backLink={<BackLink to="/todos" content={_('Back to Home page')} />}
     >
-      <Form onSubmit={submitData} />
+      <Form onSubmit={submitData} isNew />
     </Page>
   );
 }

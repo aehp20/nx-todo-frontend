@@ -18,6 +18,7 @@ const filtersConfig: FilterConfig[] = [
     label: 'Name',
     value: undefined,
     placeholder: 'Enter a name',
+    autoFocus: true,
   },
   {
     name: 'launchType',

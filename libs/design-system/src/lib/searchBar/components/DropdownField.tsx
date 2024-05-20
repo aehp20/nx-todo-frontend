@@ -7,11 +7,13 @@ export type DropdownFieldProps = {
   value?: Option;
   options: Option[] | undefined;
   placeholder?: string;
+  autoFocus?: boolean;
   onChange: (name: string, value: Option) => void;
 };
 
 export default function DropdownField(props: DropdownFieldProps) {
-  const { name, label, value, options, placeholder, onChange } = props;
+  const { name, label, value, options, placeholder, autoFocus, onChange } =
+    props;
 
   return (
     <div key={name} className="flex flex-col">
@@ -21,6 +23,7 @@ export default function DropdownField(props: DropdownFieldProps) {
         value={value}
         options={options}
         placeholder={placeholder}
+        autoFocus={autoFocus}
         customStyles={{ control: 'w-full md:w-[250px]' }}
         isClearable
         onChange={(value) => onChange(name, value)}

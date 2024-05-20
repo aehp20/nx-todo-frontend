@@ -7,11 +7,25 @@ export type InputTextFieldProps = {
   label: string;
   value: string;
   placeholder?: string;
+  autoFocus?: boolean;
   onChange: (name: string, value: string) => void;
 };
 
 export default function InputTextField(props: InputTextFieldProps) {
-  const { type = 'text', name, label, value, placeholder, onChange } = props;
+  const {
+    type = 'text',
+    name,
+    label,
+    value,
+    placeholder,
+    autoFocus,
+    onChange,
+  } = props;
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    onChange(name, event.target.value);
+  };
 
   return (
     <div className="flex flex-col">
@@ -21,8 +35,9 @@ export default function InputTextField(props: InputTextFieldProps) {
         id={name}
         value={value}
         placeholder={placeholder}
+        autoFocus={autoFocus}
         className="w-full md:w-[250px]"
-        onChange={(e) => onChange(name, e.target.value)}
+        onChange={handleChange}
       />
     </div>
   );

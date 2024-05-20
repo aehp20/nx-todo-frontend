@@ -14,7 +14,7 @@ export function useTodo(id: number) {
   const { locale } = useI18NContext();
   return useQuery({
     queryKey: todoKeys.byId(id),
-    queryFn: () => api.todo.getTodo(id),
+    queryFn: ({ signal }) => api.todo.getTodo(signal, id),
     enabled: !!id,
     select: (data): Todo =>
       instanceToInstance(new Todo(data, locale), {

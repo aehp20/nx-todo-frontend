@@ -8,6 +8,7 @@ export * from './lib/icons';
 export { default as Input } from './lib/inputs';
 export { default as Label } from './lib/labels';
 export { default as Link } from './lib/links';
+export { default as Loading } from './lib/loading';
 export * from './lib/messages';
 export { default as NavBar } from './lib/navBar';
 export { default as Page } from './lib/page';

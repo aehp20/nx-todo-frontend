@@ -3,7 +3,7 @@ import { useI18NContext } from '@nx-todo-frontend/i18n';
 
 import { useNavigate } from 'react-router-dom';
 
-export function useActions() {
+export function Actions() {
   const navigate = useNavigate();
 
   const { _ } = useI18NContext();

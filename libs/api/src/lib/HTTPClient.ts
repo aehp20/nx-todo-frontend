@@ -24,11 +24,13 @@ export class HTTPClient {
 
   async get<T>(
     endpointPath: string,
+    signal: AbortSignal,
     params?: Record<string, string>,
   ): Promise<T> {
     return await fetch(this.getUrl(endpointPath, params), {
       method: 'GET',
       headers: new Headers(this.config),
+      signal,
     }).then((res) => res.json());
   }
 

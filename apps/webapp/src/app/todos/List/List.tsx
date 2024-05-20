@@ -1,33 +1,26 @@
-import { Error, Page, SpinnerIcon } from '@nx-todo-frontend/design-system';
-import { useTodos } from '@nx-todo-frontend/query';
+import { Page } from '@nx-todo-frontend/design-system';
 
-import { useActions } from './hooks/useActions';
-import { useTitle } from './hooks/useTitle';
-import { useListContext } from './ListProvider';
+import { Actions } from './components/Actions';
+import { useList } from './hooks/useList';
 import ListSpec from './ListSpec';
 
+// TODO: custom message error to work with the backend side to make error
 export default function List() {
-  const { query } = useListContext();
-
-  const { data, error, isLoading } = useTodos(query);
-  const title = useTitle(data);
-  const actions = useActions();
-
-  if (isLoading) {
-    return (
-      <div className="flex justify-center my-2">
-        <SpinnerIcon />
-      </div>
-    );
-  }
+  const { data, error, isLoading, title } = useList();
+  const actions = <Actions />;
 
   if (error) {
-    return <Error error={error} className="m-2" />;
+    // TODO
+    // Throw an error to see the ErrorBoundary component
+    // Update the ErrorBoundary component to display the error details
+    console.log('TODO LIST error', error);
+    // TODO inspect the error content in order to be used in the constructor
+    throw new Error('An error has occurred in Todo List');
   }
 
   return (
     <Page title={title} actions={actions}>
-      <ListSpec data={data} />
+      <ListSpec data={data} isLoading={isLoading} />
     </Page>
   );
 }

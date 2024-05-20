@@ -13,7 +13,7 @@ type FilterFieldProps = {
 export function FilterField(props: FilterFieldProps) {
   const { filtersConfig, handleChange, query } = props;
 
-  const { type, label, name, options, placeholder } = filtersConfig;
+  const { type, label, name, options, placeholder, autoFocus } = filtersConfig;
 
   if (type === 'search') {
     const value = query ? query[name] || '' : '';
@@ -25,6 +25,7 @@ export function FilterField(props: FilterFieldProps) {
         label={label}
         value={value as string}
         placeholder={placeholder}
+        autoFocus={autoFocus}
         onChange={handleChange}
       />
     );
@@ -38,6 +39,7 @@ export function FilterField(props: FilterFieldProps) {
         value={value as Option}
         options={options}
         placeholder={placeholder}
+        autoFocus={autoFocus}
         onChange={handleChange}
       />
     );

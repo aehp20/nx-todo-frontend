@@ -30,7 +30,7 @@ export function Card(props: CardProps) {
     <CardWithActions actions={actions}>
       <div className="flex flex-col gap-2">
         <div className="font-bold">
-          <Link to={`/update/${id}`}>{name}</Link>
+          <Link to={`/todos/update/${id}`}>{name}</Link>
         </div>
         <div>
           {id} - {_('IS DONE?')} {isDone ? _('Yes') : _('No')}

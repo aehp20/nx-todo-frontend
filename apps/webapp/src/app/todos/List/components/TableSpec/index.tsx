@@ -50,7 +50,9 @@ export default function TableSpec(props: TableSpecProps) {
     columnHelper.accessor('name', {
       header: () => _('NAME'),
       cell: (info) => (
-        <Link to={`/update/${info.row.original.id}`}>{info.getValue()}</Link>
+        <Link to={`/todos/update/${info.row.original.id}`}>
+          {info.getValue()}
+        </Link>
       ),
     }),
     columnHelper.accessor('isDoneStringFormat', {

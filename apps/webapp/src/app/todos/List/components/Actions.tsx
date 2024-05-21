@@ -9,7 +9,7 @@ export function Actions() {
   const { _ } = useI18NContext();
 
   const actions = (
-    <Button icon={<PlusIcon />} onClick={() => navigate('/create')}>
+    <Button icon={<PlusIcon />} onClick={() => navigate('/todos/create')}>
       {_('Add')}
     </Button>
   );

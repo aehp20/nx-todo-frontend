@@ -20,8 +20,8 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/todos" element={<ListTodo />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/update/:id" element={<Update />} />
+          <Route path="/todos/create" element={<Create />} />
+          <Route path="/todos/update/:id" element={<Update />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NoMatch />} />

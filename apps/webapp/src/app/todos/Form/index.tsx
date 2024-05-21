@@ -4,6 +4,7 @@ import {
   Input,
   Label,
   Option,
+  SpinnerIcon,
   Title,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
@@ -17,10 +18,11 @@ type FormProps = {
   onSubmit: (todo: Todo) => void;
   todo?: Todo;
   isNew?: boolean;
+  isSubmitting: boolean;
 };
 
 export default function Form(props: FormProps) {
-  const { onSubmit, todo, isNew } = props;
+  const { onSubmit, todo, isNew, isSubmitting } = props;
 
   const [name, setName] = useState(todo ? todo.name : '');
   const [isDone, setIsDone] = useState(todo ? todo.isDone : undefined);
@@ -39,16 +41,19 @@ export default function Form(props: FormProps) {
     }
   };
 
-  const handleClick = useCallback(() => {
-    onSubmit(new Todo({ name, isDone }));
-  }, [onSubmit, name, isDone]);
+  const handleClick = useCallback(
+    (_event: React.MouseEvent) => {
+      onSubmit(new Todo({ name, isDone }));
+    },
+    [onSubmit, name, isDone],
+  );
 
   useEffect(() => {
-    if (todo) {
+    if (todo && !isSubmitting) {
       setName(todo.name);
       setIsDone(todo.isDone);
     }
-  }, [todo]);
+  }, [todo, isSubmitting]);
 
   return (
     <div className="flex flex-col gap-4 w-full">
@@ -67,6 +72,7 @@ export default function Form(props: FormProps) {
           onChange={(e) => setName(e.target.value)}
           placeholder={_('Enter a name')}
           autoFocus
+          disabled={isSubmitting}
         />
       </div>
       <div className="flex flex-col w-full md:w-1/2">
@@ -77,10 +83,17 @@ export default function Form(props: FormProps) {
           options={options}
           onChange={handleChange}
           placeholder={_('Select an element')}
+          isDisabled={isSubmitting}
         />
       </div>
       <div>
-        <Button onClick={handleClick}>{_('Save')}</Button>
+        <Button
+          icon={isSubmitting ? <SpinnerIcon className="w-6 h-6" /> : undefined}
+          disabled={isSubmitting}
+          onClick={handleClick}
+        >
+          {_('Save')}
+        </Button>
       </div>
     </div>
   );

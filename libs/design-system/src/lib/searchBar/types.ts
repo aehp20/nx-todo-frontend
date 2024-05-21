@@ -17,4 +17,5 @@ export type FilterConfig = {
   options?: Option[];
   placeholder?: string;
   autoFocus?: boolean;
+  disabled?: boolean;
 };

@@ -3,7 +3,6 @@ import {
   Error,
   Loading,
   Page,
-  SpinnerIcon,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 
@@ -24,19 +23,15 @@ export default function Update() {
 
   if (errorOnLoad) {
     // TODO
+    console.log('errorOnLoad', errorOnLoad);
     // Throw an error to be catched by our ErrorBoundary component
     return <Error error={errorOnLoad.message} className="m-2" />;
   }
 
-  if (isSubmitting) {
-    return (
-      <div className="flex justify-center my-2">
-        <SpinnerIcon /> {_('Saving...')}
-      </div>
-    );
-  }
-
   if (errorOnSubmit) {
+    // TODO
+    console.log('errorOnSubmit', errorOnSubmit);
+    // Throw an error to be catched by our ErrorBoundary component
     return <Error error={errorOnSubmit.message} className="m-2" />;
   }
 
@@ -47,7 +42,7 @@ export default function Update() {
     >
       <div className="relative">
         {isLoading && <Loading />}
-        <Form todo={todo} onSubmit={submitData} />
+        <Form todo={todo} onSubmit={submitData} isSubmitting={isSubmitting} />
       </div>
     </Page>
   );

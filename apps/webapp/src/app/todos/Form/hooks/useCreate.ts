@@ -28,7 +28,7 @@ export function useCreate() {
 
   return {
     submitData,
-    isSubmitting: mutation.isLoading,
+    isSubmitting: mutation.isPending,
     errorOnSubmit: mutation.error,
   };
 }

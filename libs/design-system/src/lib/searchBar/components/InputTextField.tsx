@@ -9,6 +9,7 @@ export type InputTextFieldProps = {
   placeholder?: string;
   autoFocus?: boolean;
   onChange: (name: string, value: string) => void;
+  disabled?: boolean;
 };
 
 export default function InputTextField(props: InputTextFieldProps) {
@@ -20,6 +21,7 @@ export default function InputTextField(props: InputTextFieldProps) {
     placeholder,
     autoFocus,
     onChange,
+    disabled,
   } = props;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -38,6 +40,7 @@ export default function InputTextField(props: InputTextFieldProps) {
         autoFocus={autoFocus}
         className="w-full md:w-[250px]"
         onChange={handleChange}
+        disabled={disabled}
       />
     </div>
   );

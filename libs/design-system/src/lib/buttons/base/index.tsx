@@ -6,6 +6,7 @@ import { ReactNode } from 'react';
 import '../../../styles.css';
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  type?: string;
   action?: 'primary' | 'secondary';
   disabled?: boolean;
   children?: ReactNode;
@@ -15,6 +16,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 
 export default function Button(props: ButtonProps) {
   const {
+    type = 'button',
     action = 'primary',
     children,
     disabled = false,
@@ -97,6 +99,7 @@ export default function Button(props: ButtonProps) {
   return (
     <button
       {...props}
+      type={type}
       disabled={disabled}
       className={classNames(
         'h-[42px] rounded-lg px-2 py-1 border hover:duration-750',

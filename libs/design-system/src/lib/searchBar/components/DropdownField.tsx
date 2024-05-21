@@ -9,11 +9,20 @@ export type DropdownFieldProps = {
   placeholder?: string;
   autoFocus?: boolean;
   onChange: (name: string, value: Option) => void;
+  disabled?: boolean;
 };
 
 export default function DropdownField(props: DropdownFieldProps) {
-  const { name, label, value, options, placeholder, autoFocus, onChange } =
-    props;
+  const {
+    name,
+    label,
+    value,
+    options,
+    placeholder,
+    autoFocus,
+    onChange,
+    disabled,
+  } = props;
 
   return (
     <div key={name} className="flex flex-col">
@@ -27,6 +36,7 @@ export default function DropdownField(props: DropdownFieldProps) {
         customStyles={{ control: 'w-full md:w-[250px]' }}
         isClearable
         onChange={(value) => onChange(name, value)}
+        isDisabled={disabled}
       />
     </div>
   );

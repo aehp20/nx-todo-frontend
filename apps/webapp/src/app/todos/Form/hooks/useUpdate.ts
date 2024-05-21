@@ -3,7 +3,7 @@ import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { Todo } from '@nx-todo-frontend/models';
 import { todoKeys, useTodo, useUpdateTodo } from '@nx-todo-frontend/query';
 
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useQueryClient } from '@tanstack/react-query';
@@ -31,7 +31,7 @@ export function useUpdate() {
     };
   }, []);
 
-  const submitData = (todo: Todo) => {
+  const submitData = useCallback((todo: Todo) => {
     todo.id = id;
     mutation.mutate(todo, {
       onSuccess: ({ ok }) => {
@@ -44,13 +44,13 @@ export function useUpdate() {
         }
       },
     });
-  };
+  }, []);
 
   return {
     todo,
     isLoading,
     errorOnLoad,
-    isSubmitting: mutation.isLoading,
+    isSubmitting: mutation.isPending,
     errorOnSubmit: mutation.error,
     submitData,
   };

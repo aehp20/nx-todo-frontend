@@ -10,7 +10,13 @@ import { useI18NContext } from '@nx-todo-frontend/i18n';
 
 import { useListContext } from '../../ListProvider';
 
-export default function SearchBarSpec() {
+type SearchBarSpecProps = {
+  isLoading: boolean;
+};
+
+export default function SearchBarSpec(props: SearchBarSpecProps) {
+  const { isLoading } = props;
+
   const { query, setQuery } = useListContext();
 
   const { _ } = useI18NContext();
@@ -31,6 +37,7 @@ export default function SearchBarSpec() {
       value: query?.name,
       placeholder: _('Enter a name'),
       autoFocus: true,
+      disabled: isLoading,
     },
     {
       name: 'isDone',
@@ -39,6 +46,7 @@ export default function SearchBarSpec() {
       options,
       value: selectedOption,
       placeholder: _('Select a status'),
+      disabled: isLoading,
     },
   ];
 

@@ -13,7 +13,8 @@ type FilterFieldProps = {
 export function FilterField(props: FilterFieldProps) {
   const { filtersConfig, handleChange, query } = props;
 
-  const { type, label, name, options, placeholder, autoFocus } = filtersConfig;
+  const { type, label, name, options, placeholder, autoFocus, disabled } =
+    filtersConfig;
 
   if (type === 'search') {
     const value = query ? query[name] || '' : '';
@@ -27,6 +28,7 @@ export function FilterField(props: FilterFieldProps) {
         placeholder={placeholder}
         autoFocus={autoFocus}
         onChange={handleChange}
+        disabled={disabled}
       />
     );
   } else if (type === 'dropdown') {
@@ -41,6 +43,7 @@ export function FilterField(props: FilterFieldProps) {
         placeholder={placeholder}
         autoFocus={autoFocus}
         onChange={handleChange}
+        disabled={disabled}
       />
     );
   }

@@ -1,9 +1,4 @@
-import {
-  BackLink,
-  Error,
-  Page,
-  SpinnerIcon,
-} from '@nx-todo-frontend/design-system';
+import { BackLink, Error, Page } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 
 import Form from '.';
@@ -14,14 +9,6 @@ export default function Create() {
 
   const { submitData, isSubmitting, errorOnSubmit } = useCreate();
 
-  if (isSubmitting) {
-    return (
-      <div className="flex justify-center my-2">
-        <SpinnerIcon /> {_('Saving...')}
-      </div>
-    );
-  }
-
   if (errorOnSubmit) {
     return <Error error={errorOnSubmit.message} className="m-2" />;
   }
@@ -31,7 +18,7 @@ export default function Create() {
       title={_('Create Todo')}
       backLink={<BackLink to="/todos" content={_('Back to Home page')} />}
     >
-      <Form onSubmit={submitData} isNew />
+      <Form onSubmit={submitData} isSubmitting={isSubmitting} isNew />
     </Page>
   );
 }

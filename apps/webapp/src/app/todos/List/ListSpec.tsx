@@ -13,7 +13,7 @@ export default function ListSpec(props: ListSpecProps) {
 
   return (
     <div className="flex flex-col gap-4">
-      <SearchBarSpec isLoading={isLoading} />
+      <SearchBarSpec />
       <TableSpec data={data} isLoading={isLoading} />
     </div>
   );

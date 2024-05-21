@@ -122,6 +122,7 @@ const gridSafelist = [
 ];
 const dropdownSafelist = [
   'w-[250px]',
+  'bg-gray-300',
 ];
 const safelist = [
   ...toggleSafelist,

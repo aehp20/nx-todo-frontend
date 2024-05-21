@@ -70,10 +70,23 @@ export const LightDropdown = {
             noOptionsMessage="No options"
           />
           <Dropdown
+            options={simpleOptions}
+            onChange={handleChange}
+            noOptionsMessage="No options"
+            isDisabled
+          />
+          <Dropdown
             options={multipleOptions}
             isMulti
             onChange={handleChange}
             noOptionsMessage="No options"
+          />
+          <Dropdown
+            options={multipleOptions}
+            isMulti
+            onChange={handleChange}
+            noOptionsMessage="No options"
+            isDisabled
           />
         </div>
       </ThemeProvider>

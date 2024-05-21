@@ -68,15 +68,24 @@ export function Dropdown({
   onChange,
   customStyles,
   noOptionsMessage,
+  isDisabled,
   ...props
 }: DropdownProps) {
   const { styles, stylesPropertiesName } = useThemeStyles(
     componentsName.dropdown,
   );
 
-  const { BG_COLOR, BORDER_COLOR, BORDER_COLOR_HOVER } = stylesPropertiesName;
+  const {
+    BG_COLOR,
+    BG_COLOR_HOVER,
+    BG_COLOR_DISABLED,
+    BORDER_COLOR,
+    BORDER_COLOR_HOVER,
+  } = stylesPropertiesName;
 
   const bgColor = `bg-${styles[BG_COLOR]}`;
+  const bgColorHover = `hover:bg-${styles[BG_COLOR_HOVER]}`;
+  const bgColorDisabled = `bg-${styles[BG_COLOR_DISABLED]}`;
   const borderColor = `border-${styles[BORDER_COLOR]}`;
   const borderColorHover = `hover:border-${styles[BORDER_COLOR_HOVER]}`;
   const placeholderColor = `text-${styles[BORDER_COLOR]}`;
@@ -90,7 +99,9 @@ export function Dropdown({
 
   const placeholderStyles = `${placeholderColor} pl-1 py-0.5`;
   const controlStyles = {
-    base: `border rounded-lg ${bgColor} hover:cursor-pointer ${customStyles?.control}`,
+    base: `border rounded-lg ${
+      isDisabled ? bgColorDisabled : bgColor
+    } ${bgColorHover} hover:cursor-pointer ${customStyles?.control}`,
     focus: 'border-blue-500',
     nonFocus: `${borderColor} ${borderColorHover}`,
   };
@@ -111,6 +122,7 @@ export function Dropdown({
       closeMenuOnSelect={false}
       hideSelectedOptions={false}
       noOptionsMessage={() => noOptionsMessage || 'No more options'}
+      isDisabled={isDisabled}
       unstyled
       styles={{
         input: (base) => ({

@@ -1,15 +1,12 @@
 import { useI18NContext } from '@nx-todo-frontend/i18n';
-import { TodoList } from '@nx-todo-frontend/models';
+import { PaginationResponse, Todo } from '@nx-todo-frontend/models';
 
-export function useTitle(data?: TodoList) {
+export function useTitle(paginationResponse?: PaginationResponse<Todo>) {
   const { _ } = useI18NContext();
 
-  return data?.allCount
+  return paginationResponse?.meta
     ? _('Todos ({count})', {
-        count:
-          data.allCount === data.filteredCount
-            ? data.allCount
-            : `${data.filteredCount}/${data.allCount}`,
+        count: paginationResponse.meta.totalItems,
       })
     : _('Todos');
 }

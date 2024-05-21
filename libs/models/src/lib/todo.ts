@@ -9,11 +9,13 @@ export enum ClassTransformerGroup {
 
 export class Todo {
   @Expose({
+    name: 'id',
     groups: [ClassTransformerGroup.MAIN, ClassTransformerGroup.UPDATE],
   })
   public id: number;
 
   @Expose({
+    name: 'name',
     groups: [
       ClassTransformerGroup.MAIN,
       ClassTransformerGroup.UPDATE,
@@ -23,6 +25,7 @@ export class Todo {
   public name: string;
 
   @Expose({
+    name: 'is_done',
     groups: [
       ClassTransformerGroup.MAIN,
       ClassTransformerGroup.UPDATE,
@@ -31,10 +34,10 @@ export class Todo {
   })
   public isDone: boolean;
 
-  @Expose({ groups: [ClassTransformerGroup.MAIN] })
+  @Expose({ name: 'created_at', groups: [ClassTransformerGroup.MAIN] })
   public createdAt: string;
 
-  @Expose({ groups: [ClassTransformerGroup.MAIN] })
+  @Expose({ name: 'updated_at', groups: [ClassTransformerGroup.MAIN] })
   public updatedAt: string;
 
   @Expose({ groups: [ClassTransformerGroup.MAIN] })
@@ -62,10 +65,7 @@ export class Todo {
     return dayjs(this.updatedAt).format('L LTS');
   }
 
-  constructor(model: Partial<Todo> = {}, locale?: string) {
-    if (locale) {
-      dayjs.locale(locale);
-    }
+  constructor(model: Partial<Todo> = {}) {
     Object.assign(this, model);
   }
 }

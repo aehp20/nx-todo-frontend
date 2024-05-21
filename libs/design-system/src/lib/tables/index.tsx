@@ -1,8 +1,11 @@
+import { PaginationMeta } from '@nx-todo-frontend/models';
 import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 
 import classNames from 'classnames';
 
 import { Table as ITable, Row, flexRender } from '@tanstack/react-table';
+
+import { Option } from '../dropdown';
 
 import { ItemsPerPage } from './itemsPerPage';
 import Pagination from './pagination';
@@ -11,10 +14,24 @@ export type TableProps<T> = {
   table: ITable<T>;
   ComponentOnList: React.FunctionComponent<{ row: Row<T> }>;
   labelItemsPerPage: string;
+  paginationMeta?: PaginationMeta;
+  pageSize: number;
+  pageSizeOptions: Option[];
+  setPageSize: (pageSize: number) => void;
+  goToPage: (page: number) => void;
 };
 
 export default function Table<T>(props: TableProps<T>) {
-  const { table, ComponentOnList, labelItemsPerPage } = props;
+  const {
+    table,
+    ComponentOnList,
+    labelItemsPerPage,
+    paginationMeta,
+    pageSize,
+    pageSizeOptions,
+    setPageSize,
+    goToPage,
+  } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(componentsName.table);
 
@@ -81,11 +98,12 @@ export default function Table<T>(props: TableProps<T>) {
       </table>
       <div className="flex flex-col md:flex-row gap-2">
         <ItemsPerPage
-          pageSize={table.getState().pagination.pageSize}
-          setPageSize={table.setPageSize}
+          pageSize={pageSize}
+          pageSizeOptions={pageSizeOptions}
+          setPageSize={setPageSize}
           label={labelItemsPerPage}
         />
-        <Pagination table={table} />
+        <Pagination paginationMeta={paginationMeta} goToPage={goToPage} />
       </div>
     </div>
   );

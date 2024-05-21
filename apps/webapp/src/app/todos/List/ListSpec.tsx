@@ -1,10 +1,10 @@
-import { TodoList } from '@nx-todo-frontend/models';
+import { PaginationResponse, Todo } from '@nx-todo-frontend/models';
 
 import SearchBarSpec from './components/SearchBarSpec';
 import TableSpec from './components/TableSpec';
 
 export type ListSpecProps = {
-  data?: TodoList;
+  data?: PaginationResponse<Todo>;
   isLoading: boolean;
 };
 

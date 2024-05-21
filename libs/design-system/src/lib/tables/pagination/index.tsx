@@ -1,4 +1,4 @@
-import { Table } from '@tanstack/react-table';
+import { PaginationMeta } from '@nx-todo-frontend/models';
 
 import { Button } from '../../buttons';
 import {
@@ -10,44 +10,68 @@ import {
 import Input from '../../inputs';
 
 export type PaginationProps<T> = {
-  table: Table<T>;
+  paginationMeta?: PaginationMeta;
+  goToPage: (page: number) => void;
 };
 
 export default function Pagination<T>(props: PaginationProps<T>) {
-  const { table } = props;
+  const { paginationMeta, goToPage } = props;
+
+  const isDisabled = !paginationMeta;
+
+  const goToFirstPage = () => {
+    goToPage(1);
+  };
+  const goToPreviousPage = () => {
+    if (paginationMeta) {
+      goToPage(paginationMeta.page - 1);
+    }
+  };
+  const goToNextPage = () => {
+    if (paginationMeta) {
+      goToPage(paginationMeta.page + 1);
+    }
+  };
+  const goToLastPage = () => {
+    if (paginationMeta) {
+      goToPage(paginationMeta.totalPages);
+    }
+  };
 
   return (
     <div className="flex w-full items-center justify-center md:justify-end gap-2">
       <div className="flex gap-2">
         <Button
           icon={<FastArrowLeftIcon />}
-          onClick={() => table.setPageIndex(0)}
-          disabled={!table.getCanPreviousPage()}
+          onClick={goToFirstPage}
+          disabled={isDisabled || !paginationMeta.hasPreviousPage}
         />
         <Button
           icon={<NavArrowLeftIcon />}
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
+          onClick={goToPreviousPage}
+          disabled={isDisabled || !paginationMeta.hasPreviousPage}
         />
         <Input
           min={1}
-          max={table.getPageCount()}
+          max={paginationMeta?.totalPages}
           type="number"
-          value={table.getState().pagination.pageIndex + 1}
-          onChange={(e) => {
-            const page = e.target.value ? Number(e.target.value) - 1 : 0;
-            table.setPageIndex(page);
+          value={paginationMeta?.page || 1}
+          onChange={(event) => {
+            const page = event.target.value ? Number(event.target.value) : 1;
+            goToPage(page);
           }}
+          disabled={isDisabled}
+          className="w-[60px]"
         />
         <Button
           icon={<NavArrowRightIcon />}
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
+          onClick={goToNextPage}
+          disabled={isDisabled || !paginationMeta.hasNextPage}
         />
         <Button
           icon={<FastArrowRightIcon />}
-          onClick={() => table.setPageIndex(table.getPageCount() - 1)}
-          disabled={!table.getCanNextPage()}
+          onClick={goToLastPage}
+          disabled={isDisabled || !paginationMeta.hasNextPage}
         />
       </div>
     </div>

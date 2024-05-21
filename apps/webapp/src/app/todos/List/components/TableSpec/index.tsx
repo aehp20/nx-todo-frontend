@@ -5,7 +5,7 @@ import {
   TrashIcon,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
-import { Todo, TodoList } from '@nx-todo-frontend/models';
+import { PaginationResponse, Todo } from '@nx-todo-frontend/models';
 import { useDeleteTodo } from '@nx-todo-frontend/query';
 
 import { useState } from 'react';
@@ -14,7 +14,6 @@ import { Link } from 'react-router-dom';
 import {
   createColumnHelper,
   getCoreRowModel,
-  getPaginationRowModel,
   getSortedRowModel,
   Row,
   SortingState,
@@ -22,12 +21,13 @@ import {
 } from '@tanstack/react-table';
 
 import { useToast } from '../../../../../common/useToast';
+import { useListContext } from '../../ListProvider';
 
 import { Card } from './Card';
 import { Dialog } from './Dialog';
 
 export type TableSpecProps = {
-  data?: TodoList;
+  data?: PaginationResponse<Todo>;
   isLoading: boolean;
 };
 
@@ -35,6 +35,8 @@ const columnHelper = createColumnHelper<Todo>();
 
 export default function TableSpec(props: TableSpecProps) {
   const { data, isLoading } = props;
+
+  const { pageSize, setPageSize, pageSizeOptions, setPage } = useListContext();
 
   const [sorting, setSorting] = useState<SortingState>([]);
 
@@ -82,20 +84,15 @@ export default function TableSpec(props: TableSpecProps) {
   ];
 
   const table = useReactTable({
-    data: data?.items || [],
+    data: data?.data || [],
     columns,
+    manualPagination: true,
     getCoreRowModel: getCoreRowModel(),
     state: {
       sorting,
     },
-    initialState: {
-      pagination: {
-        pageSize: 5,
-      },
-    },
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
   });
 
   const mutation = useDeleteTodo();
@@ -117,6 +114,11 @@ export default function TableSpec(props: TableSpecProps) {
         table={table}
         ComponentOnList={ComponentOnList}
         labelItemsPerPage={_('Items per page')}
+        paginationMeta={data?.meta}
+        pageSize={pageSize}
+        pageSizeOptions={pageSizeOptions}
+        setPageSize={setPageSize}
+        goToPage={setPage}
       />
     </div>
   );

@@ -9,11 +9,15 @@ import { useListContext } from '../ListProvider';
 import { useTitle } from './useTitle';
 
 export function useList() {
-  const { query } = useListContext();
+  const { query, page, pageSize } = useListContext();
 
   const queryClient = useQueryClient();
 
-  const { data, error, isLoading } = useTodos(query);
+  const { data, error, isLoading } = useTodos({
+    ...query,
+    page: `${page}`,
+    pageSize: `${pageSize}`,
+  });
   const title = useTitle(data);
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 import {
   ClassTransformerGroup,
+  PaginationResponse,
   Todo,
-  TodoList,
 } from '@nx-todo-frontend/models';
 
 import { instanceToPlain } from 'class-transformer';
@@ -19,7 +19,7 @@ export class TodoClient {
   async get(
     signal: AbortSignal,
     params?: Record<string, string>,
-  ): Promise<TodoList> {
+  ): Promise<PaginationResponse<Todo>> {
     return await this.httpClient.get(this.endpointPath, signal, params);
   }
 

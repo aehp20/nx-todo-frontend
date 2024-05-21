@@ -30,6 +30,7 @@ export function ItemsPerPage(props: ItemsPerPageProps) {
         value={value}
         options={pageSizeOptions}
         onChange={handleChange}
+        menuPlacement="top"
       />
     </div>
   );

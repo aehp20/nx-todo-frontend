@@ -106,6 +106,14 @@ const CustomTable = () => {
       table={table}
       ComponentOnList={ComponentOnList}
       labelItemsPerPage="Items per page"
+      paginationMeta={undefined}
+      pageSize={5}
+      pageSizeOptions={[
+        { label: '5', value: '5' },
+        { label: '10', value: '10' },
+      ]}
+      setPageSize={() => console.log('setPageSize')}
+      goToPage={() => console.log('setPageSize')}
     />
   );
 };

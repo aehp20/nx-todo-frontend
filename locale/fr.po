@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-19 23:43+0200\n"
+"POT-Creation-Date: 2024-05-22 16:49+0200\n"
 "PO-Revision-Date: 2024-05-11 23:02+0200\n"
 "Last-Translator: Aron <aronherrera2009@gmail.com>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -163,133 +163,129 @@ msgstr "Profil LinkedIn complet"
 msgid "Social networks"
 msgstr "Réseaux sociaux"
 
-#: app/todos/Form/index.tsx:29
+#: app/todos/Form/index.tsx:33
 #: app/todos/List/components/SearchBarSpec/index.tsx:19
 msgid "Done"
 msgstr "Terminé"
 
-#: app/todos/Form/index.tsx:30
+#: app/todos/Form/index.tsx:34
 #: app/todos/List/components/SearchBarSpec/index.tsx:20
 msgid "To do"
 msgstr "À faire"
 
-#: app/todos/Form/index.tsx:53
+#: app/todos/Form/index.tsx:60
 msgid "Todo"
 msgstr "Tâche"
 
-#: app/todos/Form/index.tsx:59
-msgid "Created at:"
-msgstr "Créé le :"
-
-#: app/todos/Form/index.tsx:62
-msgid "Updated at:"
-msgstr "Mis à jour le :"
-
-#: app/todos/Form/index.tsx:69
+#: app/todos/Form/index.tsx:67
 msgid "Name"
 msgstr "Nom"
 
-#: app/todos/Form/index.tsx:75
+#: app/todos/Form/index.tsx:73
 #: app/todos/List/components/SearchBarSpec/index.tsx:32
 msgid "Enter a name"
 msgstr "Saisir un nom"
 
-#: app/todos/Form/index.tsx:80
+#: app/todos/Form/index.tsx:79
 msgid "Is Done?"
 msgstr "C'est fait ?"
 
-#: app/todos/Form/index.tsx:86
+#: app/todos/Form/index.tsx:85
 msgid "Select an element"
 msgstr "Sélectionner un élément"
 
-#: app/todos/Form/index.tsx:90
+#: app/todos/Form/index.tsx:95
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: app/todos/Form/Update.tsx:34
-msgid "Fetching todo..."
-msgstr "Recherche de Tâche..."
-
-#: app/todos/Form/Update.tsx:46 app/todos/Form/Create.tsx:29
-msgid "Saving..."
-msgstr "Sauver..."
-
-#: app/todos/Form/Update.tsx:61
-msgid "The update action has been completed successfully."
-msgstr "L'action de mise à jour a été effectuée avec succès."
-
-#: app/todos/Form/Update.tsx:69
+#: app/todos/Form/Update.tsx:40
 msgid "Update Todo"
 msgstr "Mise à jour Tâche"
 
-#: app/todos/Form/Update.tsx:70 app/todos/Form/Create.tsx:52
+#: app/todos/Form/Update.tsx:41 app/todos/Form/Create.tsx:19
 msgid "Back to Home page"
 msgstr "Aller à la page d'accueil"
 
-#: app/todos/Form/Create.tsx:43
+#: app/todos/Form/Create.tsx:18
+msgid "Create Todo"
+msgstr "Créer Tâche"
+
+#: app/todos/Form/components/Summary.tsx:18
+msgid "Created at:"
+msgstr "Créé le :"
+
+#: app/todos/Form/components/Summary.tsx:21
+msgid "Updated at:"
+msgstr "Mis à jour le :"
+
+#: app/todos/Form/hooks/useCreate.ts:23
 msgid "The create action has been completed successfully."
 msgstr "L'action de création a été effectuée avec succès."
 
-#: app/todos/Form/Create.tsx:51
-msgid "Create Todo"
-msgstr "Créer Tâche"
+#: app/todos/Form/hooks/useUpdate.ts:43
+msgid "The update action has been completed successfully."
+msgstr "L'action de mise à jour a été effectuée avec succès."
+
+#: app/todos/List/components/Actions.tsx:13
+msgid "Add"
+msgstr "Ajouter"
 
 #: app/todos/List/components/SearchBarSpec/index.tsx:30
 msgid "Search by name"
 msgstr "Rechercher par nom"
 
-#: app/todos/List/components/SearchBarSpec/index.tsx:37
+#: app/todos/List/components/SearchBarSpec/index.tsx:38
 msgid "Search by status"
 msgstr "Rechercher par statut"
 
-#: app/todos/List/components/SearchBarSpec/index.tsx:40
+#: app/todos/List/components/SearchBarSpec/index.tsx:41
 msgid "Select a status"
 msgstr "Sélectionner un statut"
 
-#: app/todos/List/components/TableSpec/index.tsx:45
+#: app/todos/List/components/TableSpec/index.tsx:49
 msgid "ID"
 msgstr "ID"
 
-#: app/todos/List/components/TableSpec/index.tsx:49
+#: app/todos/List/components/TableSpec/index.tsx:53
 msgid "NAME"
 msgstr "NOM"
 
-#: app/todos/List/components/TableSpec/index.tsx:55
+#: app/todos/List/components/TableSpec/index.tsx:61
 #: app/todos/List/components/TableSpec/Card.tsx:36
 msgid "IS DONE?"
 msgstr "EST-IL FAIT ?"
 
-#: app/todos/List/components/TableSpec/index.tsx:60
+#: app/todos/List/components/TableSpec/index.tsx:66
 msgid "ACTION"
 msgstr "ACTION"
 
-#: app/todos/List/components/TableSpec/index.tsx:63
+#: app/todos/List/components/TableSpec/index.tsx:69
 #: app/todos/List/components/TableSpec/Dialog.tsx:18
 msgid "Delete Todo?"
 msgstr "Supprimer Tâche ?"
 
-#: app/todos/List/components/TableSpec/index.tsx:64
+#: app/todos/List/components/TableSpec/index.tsx:70
 #: app/todos/List/components/TableSpec/Dialog.tsx:25
 msgid "Are you sure you want to delete this todo?"
 msgstr "Êtes-vous sûr de vouloir supprimer cette tâche ?"
 
-#: app/todos/List/components/TableSpec/index.tsx:66
+#: app/todos/List/components/TableSpec/index.tsx:72
 #: app/todos/List/components/TableSpec/Card.tsx:36
 #: app/todos/List/components/TableSpec/Dialog.tsx:22
 msgid "No"
 msgstr "Non"
 
-#: app/todos/List/components/TableSpec/index.tsx:67
+#: app/todos/List/components/TableSpec/index.tsx:73
 #: app/todos/List/components/TableSpec/Card.tsx:36
 #: app/todos/List/components/TableSpec/Dialog.tsx:23
 msgid "Yes"
 msgstr "Oui"
 
-#: app/todos/List/components/TableSpec/index.tsx:102
+#: app/todos/List/components/TableSpec/index.tsx:103
 msgid "The delete action has been completed successfully."
 msgstr "L'action de suppression a été effectuée avec succès."
 
-#: app/todos/List/components/TableSpec/index.tsx:113
+#: app/todos/List/components/TableSpec/index.tsx:116
 msgid "Items per page"
 msgstr "Éléments par page"
 
@@ -297,19 +293,15 @@ msgstr "Éléments par page"
 msgid "Delete"
 msgstr "Supprimer"
 
-#: app/todos/List/hooks/useTitle.ts:8
+#: app/todos/List/hooks/useTitle.ts:7
 #, python-brace-format
-msgid "Todos ({count})"
-msgstr "Tâches ({count})"
+msgid "Todos ({totalItems})"
+msgstr "Tâches ({totalItems})"
 
-#: app/todos/List/hooks/useTitle.ts:14 common/Layout.tsx:15
+#: app/todos/List/hooks/useTitle.ts:10 common/Layout.tsx:15
 #: common/Layout.tsx:20
 msgid "Todos"
 msgstr "Tâches"
-
-#: app/todos/List/hooks/useActions.tsx:13
-msgid "Add"
-msgstr "Ajouter"
 
 #: common/ErrorBoundary/ErrorBoundaryUI.tsx:17
 msgid "Error"

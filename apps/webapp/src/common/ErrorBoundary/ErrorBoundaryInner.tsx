@@ -1,12 +1,8 @@
 import { Component, ReactNode } from 'react';
 
-type Error = {
-  stack?: string;
-};
-
 type ErrorBoundaryInnerProps = {
   children: ReactNode;
-  fallback: ReactNode;
+  handleFallback: (error?: Error) => ReactNode;
   hasError: boolean;
   setHasError: (value: boolean) => void;
 };
@@ -14,15 +10,16 @@ type ErrorBoundaryInnerProps = {
 class ErrorBoundaryInner extends Component<ErrorBoundaryInnerProps> {
   state = {
     hasError: false,
+    error: undefined,
   };
 
   constructor(props: ErrorBoundaryInnerProps) {
     super(props);
-    this.state = { hasError: false };
+    this.state = { hasError: false, error: undefined };
   }
 
-  static getDerivedStateFromError(_error: Error) {
-    return { hasError: true };
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
   }
 
   componentDidUpdate(prevProps: { hasError: boolean }) {
@@ -37,7 +34,7 @@ class ErrorBoundaryInner extends Component<ErrorBoundaryInnerProps> {
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback;
+      return this.props.handleFallback(this.state.error);
     }
 
     return this.props.children;

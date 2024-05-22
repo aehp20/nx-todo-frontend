@@ -131,6 +131,10 @@ const tableSafelist = [
   'h-[1197px]',
   'h-[1482px]',
 ];
+const errorBoundaryUISafelist = [
+  'bg-Grilled',
+  'border-Grilled',
+];
 const safelist = [
   ...toggleSafelist,
   ...buttonSafelist,
@@ -144,6 +148,7 @@ const safelist = [
   ...gridSafelist,
   ...dropdownSafelist,
   ...tableSafelist,
+  ...errorBoundaryUISafelist,
 ];
 
 /** @type {import('tailwindcss').Config} */
@@ -182,6 +187,7 @@ module.exports = {
         DarkSienna: '#2F1B19',
         Liver: '#884d49',
         Bole: '#774440',
+        Grilled: '#634130',
       },
     },
   },

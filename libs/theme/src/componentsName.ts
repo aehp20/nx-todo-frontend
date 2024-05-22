@@ -13,4 +13,5 @@ export const componentsName = {
   card: 'card',
   textDelete: 'textDelete',
   link: 'link',
+  errorBoundaryUI: 'errorBoundaryUI',
 };

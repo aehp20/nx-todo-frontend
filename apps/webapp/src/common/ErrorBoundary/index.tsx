@@ -20,11 +20,13 @@ export default function ErrorBoundary(props: ErrorBoundaryProps) {
     }
   }, [location.key]);
 
+  const handleFallback = (error?: Error) => <ErrorBoundaryUI error={error} />;
+
   return (
     <ErrorBoundaryInner
       hasError={hasError}
       setHasError={setHasError}
-      fallback={<ErrorBoundaryUI />}
+      handleFallback={handleFallback}
     >
       {children}
     </ErrorBoundaryInner>

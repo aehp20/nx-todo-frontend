@@ -6,6 +6,10 @@ import { stylesButton, stylesButtonPropertiesName } from './button';
 import { stylesCard, stylesCardPropertiesName } from './card';
 import { stylesDialog, stylesDialogPropertiesName } from './dialog';
 import { stylesDropdown, stylesDropdownPropertiesName } from './dropdown';
+import {
+  stylesErrorBoundaryUI,
+  stylesErrorBoundaryUIPropertiesName,
+} from './errorBoundaryUI';
 import { stylesInput, stylesInputPropertiesName } from './input';
 import { stylesLabel, stylesLabelPropertiesName } from './label';
 import { stylesLink, stylesLinkPropertiesName } from './link';
@@ -44,6 +48,7 @@ export const styles: ThemesProps = {
     [componentsName.card]: stylesCard[themes.light],
     [componentsName.textDelete]: stylesTextDelete[themes.light],
     [componentsName.link]: stylesLink[themes.light],
+    [componentsName.errorBoundaryUI]: stylesErrorBoundaryUI[themes.light],
   },
   [themes.dark]: {
     [componentsName.app]: stylesApp[themes.dark],
@@ -60,6 +65,7 @@ export const styles: ThemesProps = {
     [componentsName.card]: stylesCard[themes.dark],
     [componentsName.textDelete]: stylesTextDelete[themes.dark],
     [componentsName.link]: stylesLink[themes.dark],
+    [componentsName.errorBoundaryUI]: stylesErrorBoundaryUI[themes.dark],
   },
 };
 
@@ -78,4 +84,5 @@ export const stylesPropertiesName: StylesPropertiesNameProps = {
   [componentsName.card]: stylesCardPropertiesName,
   [componentsName.textDelete]: stylesTextDeletePropertiesName,
   [componentsName.link]: stylesLinkPropertiesName,
+  [componentsName.errorBoundaryUI]: stylesErrorBoundaryUIPropertiesName,
 };

@@ -3,6 +3,7 @@ export * from './lib/buttons';
 export * from './lib/cards';
 export * from './lib/confirmation';
 export * from './lib/dropdown';
+export { default as ErrorBoundaryUI } from './lib/errorBoundaryUI';
 export { default as Grid } from './lib/grid';
 export * from './lib/icons';
 export { default as Input } from './lib/inputs';

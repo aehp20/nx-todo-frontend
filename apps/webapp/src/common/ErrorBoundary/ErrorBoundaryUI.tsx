@@ -1,6 +1,7 @@
 import {
   Button,
   Card,
+  ErrorBoundaryUI as ErrorBoundaryUIDesignSystem,
   OpenSelectHandGestureIcon,
   Page,
 } from '@nx-todo-frontend/design-system';
@@ -8,7 +9,13 @@ import { useI18NContext } from '@nx-todo-frontend/i18n';
 
 import { useNavigate } from 'react-router-dom';
 
-export default function ErrorBoundaryUI() {
+type ErrorBoundaryProps = {
+  error?: Error;
+};
+
+export default function ErrorBoundaryUI(props: ErrorBoundaryProps) {
+  const { error } = props;
+
   const { _ } = useI18NContext();
 
   const navigate = useNavigate();
@@ -21,6 +28,9 @@ export default function ErrorBoundaryUI() {
           <div>
             {_('Please either refresh the page or return home to try again.')}
           </div>
+          {error instanceof Error && (
+            <ErrorBoundaryUIDesignSystem className="my-2" error={error} />
+          )}
           <div>
             <Button
               icon={<OpenSelectHandGestureIcon />}

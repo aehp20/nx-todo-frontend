@@ -46,56 +46,65 @@ export default function Table<T>(props: TableProps<T>) {
           return <ComponentOnList key={index} row={row} />;
         })}
       </div>
-      <table
-        className={classNames('hidden md:table my-auto border', borderColor)}
+      <div
+        className={classNames(
+          'hidden md:flex md:flex-col',
+          'w-full border',
+          `h-[${(pageSize + 1) * 57}px]`,
+          borderColor,
+          'border-t border-x',
+          paginationMeta?.page !== paginationMeta?.totalPages && 'border-0',
+        )}
       >
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr
-              key={headerGroup.id}
-              className={classNames('border-b font-semibold', borderColor)}
-            >
-              {headerGroup.headers.map((header) => (
-                <th
-                  key={header.id}
-                  className="px-4 pr-2 py-4 font-medium text-left"
-                >
-                  {header.isPlaceholder ? null : (
-                    <div
-                      {...{
-                        className: header.column.getCanSort()
-                          ? 'cursor-pointer select-none flex min-w-[36px]'
-                          : '',
-                        onClick: header.column.getToggleSortingHandler(),
-                      }}
-                    >
-                      {flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
-                      {{
-                        asc: <span className="pl-2">↑</span>,
-                        desc: <span className="pl-2">↓</span>,
-                      }[header.column.getIsSorted() as string] ?? null}
-                    </div>
-                  )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr key={row.id} className={classNames('border-b', borderColor)}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id} className="px-4 pt-[14px] pb-[18px]">
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+        <table className="md:table">
+          <thead>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <tr
+                key={headerGroup.id}
+                className={classNames('border-b font-semibold', borderColor)}
+              >
+                {headerGroup.headers.map((header) => (
+                  <th
+                    key={header.id}
+                    className="px-4 pr-2 py-4 font-medium text-left"
+                  >
+                    {header.isPlaceholder ? null : (
+                      <div
+                        {...{
+                          className: header.column.getCanSort()
+                            ? 'cursor-pointer select-none flex min-w-[36px]'
+                            : '',
+                          onClick: header.column.getToggleSortingHandler(),
+                        }}
+                      >
+                        {flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
+                        {{
+                          asc: <span className="pl-2">↑</span>,
+                          desc: <span className="pl-2">↓</span>,
+                        }[header.column.getIsSorted() as string] ?? null}
+                      </div>
+                    )}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody>
+            {table.getRowModel().rows.map((row) => (
+              <tr key={row.id} className={classNames('border-b', borderColor)}>
+                {row.getVisibleCells().map((cell) => (
+                  <td key={cell.id} className="px-4 pt-[14px] pb-[18px]">
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="flex flex-col md:flex-row gap-2">
         <ItemsPerPage
           pageSize={pageSize}

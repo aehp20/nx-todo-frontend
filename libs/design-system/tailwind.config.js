@@ -124,6 +124,13 @@ const dropdownSafelist = [
   'w-[250px]',
   'bg-gray-300',
 ];
+const tableSafelist = [
+  'h-[342px]',
+  'h-[627px]',
+  'h-[912px]',
+  'h-[1197px]',
+  'h-[1482px]',
+];
 const safelist = [
   ...toggleSafelist,
   ...buttonSafelist,
@@ -136,6 +143,7 @@ const safelist = [
   ...linkSafelist,
   ...gridSafelist,
   ...dropdownSafelist,
+  ...tableSafelist,
 ];
 
 /** @type {import('tailwindcss').Config} */

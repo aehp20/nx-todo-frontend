@@ -106,7 +106,14 @@ const CustomTable = () => {
       table={table}
       ComponentOnList={ComponentOnList}
       labelItemsPerPage="Items per page"
-      paginationMeta={undefined}
+      paginationMeta={{
+        hasNextPage: true,
+        hasPreviousPage: false,
+        page: 1,
+        pageSize: 5,
+        totalItems: 35,
+        totalPages: 7,
+      }}
       pageSize={5}
       pageSizeOptions={[
         { label: '5', value: '5' },

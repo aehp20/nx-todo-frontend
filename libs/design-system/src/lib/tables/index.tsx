@@ -39,6 +39,14 @@ export default function Table<T>(props: TableProps<T>) {
 
   const borderColor = `border-${styles[BORDER_COLOR]}`;
 
+  const borderBottom = paginationMeta
+    ? paginationMeta.page !== paginationMeta.totalPages ||
+      paginationMeta.totalItems ===
+        paginationMeta.page * paginationMeta.pageSize
+      ? 'border-b-0'
+      : 'border-b'
+    : 'border-b';
+
   return (
     <div className="flex flex-col gap-4">
       <div className="md:hidden flex flex-col gap-2">
@@ -49,11 +57,11 @@ export default function Table<T>(props: TableProps<T>) {
       <div
         className={classNames(
           'hidden md:flex md:flex-col',
-          'w-full border',
+          'w-full',
           `h-[${(pageSize + 1) * 57}px]`,
           borderColor,
           'border-t border-x',
-          paginationMeta?.page !== paginationMeta?.totalPages && 'border-0',
+          borderBottom,
         )}
       >
         <table className="md:table">

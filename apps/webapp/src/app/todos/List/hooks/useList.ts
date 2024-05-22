@@ -18,7 +18,7 @@ export function useList() {
     page: `${page}`,
     pageSize: `${pageSize}`,
   });
-  const title = useTitle(data);
+  const title = useTitle(data?.meta?.totalItems);
 
   useEffect(() => {
     return () => {

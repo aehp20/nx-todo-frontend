@@ -8,20 +8,10 @@ export enum ClassTransformerGroup {
 }
 
 export class Todo {
-  @Expose({
-    name: 'id',
-    groups: [ClassTransformerGroup.MAIN, ClassTransformerGroup.UPDATE],
-  })
+  @Expose()
   public id: number;
 
-  @Expose({
-    name: 'name',
-    groups: [
-      ClassTransformerGroup.MAIN,
-      ClassTransformerGroup.UPDATE,
-      ClassTransformerGroup.CREATE,
-    ],
-  })
+  @Expose()
   public name: string;
 
   @Expose({

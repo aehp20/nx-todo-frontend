@@ -1,7 +1,8 @@
 import { BackLink, Page } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 
-import { throwError } from 'apps/webapp/src/common/throwError';
+import { throwError } from '../../../common/throwError';
+
 import Form from '.';
 import { useCreate } from './hooks/useCreate';
 

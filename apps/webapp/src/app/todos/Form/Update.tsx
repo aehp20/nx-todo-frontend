@@ -1,11 +1,7 @@
-import {
-  BackLink,
-  Error,
-  Loading,
-  Page,
-} from '@nx-todo-frontend/design-system';
+import { BackLink, Loading, Page } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 
+import { throwError } from 'apps/webapp/src/common/throwError';
 import Form from '.';
 import { useUpdate } from './hooks/useUpdate';
 
@@ -22,17 +18,11 @@ export default function Update() {
   } = useUpdate();
 
   if (errorOnLoad) {
-    // TODO
-    console.log('errorOnLoad', errorOnLoad);
-    // Throw an error to be catched by our ErrorBoundary component
-    return <Error error={errorOnLoad.message} className="m-2" />;
+    throwError(errorOnLoad);
   }
 
   if (errorOnSubmit) {
-    // TODO
-    console.log('errorOnSubmit', errorOnSubmit);
-    // Throw an error to be catched by our ErrorBoundary component
-    return <Error error={errorOnSubmit.message} className="m-2" />;
+    throwError(errorOnSubmit);
   }
 
   return (

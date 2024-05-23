@@ -35,7 +35,12 @@ export default function ListProvider(props: ListProviderProps) {
 
   const value = useMemo(() => {
     return {
-      query,
+      query: {
+        ...query,
+        page: `${page}`,
+        pageSize: `${pageSize}`,
+        order: 'DESC',
+      },
       setQuery,
       page,
       setPage,

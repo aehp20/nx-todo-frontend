@@ -1,6 +1,7 @@
-import { BackLink, Error, Page } from '@nx-todo-frontend/design-system';
+import { BackLink, Page } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 
+import { throwError } from 'apps/webapp/src/common/throwError';
 import Form from '.';
 import { useCreate } from './hooks/useCreate';
 
@@ -10,7 +11,7 @@ export default function Create() {
   const { submitData, isSubmitting, errorOnSubmit } = useCreate();
 
   if (errorOnSubmit) {
-    return <Error error={errorOnSubmit.message} className="m-2" />;
+    throwError(errorOnSubmit);
   }
 
   return (

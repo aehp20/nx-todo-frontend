@@ -1,56 +1,43 @@
 import { Expose } from 'class-transformer';
 import dayjs from 'dayjs';
 
-export enum ClassTransformerGroup {
-  MAIN = 'main',
-  CREATE = 'create',
-  UPDATE = 'update',
-}
-
 export class Todo {
   @Expose()
-  public id: number;
+  public id?: number;
 
   @Expose()
   public name: string;
 
-  @Expose({
-    name: 'is_done',
-    groups: [
-      ClassTransformerGroup.MAIN,
-      ClassTransformerGroup.UPDATE,
-      ClassTransformerGroup.CREATE,
-    ],
-  })
-  public isDone: boolean;
+  @Expose()
+  public isDone?: boolean;
 
-  @Expose({ name: 'created_at', groups: [ClassTransformerGroup.MAIN] })
-  public createdAt: string;
+  @Expose()
+  public createdAt?: string;
 
-  @Expose({ name: 'updated_at', groups: [ClassTransformerGroup.MAIN] })
-  public updatedAt: string;
+  @Expose()
+  public updatedAt?: string;
 
-  @Expose({ groups: [ClassTransformerGroup.MAIN] })
+  @Expose()
   public get isDoneStringFormat(): string {
     return this.isDone ? 'Yes' : 'No';
   }
 
-  @Expose({ groups: [ClassTransformerGroup.MAIN] })
+  @Expose()
   public get createdAtDateFormat(): string {
     return dayjs(this.createdAt).format('L');
   }
 
-  @Expose({ groups: [ClassTransformerGroup.MAIN] })
+  @Expose()
   public get createdAtDateTimeFormat(): string {
     return dayjs(this.createdAt).format('L LTS');
   }
 
-  @Expose({ groups: [ClassTransformerGroup.MAIN] })
+  @Expose()
   public get updatedAtDateFormat(): string {
     return dayjs(this.updatedAt).format('L');
   }
 
-  @Expose({ groups: [ClassTransformerGroup.MAIN] })
+  @Expose()
   public get updatedAtDateTimeFormat(): string {
     return dayjs(this.updatedAt).format('L LTS');
   }

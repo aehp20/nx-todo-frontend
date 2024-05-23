@@ -20,6 +20,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 
+import { throwError } from '../../../../../common/throwError';
 import { useToast } from '../../../../../common/useToast';
 import { useListContext } from '../../ListProvider';
 
@@ -64,22 +65,25 @@ export default function TableSpec(props: TableSpecProps) {
     columnHelper.accessor('isDone', {
       id: 'action',
       header: () => _('ACTION'),
-      cell: (info) => (
-        <Confirmation
-          title={_('Delete Todo?')}
-          content={_('Are you sure you want to delete this todo?')}
-          onConfirm={() => handleDelete(info.row.original.id)}
-          labelNoButton={_('No')}
-          labelYesButton={_('Yes')}
-        >
-          {({ displayConfirmation }) => (
-            <TrashIcon
-              className="cursor-pointer"
-              onClick={() => displayConfirmation(true)}
-            />
-          )}
-        </Confirmation>
-      ),
+      cell: (info) => {
+        const id = info.row.original.id;
+        return id ? (
+          <Confirmation
+            title={_('Delete Todo?')}
+            content={_('Are you sure you want to delete this todo?')}
+            onConfirm={() => handleDelete(id)}
+            labelNoButton={_('No')}
+            labelYesButton={_('Yes')}
+          >
+            {({ displayConfirmation }) => (
+              <TrashIcon
+                className="cursor-pointer"
+                onClick={() => displayConfirmation(true)}
+              />
+            )}
+          </Confirmation>
+        ) : null;
+      },
     }),
   ];
 
@@ -97,6 +101,10 @@ export default function TableSpec(props: TableSpecProps) {
 
   const mutation = useDeleteTodo();
 
+  if (mutation.error) {
+    throwError(mutation.error);
+  }
+
   const handleDelete = (id: number) => {
     mutation.mutate(id, {
       onSuccess: (_data) => {
@@ -109,7 +117,7 @@ export default function TableSpec(props: TableSpecProps) {
 
   return (
     <div className="relative">
-      {isLoading && <Loading />}
+      {(isLoading || mutation.isPending) && <Loading />}
       <Table
         table={table}
         ComponentOnList={ComponentOnList}
@@ -131,7 +139,7 @@ function generateComponentOnList(handleDelete: (id: number) => void) {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    return (
+    return id ? (
       <>
         <Card todo={row.original} setIsOpen={setIsOpen} />
         <Dialog
@@ -141,7 +149,7 @@ function generateComponentOnList(handleDelete: (id: number) => void) {
           handleDelete={handleDelete}
         />
       </>
-    );
+    ) : null;
   };
 
   return ComponentOnList;

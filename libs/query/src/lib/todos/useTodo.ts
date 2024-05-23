@@ -1,4 +1,4 @@
-import { ClassTransformerGroup, Todo } from '@nx-todo-frontend/models';
+import { Todo } from '@nx-todo-frontend/models';
 
 import { plainToInstance } from 'class-transformer';
 
@@ -15,9 +15,7 @@ export function useTodo(id: number) {
     queryFn: ({ signal }) => api.todo.getTodo(signal, id),
     enabled: !!id,
     select: (data): Todo => {
-      return plainToInstance(Todo, data, {
-        groups: [ClassTransformerGroup.MAIN],
-      });
+      return plainToInstance(Todo, data);
     },
   });
 }

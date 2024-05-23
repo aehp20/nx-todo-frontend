@@ -37,6 +37,9 @@ export function useUpdate() {
       onSuccess: ({ ok }) => {
         if (ok) {
           queryClient.invalidateQueries({
+            queryKey: todoKeys.all,
+          });
+          queryClient.invalidateQueries({
             queryKey: todoKeys.byId(id),
           });
           navigate('/todos');

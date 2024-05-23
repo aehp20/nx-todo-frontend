@@ -88,7 +88,9 @@ export default function Form(props: FormProps) {
       </div>
       <div>
         <Button
-          icon={isSubmitting ? <SpinnerIcon className="w-5 h-5" /> : undefined}
+          icon={
+            isSubmitting ? <SpinnerIcon className="!w-5 !h-5" /> : undefined
+          }
           disabled={isSubmitting}
           onClick={handleClick}
         >

@@ -13,8 +13,16 @@ type FilterFieldProps = {
 export function FilterField(props: FilterFieldProps) {
   const { filtersConfig, handleChange, query } = props;
 
-  const { type, label, name, options, placeholder, autoFocus, disabled } =
-    filtersConfig;
+  const {
+    type,
+    label,
+    name,
+    options,
+    placeholder,
+    autoFocus,
+    disabled,
+    noOptionsMessage,
+  } = filtersConfig;
 
   if (type === 'search') {
     const value = query ? query[name] || '' : '';
@@ -44,6 +52,7 @@ export function FilterField(props: FilterFieldProps) {
         autoFocus={autoFocus}
         onChange={handleChange}
         disabled={disabled}
+        noOptionsMessage={noOptionsMessage}
       />
     );
   }

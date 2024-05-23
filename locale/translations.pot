@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-22 17:40+0200\n"
+"POT-Creation-Date: 2024-05-23 19:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,19 +167,19 @@ msgstr ""
 msgid "Select an element"
 msgstr ""
 
-#: app/todos/Form/index.tsx:95
+#: app/todos/Form/index.tsx:97
 msgid "Save"
 msgstr ""
 
-#: app/todos/Form/Update.tsx:40
+#: app/todos/Form/Update.tsx:31
 msgid "Update Todo"
 msgstr ""
 
-#: app/todos/Form/Update.tsx:41 app/todos/Form/Create.tsx:19
+#: app/todos/Form/Update.tsx:32 app/todos/Form/Create.tsx:21
 msgid "Back to Home page"
 msgstr ""
 
-#: app/todos/Form/Create.tsx:18
+#: app/todos/Form/Create.tsx:20
 msgid "Create Todo"
 msgstr ""
 
@@ -195,7 +195,7 @@ msgstr ""
 msgid "The create action has been completed successfully."
 msgstr ""
 
-#: app/todos/Form/hooks/useUpdate.ts:43
+#: app/todos/Form/hooks/useUpdate.ts:46
 msgid "The update action has been completed successfully."
 msgstr ""
 
@@ -215,50 +215,54 @@ msgstr ""
 msgid "Select a status"
 msgstr ""
 
-#: app/todos/List/components/TableSpec/index.tsx:49
+#: app/todos/List/components/SearchBarSpec/index.tsx:42
+msgid "No options"
+msgstr ""
+
+#: app/todos/List/components/TableSpec/index.tsx:50
 msgid "ID"
 msgstr ""
 
-#: app/todos/List/components/TableSpec/index.tsx:53
+#: app/todos/List/components/TableSpec/index.tsx:54
 msgid "NAME"
 msgstr ""
 
-#: app/todos/List/components/TableSpec/index.tsx:61
+#: app/todos/List/components/TableSpec/index.tsx:62
 #: app/todos/List/components/TableSpec/Card.tsx:36
 msgid "IS DONE?"
 msgstr ""
 
-#: app/todos/List/components/TableSpec/index.tsx:66
+#: app/todos/List/components/TableSpec/index.tsx:67
 msgid "ACTION"
 msgstr ""
 
-#: app/todos/List/components/TableSpec/index.tsx:69
+#: app/todos/List/components/TableSpec/index.tsx:72
 #: app/todos/List/components/TableSpec/Dialog.tsx:18
 msgid "Delete Todo?"
 msgstr ""
 
-#: app/todos/List/components/TableSpec/index.tsx:70
+#: app/todos/List/components/TableSpec/index.tsx:73
 #: app/todos/List/components/TableSpec/Dialog.tsx:25
 msgid "Are you sure you want to delete this todo?"
 msgstr ""
 
-#: app/todos/List/components/TableSpec/index.tsx:72
+#: app/todos/List/components/TableSpec/index.tsx:75
 #: app/todos/List/components/TableSpec/Card.tsx:36
 #: app/todos/List/components/TableSpec/Dialog.tsx:22
 msgid "No"
 msgstr ""
 
-#: app/todos/List/components/TableSpec/index.tsx:73
+#: app/todos/List/components/TableSpec/index.tsx:76
 #: app/todos/List/components/TableSpec/Card.tsx:36
 #: app/todos/List/components/TableSpec/Dialog.tsx:23
 msgid "Yes"
 msgstr ""
 
-#: app/todos/List/components/TableSpec/index.tsx:103
+#: app/todos/List/components/TableSpec/index.tsx:111
 msgid "The delete action has been completed successfully."
 msgstr ""
 
-#: app/todos/List/components/TableSpec/index.tsx:116
+#: app/todos/List/components/TableSpec/index.tsx:124
 msgid "Items per page"
 msgstr ""
 
@@ -276,19 +280,19 @@ msgstr ""
 msgid "Todos"
 msgstr ""
 
-#: common/ErrorBoundary/ErrorBoundaryUI.tsx:17
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:24
 msgid "Error"
 msgstr ""
 
-#: common/ErrorBoundary/ErrorBoundaryUI.tsx:20
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:27
 msgid "Whoops, something went wrong."
 msgstr ""
 
-#: common/ErrorBoundary/ErrorBoundaryUI.tsx:22
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:29
 msgid "Please either refresh the page or return home to try again."
 msgstr ""
 
-#: common/ErrorBoundary/ErrorBoundaryUI.tsx:31
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:41
 msgid "Return to home"
 msgstr ""
 

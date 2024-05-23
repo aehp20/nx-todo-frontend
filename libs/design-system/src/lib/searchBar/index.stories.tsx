@@ -30,6 +30,7 @@ const filtersConfig: FilterConfig[] = [
     ],
     value: undefined,
     placeholder: 'Select a launch type',
+    noOptionsMessage: 'No options',
   },
   {
     name: 'category',

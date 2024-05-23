@@ -10,6 +10,7 @@ export type DropdownFieldProps = {
   autoFocus?: boolean;
   onChange: (name: string, value: Option) => void;
   disabled?: boolean;
+  noOptionsMessage?: string;
 };
 
 export default function DropdownField(props: DropdownFieldProps) {
@@ -22,6 +23,7 @@ export default function DropdownField(props: DropdownFieldProps) {
     autoFocus,
     onChange,
     disabled,
+    noOptionsMessage,
   } = props;
 
   return (
@@ -37,6 +39,7 @@ export default function DropdownField(props: DropdownFieldProps) {
         isClearable
         onChange={(value) => onChange(name, value)}
         isDisabled={disabled}
+        noOptionsMessage={noOptionsMessage}
       />
     </div>
   );

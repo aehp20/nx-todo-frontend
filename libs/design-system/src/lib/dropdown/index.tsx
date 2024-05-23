@@ -121,7 +121,7 @@ export function Dropdown({
       onChange={(newValue: unknown) => onChange(newValue as Option)}
       closeMenuOnSelect={false}
       hideSelectedOptions={false}
-      noOptionsMessage={() => noOptionsMessage || 'No more options'}
+      noOptionsMessage={() => noOptionsMessage || 'No options'}
       isDisabled={isDisabled}
       unstyled
       styles={{

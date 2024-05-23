@@ -18,4 +18,5 @@ export type FilterConfig = {
   placeholder?: string;
   autoFocus?: boolean;
   disabled?: boolean;
+  noOptionsMessage?: string;
 };

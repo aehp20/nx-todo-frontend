@@ -39,6 +39,7 @@ export default function SearchBarSpec() {
       options,
       value: selectedOption,
       placeholder: _('Select a status'),
+      noOptionsMessage: _('No options'),
     },
   ];
 

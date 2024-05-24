@@ -18,7 +18,11 @@ export function CacheField() {
   return (
     <div className="flex flex-col gap-1">
       <Label htmlFor="theme">{_('Cache')}</Label>
-      <Button icon={<TrashIcon className="!w-5 !h-5" />} onClick={handleClick}>
+      <Button
+        data-testid="btn-clear-cache"
+        icon={<TrashIcon className="!w-5 !h-5" />}
+        onClick={handleClick}
+      >
         {_('Clear Cache')}
       </Button>
     </div>

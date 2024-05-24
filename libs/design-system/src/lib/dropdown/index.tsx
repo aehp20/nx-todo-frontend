@@ -70,6 +70,7 @@ export function Dropdown({
   noOptionsMessage,
   isDisabled,
   isSearchable = false,
+  blurInputOnSelect = true,
   ...props
 }: DropdownProps) {
   const { styles, stylesPropertiesName } = useThemeStyles(
@@ -125,6 +126,7 @@ export function Dropdown({
       noOptionsMessage={() => noOptionsMessage || 'No options'}
       isDisabled={isDisabled}
       isSearchable={isSearchable}
+      blurInputOnSelect={blurInputOnSelect}
       unstyled
       styles={{
         input: (base) => ({

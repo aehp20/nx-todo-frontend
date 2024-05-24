@@ -1,8 +1,4 @@
-import {
-  Button,
-  Label,
-  RefreshDoubleIcon,
-} from '@nx-todo-frontend/design-system';
+import { Button, Label, TrashIcon } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { useThemeContext } from '@nx-todo-frontend/theme';
 
@@ -20,13 +16,9 @@ export function CacheField() {
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-1">
       <Label htmlFor="theme">{_('Cache')}</Label>
-
-      <Button
-        icon={<RefreshDoubleIcon className="!w-5 !h-5" />}
-        onClick={handleClick}
-      >
+      <Button icon={<TrashIcon className="!w-5 !h-5" />} onClick={handleClick}>
         {_('Clear Cache')}
       </Button>
     </div>

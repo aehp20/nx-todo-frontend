@@ -31,16 +31,14 @@ export default function ErrorBoundaryUI(props: ErrorBoundaryProps) {
           {error instanceof Error && (
             <ErrorBoundaryUIDesignSystem className="my-2" error={error} />
           )}
-          <div>
-            <Button
-              icon={<OpenSelectHandGestureIcon />}
-              onClick={() => {
-                navigate('/');
-              }}
-            >
-              {_('Return to home')}
-            </Button>
-          </div>
+          <Button
+            icon={<OpenSelectHandGestureIcon />}
+            onClick={() => {
+              navigate('/');
+            }}
+          >
+            {_('Return to home')}
+          </Button>
         </div>
       </Card>
     </Page>

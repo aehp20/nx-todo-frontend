@@ -1,7 +1,7 @@
 import { HTTPClient } from '@nx-todo-frontend/api';
 import { I18NProvider } from '@nx-todo-frontend/i18n';
 import { APIProvider } from '@nx-todo-frontend/query';
-import { ThemeProvider, themes } from '@nx-todo-frontend/theme';
+import { ThemeProvider } from '@nx-todo-frontend/theme';
 
 import dayjs from 'dayjs';
 import * as localizedFormat from 'dayjs/plugin/localizedFormat';
@@ -22,18 +22,24 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-const API_VERSION_PATH = import.meta.env.VITE_API_VERSION_PATH;
-const I18N_URL = import.meta.env.VITE_I18N_URL;
+const APP_BACKEND_URL = import.meta.env.VITE_APP_BACKEND_URL;
+const APP_API_VERSION_PATH = import.meta.env.VITE_APP_API_VERSION_PATH;
+const APP_I18N_URL = import.meta.env.VITE_APP_I18N_URL;
+const APP_LOCALE = import.meta.env.VITE_APP_LOCALE;
+const APP_THEME = import.meta.env.VITE_APP_THEME;
 
-const httpClient = new HTTPClient(BACKEND_URL, API_VERSION_PATH);
+const httpClient = new HTTPClient(APP_BACKEND_URL, APP_API_VERSION_PATH);
 
 root.render(
   <StrictMode>
     <BrowserRouter>
-      <I18NProvider locale="es" urlApp={I18N_URL} folderPath="/translations/">
+      <I18NProvider
+        locale={APP_LOCALE}
+        urlApp={APP_I18N_URL}
+        folderPath="/translations/"
+      >
         <APIProvider httpClient={httpClient}>
-          <ThemeProvider theme={themes.light} enabledResetTheme>
+          <ThemeProvider theme={APP_THEME} enabledResetTheme>
             <App />
           </ThemeProvider>
         </APIProvider>

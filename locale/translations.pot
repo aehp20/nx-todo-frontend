@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-23 19:44+0200\n"
+"POT-Creation-Date: 2024-05-24 11:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: app/settings/index.tsx:11 common/Layout.tsx:22
+#: app/settings/index.tsx:12 common/Layout.tsx:22
 msgid "Settings"
+msgstr ""
+
+#: app/settings/cache/index.tsx:24
+msgid "Cache"
+msgstr ""
+
+#: app/settings/cache/index.tsx:30
+msgid "Clear Cache"
 msgstr ""
 
 #: app/settings/language/index.tsx:13 app/settings/language/index.tsx:35

@@ -102,7 +102,7 @@ export default function Button(props: ButtonProps) {
       type={type}
       disabled={disabled}
       className={classNames(
-        'h-[42px] rounded-lg px-2 py-1 border hover:duration-750',
+        'h-[42px] rounded-lg px-2 py-1 border hover:duration-750 w-fit',
         className,
         textColor,
         textColorHover,

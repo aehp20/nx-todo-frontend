@@ -69,6 +69,7 @@ export function Dropdown({
   customStyles,
   noOptionsMessage,
   isDisabled,
+  isSearchable = false,
   ...props
 }: DropdownProps) {
   const { styles, stylesPropertiesName } = useThemeStyles(
@@ -123,6 +124,7 @@ export function Dropdown({
       hideSelectedOptions={false}
       noOptionsMessage={() => noOptionsMessage || 'No options'}
       isDisabled={isDisabled}
+      isSearchable={isSearchable}
       unstyled
       styles={{
         input: (base) => ({

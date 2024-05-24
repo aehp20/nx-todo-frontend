@@ -56,7 +56,7 @@ export default function ListProvider(props: ListProviderProps) {
 export function useListContext() {
   const context = useContext(ListContext);
   if (context === undefined) {
-    throw new Error('Context must be used within a Provider');
+    throw new Error('ListContext: Context must be used within a Provider');
   }
   return context;
 }

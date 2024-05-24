@@ -75,6 +75,7 @@ nx run design-system:storybook
 nx g @nx/react:library theme --directory libs/theme --unitTestRunner=jest --bundler=none
 nx g @nx/react:library query --directory libs/query --unitTestRunner=jest --bundler=none
 nx g @nx/react:library i18n --directory libs/i18n --unitTestRunner=jest --bundler=none
+nx g @nx/react:library fonts --directory libs/fonts --unitTestRunner=jest --bundler=none
 
 nx g @nx/js:lib api --directory libs/api --unitTestRunner=jest --bundler=none
 nx g @nx/js:lib hooks --directory libs/hooks --unitTestRunner=jest --bundler=none

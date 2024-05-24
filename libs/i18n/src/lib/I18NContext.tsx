@@ -77,7 +77,7 @@ export function I18NProvider(props: I18NProviderProps) {
 export function useI18NContext() {
   const context = useContext(I18NContext);
   if (context === undefined) {
-    throw new Error('Context must be used within a Provider');
+    throw new Error('I18NContext: Context must be used within a Provider');
   }
   return context;
 }

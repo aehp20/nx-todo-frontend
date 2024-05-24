@@ -73,11 +73,15 @@ export function ThemeProvider(props: ThemeProviderProps) {
 }
 
 export function useThemeContext() {
-  return useContext(ThemeContext);
+  const context = useContext(ThemeContext);
+  if (context === undefined) {
+    throw new Error('ThemeContext: Context must be used within a Provider');
+  }
+  return context;
 }
 
 export function useThemeStyles(componentName: string) {
-  const { styles, stylesPropertiesName } = useContext(ThemeContext);
+  const { styles, stylesPropertiesName } = useThemeContext();
   return {
     styles: styles[componentName],
     stylesPropertiesName: stylesPropertiesName[componentName],

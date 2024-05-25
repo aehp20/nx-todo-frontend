@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-24 11:38+0200\n"
+"POT-Creation-Date: 2024-05-25 23:02+0200\n"
 "PO-Revision-Date: 2024-05-11 23:02+0200\n"
 "Last-Translator: Aron <aronherrera2009@gmail.com>\n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: app/settings/index.tsx:12 common/Layout.tsx:22
+#: app/settings/index.tsx:13 common/Layout.tsx:22
 msgid "Settings"
 msgstr "Paramètres"
 
-#: app/settings/cache/index.tsx:24
+#: app/settings/cache/index.tsx:23
 msgid "Cache"
 msgstr "Cache"
 
-#: app/settings/cache/index.tsx:30
+#: app/settings/cache/index.tsx:29
 msgid "Clear Cache"
 msgstr "Effacer le cache"
 
@@ -57,6 +57,10 @@ msgstr "Sombre"
 #: app/settings/theme/index.tsx:31
 msgid "Theme"
 msgstr "Thème"
+
+#: app/settings/font/index.tsx:16
+msgid "Font"
+msgstr "Police"
 
 #: app/home/index.tsx:8 common/Layout.tsx:19
 msgid "Home"
@@ -202,7 +206,7 @@ msgstr "C'est fait ?"
 msgid "Select an element"
 msgstr "Sélectionner un élément"
 
-#: app/todos/Form/index.tsx:97
+#: app/todos/Form/index.tsx:94
 msgid "Save"
 msgstr "Sauvegarder"
 
@@ -328,7 +332,7 @@ msgid "Please either refresh the page or return home to try again."
 msgstr ""
 "Veuillez actualiser la page ou revenir à la page d'accueil pour réessayer."
 
-#: common/ErrorBoundary/ErrorBoundaryUI.tsx:41
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:40
 msgid "Return to home"
 msgstr "Retourner à la page d'accueil"
 

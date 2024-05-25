@@ -135,6 +135,15 @@ const errorBoundaryUISafelist = [
   'bg-Grilled',
   'border-Grilled',
 ];
+const fontCardSafelist = [
+  'text-blue-500',
+  'text-blue-300',
+  'text-gray-500',
+  'text-gray-300',
+  'font-[Lora]',
+  'font-[Mina]',
+  'font-[Poppins]',
+];
 const safelist = [
   ...toggleSafelist,
   ...buttonSafelist,
@@ -149,6 +158,7 @@ const safelist = [
   ...dropdownSafelist,
   ...tableSafelist,
   ...errorBoundaryUISafelist,
+  ...fontCardSafelist,
 ];
 
 /** @type {import('tailwindcss').Config} */

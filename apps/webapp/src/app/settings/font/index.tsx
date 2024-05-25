@@ -1,7 +1,6 @@
-import { Button, Label } from '@nx-todo-frontend/design-system';
-import { useFontsContext } from '@nx-todo-frontend/fonts';
+import { FontCard, Label } from '@nx-todo-frontend/design-system';
+import { fontNames, useFontsContext } from '@nx-todo-frontend/fonts';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
-import classNames from 'classnames';
 
 export function FontField() {
   const { fontFamily, setFontFamily } = useFontsContext();
@@ -14,35 +13,18 @@ export function FontField() {
 
   return (
     <div className="flex flex-col w-1/2 md:w-1/4 gap-1">
-      <Label htmlFor="theme">{_('Theme')}</Label>
+      <Label htmlFor="theme">{_('Font')}</Label>
       <div className="flex gap-2">
-        <div
-          className={classNames(
-            "flex flex-col gap-2 font-['Lora']",
-            fontFamily === 'Lora' && 'font-bold',
-          )}
-        >
-          <div className="text-4xl">Ag</div>
-          <Button onClick={() => handleClick('Lora')}>Lora</Button>
-        </div>
-        <div
-          className={classNames(
-            "flex flex-col gap-2 font-['Mina']",
-            fontFamily === 'Mina' && 'font-bold',
-          )}
-        >
-          <div className="text-4xl">Ag</div>
-          <Button onClick={() => handleClick('Mina')}>Mina</Button>
-        </div>
-        <div
-          className={classNames(
-            "flex flex-col gap-2 font-['Poppins']",
-            fontFamily === 'Poppins' && 'font-bold',
-          )}
-        >
-          <div className="text-4xl">Ag</div>
-          <Button onClick={() => handleClick('Poppins')}>Poppins</Button>
-        </div>
+        {fontNames.map((fontName) => {
+          return (
+            <FontCard
+              key={fontName}
+              fontName={fontName}
+              isSelected={fontFamily === fontName}
+              onClick={() => handleClick(fontName)}
+            />
+          );
+        })}
       </div>
     </div>
   );

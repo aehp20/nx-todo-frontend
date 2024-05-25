@@ -10,6 +10,7 @@ import {
   stylesErrorBoundaryUI,
   stylesErrorBoundaryUIPropertiesName,
 } from './errorBoundaryUI';
+import { stylesFontCard, stylesFontCardPropertiesName } from './fontCard';
 import { stylesInput, stylesInputPropertiesName } from './input';
 import { stylesLabel, stylesLabelPropertiesName } from './label';
 import { stylesLink, stylesLinkPropertiesName } from './link';
@@ -49,6 +50,7 @@ export const styles: ThemesProps = {
     [componentsName.textDelete]: stylesTextDelete[themes.light],
     [componentsName.link]: stylesLink[themes.light],
     [componentsName.errorBoundaryUI]: stylesErrorBoundaryUI[themes.light],
+    [componentsName.fontCard]: stylesFontCard[themes.light],
   },
   [themes.dark]: {
     [componentsName.app]: stylesApp[themes.dark],
@@ -66,6 +68,7 @@ export const styles: ThemesProps = {
     [componentsName.textDelete]: stylesTextDelete[themes.dark],
     [componentsName.link]: stylesLink[themes.dark],
     [componentsName.errorBoundaryUI]: stylesErrorBoundaryUI[themes.dark],
+    [componentsName.fontCard]: stylesFontCard[themes.dark],
   },
 };
 
@@ -85,4 +88,5 @@ export const stylesPropertiesName: StylesPropertiesNameProps = {
   [componentsName.textDelete]: stylesTextDeletePropertiesName,
   [componentsName.link]: stylesLinkPropertiesName,
   [componentsName.errorBoundaryUI]: stylesErrorBoundaryUIPropertiesName,
+  [componentsName.fontCard]: stylesFontCardPropertiesName,
 };

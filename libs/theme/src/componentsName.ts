@@ -14,4 +14,5 @@ export const componentsName = {
   textDelete: 'textDelete',
   link: 'link',
   errorBoundaryUI: 'errorBoundaryUI',
+  fontCard: 'fontCard',
 };

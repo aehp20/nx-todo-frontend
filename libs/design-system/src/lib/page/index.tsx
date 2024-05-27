@@ -17,7 +17,7 @@ export default function Page(props: PageProps) {
 
   return (
     <>
-      <header className="px-6 py-3">
+      <header role="banner" className="px-6 py-3">
         {backLink ? (
           backLink
         ) : actions ? (
@@ -29,7 +29,9 @@ export default function Page(props: PageProps) {
           <Title>{title}</Title>
         )}
       </header>
-      <main className="px-6 pt-1 pb-6">{children}</main>
+      <main role="main" className="px-6 pt-1 pb-6">
+        {children}
+      </main>
     </>
   );
 }

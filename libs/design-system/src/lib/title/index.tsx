@@ -19,11 +19,11 @@ export default function Title(props: TitleProps) {
   const color = `text-${styles[COLOR]}`;
 
   return (
-    <h2
+    <h1
       data-testid="title"
       className={classNames('text-xl font-semibold', color)}
     >
       {children}
-    </h2>
+    </h1>
   );
 }

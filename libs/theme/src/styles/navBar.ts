@@ -16,7 +16,7 @@ export const stylesNavBar = {
   [themes.light]: {
     [BG_COLOR]: 'MetallicSeaweed',
     [COLOR_TITLE]: 'Alabaster',
-    [COLOR_ITEM]: 'teal-200',
+    [COLOR_ITEM]: 'Alabaster',
     [COLOR_ITEM_HOVER]: 'Alabaster',
   },
   [themes.dark]: {

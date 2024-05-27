@@ -29,7 +29,7 @@ export default function NavBar(props: NavBarProps) {
 
   return (
     <>
-      <nav className={classNames('flex md:hidden', bgColor)}>
+      <nav role="navigation" className={classNames('flex md:hidden', bgColor)}>
         <SmallMenu
           isOpen={isOpen}
           setIsOpen={setIsOpen}
@@ -38,6 +38,7 @@ export default function NavBar(props: NavBarProps) {
         />
       </nav>
       <nav
+        role="navigation"
         className={classNames(
           'hidden md:flex items-center justify-between flex-wrap p-6 w-full',
           bgColor,

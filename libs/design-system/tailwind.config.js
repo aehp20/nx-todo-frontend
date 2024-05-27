@@ -61,7 +61,6 @@ const labelSafelist = ['text-MetallicSeaweed', 'text-ChromeYellow'];
 const navBarSafelist = [
   'bg-MetallicSeaweed',
   'text-Alabaster',
-  'text-teal-200',
   'hover:text-Alabaster',
   'bg-ChromeYellow',
   'text-Kurotobi',
@@ -176,7 +175,7 @@ module.exports = {
       colors: {
         Alabaster: '#F6F4E8',
         MediumJungleGreen: '#1D3124',
-        MetallicSeaweed: '#1C9099',
+        MetallicSeaweed: '#017298',
         MetallicSeaweedHover: '#06858F',
         MetallicSeaweedActive: '#066169',
         BeauBlue: '#BADDE0',

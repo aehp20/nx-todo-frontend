@@ -3,6 +3,7 @@ import { FontsProvider } from '@nx-todo-frontend/fonts';
 import { I18NProvider } from '@nx-todo-frontend/i18n';
 import { APIProvider } from '@nx-todo-frontend/query';
 import { ThemeProvider } from '@nx-todo-frontend/theme';
+import React from 'react';
 
 import dayjs from 'dayjs';
 import * as localizedFormat from 'dayjs/plugin/localizedFormat';
@@ -16,6 +17,7 @@ import './styles.css';
 
 import 'dayjs/locale/es';
 import 'dayjs/locale/fr';
+import { reportAccessibility } from './common';
 
 dayjs.extend(localizedFormat);
 
@@ -56,3 +58,5 @@ root.render(
     </BrowserRouter>
   </StrictMode>,
 );
+
+reportAccessibility(React);

@@ -18,8 +18,7 @@ export default function BurgerButton(props: BurgerButtonProps) {
     <Button
       onClick={onClick}
       className={classNames('px-2 py-2 h-auto md:h-[42px]', className)}
-    >
-      {<Icon className="w-4 h-4 md:w-6 md:h-6" />}
-    </Button>
+      icon={<Icon className="w-4 h-4 md:w-6 md:h-6" title="Burger button" />}
+    />
   );
 }

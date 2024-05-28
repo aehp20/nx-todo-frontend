@@ -1,6 +1,8 @@
 import { SVGProps } from 'react';
 
-export type SVGIcon = SVGProps<SVGSVGElement>;
+export type SVGIcon = SVGProps<SVGSVGElement> & {
+  title?: string;
+};
 
 export { default as ClipboardCheckIcon } from './ClipboardCheckIcon';
 export { default as CloudXMarkIcon } from './CloudXMarkIcon';

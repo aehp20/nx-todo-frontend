@@ -3,21 +3,22 @@ import { FontsProvider } from '@nx-todo-frontend/fonts';
 import { I18NProvider } from '@nx-todo-frontend/i18n';
 import { APIProvider } from '@nx-todo-frontend/query';
 import { ThemeProvider } from '@nx-todo-frontend/theme';
-import React from 'react';
 
 import dayjs from 'dayjs';
 import * as localizedFormat from 'dayjs/plugin/localizedFormat';
-import { StrictMode } from 'react';
+import React, { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
+import { reportAccessibility } from './common';
 import App from './common/App';
 
+import 'react-toastify/dist/ReactToastify.css';
 import './styles.css';
 
 import 'dayjs/locale/es';
 import 'dayjs/locale/fr';
-import { reportAccessibility } from './common';
 
 dayjs.extend(localizedFormat);
 
@@ -50,7 +51,7 @@ root.render(
         >
           <APIProvider httpClient={httpClient}>
             <ThemeProvider theme={APP_THEME} enabledResetTheme>
-              <App />
+              <App ToastContainer={ToastContainer} />
             </ThemeProvider>
           </APIProvider>
         </I18NProvider>

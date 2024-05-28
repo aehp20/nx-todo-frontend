@@ -1,10 +1,7 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
 
 import { useApp } from './useApp';
-
-import 'react-toastify/dist/ReactToastify.css';
 
 const Layout = lazy(() => import('./Layout'));
 const Create = lazy(() => import('../app/todos/Form/Create'));
@@ -15,7 +12,13 @@ const About = lazy(() => import('../app/about'));
 const Settings = lazy(() => import('../app/settings'));
 const NoMatch = lazy(() => import('./NoMatch'));
 
-export default function App() {
+type AppProps = {
+  ToastContainer: React.FunctionComponent;
+};
+
+export default function App(props: AppProps) {
+  const { ToastContainer } = props;
+
   useApp();
 
   return (

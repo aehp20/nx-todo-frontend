@@ -29,6 +29,7 @@ export function useUpdate() {
     return () => {
       queryClient.cancelQueries({ queryKey: todoKeys.byId(id) });
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const submitData = useCallback((todo: Todo) => {

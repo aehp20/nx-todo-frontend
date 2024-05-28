@@ -2,9 +2,9 @@ import { Page } from '@nx-todo-frontend/design-system';
 
 import { throwError } from '../../../common/throwError';
 
-import ListSpec from './ListSpec';
 import { Actions } from './components/Actions';
 import { useList } from './hooks/useList';
+import ListSpec from './ListSpec';
 
 export default function List() {
   const { data, error, isLoading, title } = useList();

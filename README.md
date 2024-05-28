@@ -154,3 +154,9 @@ Use the codegen command to run the test generator followed by the URL of the web
 ```
 npx playwright codegen http://localhost:4200/
 ```
+
+# Linters
+## Eslint
+```
+nx lint webapp
+```

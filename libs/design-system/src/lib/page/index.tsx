@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { ReactNode } from 'react';
 import { useTitle } from 'react-use';
 
@@ -8,10 +9,11 @@ export type PageProps = {
   title: string;
   backLink?: ReactNode;
   actions?: ReactNode;
+  mainClassName?: string;
 };
 
 export default function Page(props: PageProps) {
-  const { children, title, backLink, actions } = props;
+  const { children, title, backLink, actions, mainClassName } = props;
 
   useTitle(title);
 
@@ -29,7 +31,7 @@ export default function Page(props: PageProps) {
           <Title>{title}</Title>
         )}
       </header>
-      <main role="main" className="px-6 pt-1 pb-6">
+      <main role="main" className={classNames('px-6 pt-1 pb-6', mainClassName)}>
         {children}
       </main>
     </>

@@ -20,6 +20,7 @@ export function useList() {
     return () => {
       queryClient.cancelQueries({ queryKey: todoKeys.byParams(query) });
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {

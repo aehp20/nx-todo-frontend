@@ -32,23 +32,28 @@ export function useUpdate() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const submitData = useCallback((todo: Todo) => {
-    todo.id = id;
-    mutation.mutate(todo, {
-      onSuccess: ({ ok }) => {
-        if (ok) {
-          queryClient.invalidateQueries({
-            queryKey: todoKeys.all,
-          });
-          queryClient.invalidateQueries({
-            queryKey: todoKeys.byId(id),
-          });
-          navigate('/todos');
-          successToast(_('The update action has been completed successfully.'));
-        }
-      },
-    });
-  }, []);
+  const submitData = useCallback(
+    (todo: Todo) => {
+      todo.id = id;
+      mutation.mutate(todo, {
+        onSuccess: ({ ok }) => {
+          if (ok) {
+            queryClient.invalidateQueries({
+              queryKey: todoKeys.all,
+            });
+            queryClient.invalidateQueries({
+              queryKey: todoKeys.byId(id),
+            });
+            navigate('/todos');
+            successToast(
+              _('The update action has been completed successfully.'),
+            );
+          }
+        },
+      });
+    },
+    [_, id, mutation, navigate, queryClient, successToast],
+  );
 
   return {
     todo,

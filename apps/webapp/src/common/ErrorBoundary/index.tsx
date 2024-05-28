@@ -18,6 +18,7 @@ export default function ErrorBoundary(props: ErrorBoundaryProps) {
     if (hasError) {
       setHasError(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.key]);
 
   const handleFallback = (error?: Error) => <ErrorBoundaryUI error={error} />;

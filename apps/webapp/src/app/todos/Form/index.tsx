@@ -71,7 +71,6 @@ export default function Form(props: FormProps) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder={_('Enter a name')}
-          autoFocus
           disabled={isSubmitting}
         />
       </div>

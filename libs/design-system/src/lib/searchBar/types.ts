@@ -16,7 +16,6 @@ export type FilterConfig = {
   value?: QueryValueType;
   options?: Option[];
   placeholder?: string;
-  autoFocus?: boolean;
   disabled?: boolean;
   noOptionsMessage?: string;
 };

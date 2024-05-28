@@ -7,7 +7,6 @@ export type InputTextFieldProps = {
   label: string;
   value: string;
   placeholder?: string;
-  autoFocus?: boolean;
   onChange: (name: string, value: string) => void;
   disabled?: boolean;
 };
@@ -19,7 +18,6 @@ export default function InputTextField(props: InputTextFieldProps) {
     label,
     value,
     placeholder,
-    autoFocus,
     onChange,
     disabled,
   } = props;
@@ -37,7 +35,6 @@ export default function InputTextField(props: InputTextFieldProps) {
         id={name}
         value={value}
         placeholder={placeholder}
-        autoFocus={autoFocus}
         className="w-full md:w-[250px]"
         onChange={handleChange}
         disabled={disabled}

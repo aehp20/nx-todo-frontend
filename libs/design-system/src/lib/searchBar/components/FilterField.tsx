@@ -19,7 +19,6 @@ export function FilterField(props: FilterFieldProps) {
     name,
     options,
     placeholder,
-    autoFocus,
     disabled,
     noOptionsMessage,
   } = filtersConfig;
@@ -34,7 +33,6 @@ export function FilterField(props: FilterFieldProps) {
         label={label}
         value={value as string}
         placeholder={placeholder}
-        autoFocus={autoFocus}
         onChange={handleChange}
         disabled={disabled}
       />
@@ -49,7 +47,6 @@ export function FilterField(props: FilterFieldProps) {
         value={value as Option}
         options={options}
         placeholder={placeholder}
-        autoFocus={autoFocus}
         onChange={handleChange}
         disabled={disabled}
         noOptionsMessage={noOptionsMessage}

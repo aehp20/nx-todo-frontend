@@ -30,7 +30,6 @@ export default function SearchBarSpec() {
       label: _('Search by name'),
       value: query?.name,
       placeholder: _('Enter a name'),
-      autoFocus: true,
     },
     {
       name: 'isDone',

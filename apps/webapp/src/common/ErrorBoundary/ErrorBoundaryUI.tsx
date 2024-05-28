@@ -23,7 +23,7 @@ export default function ErrorBoundaryUI(props: ErrorBoundaryProps) {
   return (
     <Page title={_('Error')}>
       <Card>
-        <div className="flex flex-col text-center gap-2">
+        <div className="flex flex-col text-center items-center gap-2">
           <div className="font-bold">{_('Whoops, something went wrong.')}</div>
           <div>
             {_('Please either refresh the page or return home to try again.')}

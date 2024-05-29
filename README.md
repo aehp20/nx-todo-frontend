@@ -156,6 +156,7 @@ npx playwright codegen http://localhost:4200/
 ```
 
 # Linters
+
 ## Eslint
 ```
 nx lint webapp

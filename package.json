@@ -6,7 +6,9 @@
     "prepare": "husky install",
     "po2jsonEN": "node scripts/myPo2Json --locale=en",
     "po2jsonES": "node scripts/myPo2Json --locale=es",
-    "po2jsonFR": "node scripts/myPo2Json --locale=fr"
+    "po2jsonFR": "node scripts/myPo2Json --locale=fr",
+    "precommit": "nx lint webapp",
+    "prepush": "nx lint webapp"
   },
   "private": true,
   "dependencies": {

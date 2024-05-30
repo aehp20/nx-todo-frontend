@@ -161,3 +161,12 @@ npx playwright codegen http://localhost:4200/
 ```
 nx lint webapp
 ```
+
+# npm-check-updates
+Upgrades your package.json dependencies to the latest versions, ignoring specified versions.
+
+```
+sudo npm install -g npm-check-updates
+ncu
+ncu postcss -u
+```

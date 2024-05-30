@@ -175,9 +175,9 @@ module.exports = {
       colors: {
         Alabaster: '#F6F4E8',
         MediumJungleGreen: '#1D3124',
-        MetallicSeaweed: '#017298',
-        MetallicSeaweedHover: '#06858F',
-        MetallicSeaweedActive: '#066169',
+        MetallicSeaweed: '#01546F',
+        MetallicSeaweedHover: '#014C65',
+        MetallicSeaweedActive: '#014860',
         BeauBlue: '#BADDE0',
         BlueCola: '#0678E0',
         Kurotobi: '#351E1C',

@@ -169,4 +169,5 @@ Upgrades your package.json dependencies to the latest versions, ignoring specifi
 sudo npm install -g npm-check-updates
 ncu
 ncu postcss -u
+ncu --format group
 ```

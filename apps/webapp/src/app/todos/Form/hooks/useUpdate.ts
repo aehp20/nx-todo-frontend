@@ -1,3 +1,4 @@
+import { useToast } from '@nx-todo-frontend/design-system';
 import { useParamsId } from '@nx-todo-frontend/hooks';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { Todo } from '@nx-todo-frontend/models';
@@ -7,8 +8,6 @@ import { useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useQueryClient } from '@tanstack/react-query';
-
-import { useToast } from '../../../../common/useToast';
 
 export function useUpdate() {
   const navigate = useNavigate();

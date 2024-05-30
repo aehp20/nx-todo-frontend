@@ -1,4 +1,5 @@
 import { HTTPClient } from '@nx-todo-frontend/api';
+import { ToastContainer } from '@nx-todo-frontend/design-system';
 import { FontsProvider } from '@nx-todo-frontend/fonts';
 import { I18NProvider } from '@nx-todo-frontend/i18n';
 import { APIProvider } from '@nx-todo-frontend/query';
@@ -9,12 +10,10 @@ import * as localizedFormat from 'dayjs/plugin/localizedFormat';
 import React, { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
 
 import { reportAccessibility } from './common';
 import App from './common/App';
 
-import 'react-toastify/dist/ReactToastify.css';
 import './styles.css';
 
 import 'dayjs/locale/es';
@@ -50,7 +49,7 @@ root.render(
           folderPath="/translations/"
         >
           <APIProvider httpClient={httpClient}>
-            <ThemeProvider theme={APP_THEME} enabledResetTheme>
+            <ThemeProvider theme={APP_THEME}>
               <App ToastContainer={ToastContainer} />
             </ThemeProvider>
           </APIProvider>

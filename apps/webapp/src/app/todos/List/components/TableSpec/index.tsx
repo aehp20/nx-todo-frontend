@@ -3,6 +3,7 @@ import {
   Loading,
   Table,
   TrashIcon,
+  useToast,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { PaginationResponse, Todo } from '@nx-todo-frontend/models';
@@ -21,7 +22,6 @@ import {
 } from '@tanstack/react-table';
 
 import { throwError } from '../../../../../common/throwError';
-import { useToast } from '../../../../../common/useToast';
 import { useListContext } from '../../ListProvider';
 
 import { Card } from './Card';

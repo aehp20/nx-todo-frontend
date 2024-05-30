@@ -1,0 +1,23 @@
+:root {
+  --toastify-color-success: #07bc0c;
+  --toastify-icon-color-success: var(--toastify-color-success);
+}
+.Toastify__toast {
+  background-color: #F6F4E8;
+  color: #1D3124;
+}
+.Toastify__progress-bar--bg {
+  background-color: #07bc0c;
+  opacity: 1;
+}
+.Toastify__progress-bar--animated {
+  background-color: #F6F4E8;
+  opacity: 1;
+}
+.Toastify__close-button {
+  color: #1D3124;
+}
+.Toastify__close-button:hover,
+.Toastify__close-button:focus {
+  color: #1D3124;
+}

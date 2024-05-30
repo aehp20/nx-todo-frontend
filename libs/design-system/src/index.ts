@@ -17,4 +17,5 @@ export * from './lib/searchBar';
 export { default as Table } from './lib/tables';
 export { default as TextDelete } from './lib/texts';
 export { default as Title } from './lib/title';
+export * from './lib/toast';
 export { default as Toggle } from './lib/toggles';

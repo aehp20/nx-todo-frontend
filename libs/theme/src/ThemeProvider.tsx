@@ -22,6 +22,8 @@ type ThemeProviderValue = {
   setTheme: (theme: string) => void;
   styles: StylesProps;
   stylesPropertiesName: StylesPropertiesNameProps;
+  isLightTheme: boolean;
+  isDarkTheme: boolean;
 };
 
 type ThemeProviderProps = {
@@ -56,6 +58,8 @@ export function ThemeProvider(props: ThemeProviderProps) {
       setTheme: handleTheme,
       styles: styles[theme],
       stylesPropertiesName,
+      isLightTheme: theme === themes.light,
+      isDarkTheme: theme === themes.dark,
     }),
     [theme, handleTheme],
   );

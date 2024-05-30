@@ -1,10 +1,9 @@
+import { useToast } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { Todo } from '@nx-todo-frontend/models';
 import { useCreateTodo } from '@nx-todo-frontend/query';
 
 import { useNavigate } from 'react-router-dom';
-
-import { useToast } from '../../../../common/useToast';
 
 export function useCreate() {
   const navigate = useNavigate();

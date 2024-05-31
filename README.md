@@ -86,9 +86,6 @@ nx g @nx/js:lib models --directory libs/models --unitTestRunner=jest --bundler=n
 nx g @nx/jest:configuration --project=webapp
 ```
 
-## Design System
-Run `nx run design-system:storybook` to see the Design System components in storybook app.
-
 ## i18n
 Initial setup
 ```
@@ -155,6 +152,9 @@ Use the codegen command to run the test generator followed by the URL of the web
 npx playwright codegen http://localhost:4200/
 ```
 
+## Design System
+Run `nx run design-system:storybook` to see the Design System components in storybook app.
+
 # Linters
 
 ## Eslint
@@ -170,4 +170,13 @@ sudo npm install -g npm-check-updates
 ncu
 ncu postcss -u
 ncu --format group
+```
+
+# Migrate
+
+```
+nx migrate latest
+sudo npm add --global nx@latest
+
+npx storybook@latest upgrade --config-dir=libs/design-system/.storybook
 ```

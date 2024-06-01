@@ -1,7 +1,8 @@
+import { axe, toHaveNoViolations } from 'jest-axe';
+
 import { composeStories } from '@storybook/testing-react';
 import { StoryFn } from '@storybook/testing-react/dist/types';
 import { render, screen } from '@testing-library/react';
-import { axe, toHaveNoViolations } from 'jest-axe';
 
 import { BackLinkProps } from '.';
 import * as stories from './index.stories';

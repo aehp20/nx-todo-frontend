@@ -5,8 +5,6 @@ import { I18NProvider } from '@nx-todo-frontend/i18n';
 import { APIProvider } from '@nx-todo-frontend/query';
 import { ThemeProvider } from '@nx-todo-frontend/theme';
 
-import dayjs from 'dayjs';
-import * as localizedFormat from 'dayjs/plugin/localizedFormat';
 import React, { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
@@ -15,11 +13,6 @@ import { reportAccessibility } from './common';
 import App from './common/App';
 
 import './styles.css';
-
-import 'dayjs/locale/es';
-import 'dayjs/locale/fr';
-
-dayjs.extend(localizedFormat);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,

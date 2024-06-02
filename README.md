@@ -92,7 +92,7 @@ Initial setup
 mkdir locale
 rm -rf /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/webapp/public/translations/*
 rm -rf /Users/home/learn/github/nx-todo/nx-todo-frontend/locale/*.json
-rm /Users/home/learn/github/nx-todo/nx-todo-frontend/list.txt
+rm /Users/home/learn/github/nx-todo/nx-todo-frontend/apps/list.txt
 ```
 
 Find all the typescript files and put them into the "list" file

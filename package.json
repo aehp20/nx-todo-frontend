@@ -37,6 +37,8 @@
     "@babel/core": "^7.24.6",
     "@babel/preset-react": "^7.24.6",
     "@chromatic-com/storybook": "^1.5.0",
+    "@eslint/eslintrc": "^2.1.1",
+    "@eslint/js": "~8.57.0",
     "@nrwl/eslint-plugin-nx": "19.1.1",
     "@nrwl/linter": "19.1.1",
     "@nx/cypress": "19.1.1",

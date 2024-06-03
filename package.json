@@ -65,7 +65,7 @@
     "@swc/cli": "0.3.12",
     "@swc/core": "~1.5.24",
     "@swc/helpers": "~0.5.11",
-    "@testing-library/react": "15.0.7",
+    "@testing-library/react": "16.0.0",
     "@types/gettext.js": "^1.0.3",
     "@types/jest": "^29.5.12",
     "@types/jest-axe": "^3.5.9",

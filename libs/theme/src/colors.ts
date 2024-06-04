@@ -1,4 +1,4 @@
-export const colors = {
+export const colors: { [key: string]: string } = {
   Alabaster: '#F6F4E8',
   MediumJungleGreen: '#1D3124',
   MetallicSeaweed: '#1C9099',
@@ -22,4 +22,5 @@ export const colors = {
   DarkSienna: '#2F1B19',
   Liver: '#884d49',
   Bole: '#774440',
+  Grilled: '#634130',
 };

@@ -10,6 +10,8 @@ export * from './types';
 export * from './utils/isOption';
 export * from './utils/isString';
 
+import '../../../styles.css';
+
 export type SearchBarProps = {
   updateQuery: (query: Query) => void;
   filtersConfig: FilterConfig[];

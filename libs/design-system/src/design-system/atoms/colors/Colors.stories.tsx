@@ -4,6 +4,8 @@ import type { Meta } from '@storybook/react';
 import classNames from 'classnames';
 import Grid from '../../molecules/grid/Grid';
 
+import '../../../styles.css';
+
 const meta: Meta = {};
 export default meta;
 

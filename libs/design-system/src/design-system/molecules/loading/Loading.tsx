@@ -1,5 +1,7 @@
 import { SpinnerIcon } from '../../atoms/icons';
 
+import '../../../styles.css';
+
 export default function Loading() {
   return (
     <div className="absolute w-full h-full bg-gray-300 bg-opacity-25 z-10">

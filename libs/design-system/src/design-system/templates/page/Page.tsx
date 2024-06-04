@@ -4,6 +4,8 @@ import { useTitle } from 'react-use';
 
 import Title from '../../atoms/title/Title';
 
+import '../../../styles.css';
+
 export type PageProps = {
   children: ReactNode;
   title: string;

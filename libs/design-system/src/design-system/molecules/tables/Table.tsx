@@ -10,6 +10,8 @@ import { Option } from '../dropdown/Dropdown';
 import { ItemsPerPage } from './itemsPerPage';
 import Pagination from './pagination';
 
+import '../../../styles.css';
+
 export type TableProps<T> = {
   table: ITable<T>;
   ComponentOnList: React.FunctionComponent<{ row: Row<T> }>;

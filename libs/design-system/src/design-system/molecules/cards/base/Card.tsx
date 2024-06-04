@@ -3,6 +3,8 @@ import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 import classNames from 'classnames';
 import { ReactNode } from 'react';
 
+import '../../../../styles.css';
+
 export type CardProps = {
   children: ReactNode;
   className?: string;

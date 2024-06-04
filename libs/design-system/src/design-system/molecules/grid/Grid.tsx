@@ -1,3 +1,5 @@
+import '../../../styles.css';
+
 export type GridProps<T extends { id: string }> = {
   nbColumns: number;
   gap: number;

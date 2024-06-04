@@ -17,12 +17,12 @@ export const stylesNavBar = {
     [BG_COLOR]: 'MetallicSeaweed',
     [COLOR_TITLE]: 'Alabaster',
     [COLOR_ITEM]: 'Alabaster',
-    [COLOR_ITEM_HOVER]: 'Alabaster',
+    [COLOR_ITEM_HOVER]: 'BeauBlue',
   },
   [themes.dark]: {
     [BG_COLOR]: 'ChromeYellow',
     [COLOR_TITLE]: 'Kurotobi',
-    [COLOR_ITEM]: 'white',
-    [COLOR_ITEM_HOVER]: 'Kurotobi',
+    [COLOR_ITEM]: 'Kurotobi',
+    [COLOR_ITEM_HOVER]: 'white',
   },
 };

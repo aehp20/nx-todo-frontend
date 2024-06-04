@@ -87,11 +87,11 @@ const labelSafelist = ['text-MetallicSeaweed', 'text-ChromeYellow'];
 const navBarSafelist = [
   'bg-MetallicSeaweed',
   'text-Alabaster',
-  'hover:text-Alabaster',
+  'hover:text-BeauBlue',
   'bg-ChromeYellow',
   'text-Kurotobi',
   'text-white',
-  'hover:text-Kurotobi',
+  'hover:text-white',
 ];
 const toggleSafelist = [
   'peer-disabled:bg-gray-300',

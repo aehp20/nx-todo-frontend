@@ -13,7 +13,7 @@ type ErrorBoundaryProps = {
   error?: Error;
 };
 
-export default function ErrorBoundaryUI(props: ErrorBoundaryProps) {
+export default function ErrorBoundaryUI(props: Readonly<ErrorBoundaryProps>) {
   const { error } = props;
 
   const { _ } = useI18NContext();

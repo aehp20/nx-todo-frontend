@@ -8,7 +8,7 @@ export type ListSpecProps = {
   isLoading: boolean;
 };
 
-export default function ListSpec(props: ListSpecProps) {
+export default function ListSpec(props: Readonly<ListSpecProps>) {
   const { data, isLoading } = props;
 
   return (

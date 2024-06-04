@@ -34,7 +34,7 @@ export type TableSpecProps = {
 
 const columnHelper = createColumnHelper<Todo>();
 
-export default function TableSpec(props: TableSpecProps) {
+export default function TableSpec(props: Readonly<TableSpecProps>) {
   const { data, isLoading } = props;
 
   const { pageSize, setPageSize, pageSizeOptions, setPage } = useListContext();

@@ -6,7 +6,7 @@ type SummaryProps = {
   todo?: Todo;
 };
 
-export function Summary(props: SummaryProps) {
+export function Summary(props: Readonly<SummaryProps>) {
   const { todo } = props;
 
   const { _ } = useI18NContext();

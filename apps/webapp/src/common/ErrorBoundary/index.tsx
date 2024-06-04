@@ -8,7 +8,7 @@ type ErrorBoundaryProps = {
   children: ReactNode;
 };
 
-export default function ErrorBoundary(props: ErrorBoundaryProps) {
+export default function ErrorBoundary(props: Readonly<ErrorBoundaryProps>) {
   const { children } = props;
 
   const [hasError, setHasError] = useState(false);

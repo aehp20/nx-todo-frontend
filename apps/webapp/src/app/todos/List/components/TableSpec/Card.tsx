@@ -13,7 +13,7 @@ type CardProps = {
   setIsOpen: (value: boolean) => void;
 };
 
-export function Card(props: CardProps) {
+export function Card(props: Readonly<CardProps>) {
   const { todo, setIsOpen } = props;
   const { id, name, isDone } = todo;
 

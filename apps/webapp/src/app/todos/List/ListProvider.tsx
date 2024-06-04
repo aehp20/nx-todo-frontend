@@ -25,7 +25,7 @@ const pageSizeOptions: Option[] = [
   { label: '20', value: '20' },
 ];
 
-export default function ListProvider(props: ListProviderProps) {
+export default function ListProvider(props: Readonly<ListProviderProps>) {
   const { children } = props;
 
   const [query, setQuery] = useState<Record<string, string>>();

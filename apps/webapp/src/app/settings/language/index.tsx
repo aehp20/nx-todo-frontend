@@ -1,7 +1,7 @@
 import { Dropdown, Label, Option } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 export function LanguageField() {
   const { _, locale, setLocale } = useI18NContext();
@@ -23,6 +23,14 @@ export function LanguageField() {
     },
   ];
 
+  const optionLabel: { [key: string]: string } = useMemo(() => {
+    return {
+      en: _('English'),
+      es: _('Spanish'),
+      fr: _('French'),
+    };
+  }, [_]);
+
   const handleChangeLanguage = (option: Option) => {
     setLocale(option.value);
   };
@@ -30,16 +38,11 @@ export function LanguageField() {
   useEffect(() => {
     if (locale) {
       setOption({
-        label:
-          locale === 'en'
-            ? _('English')
-            : locale === 'es'
-            ? _('Spanish')
-            : _('French'),
+        label: optionLabel[locale],
         value: locale,
       });
     }
-  }, [_, locale]);
+  }, [_, locale, optionLabel]);
 
   return (
     <div className="flex flex-col w-1/2 md:w-1/4 gap-1">

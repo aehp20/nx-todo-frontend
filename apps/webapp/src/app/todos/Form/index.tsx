@@ -21,7 +21,7 @@ type FormProps = {
   isSubmitting: boolean;
 };
 
-export default function Form(props: FormProps) {
+export default function Form(props: Readonly<FormProps>) {
   const { onSubmit, todo, isNew, isSubmitting } = props;
 
   const [name, setName] = useState(todo ? todo.name : '');

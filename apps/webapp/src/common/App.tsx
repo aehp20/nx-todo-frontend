@@ -16,7 +16,7 @@ type AppProps = {
   ToastContainer: React.FunctionComponent;
 };
 
-export default function App(props: AppProps) {
+export default function App(props: Readonly<AppProps>) {
   const { ToastContainer } = props;
 
   useApp();

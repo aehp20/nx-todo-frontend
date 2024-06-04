@@ -8,7 +8,7 @@ type DialogProps = {
   handleDelete: (id: number) => void;
 };
 
-export function Dialog(props: DialogProps) {
+export function Dialog(props: Readonly<DialogProps>) {
   const { isOpen, setIsOpen, id, handleDelete } = props;
 
   const { _ } = useI18NContext();

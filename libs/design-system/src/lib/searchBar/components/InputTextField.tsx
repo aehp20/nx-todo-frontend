@@ -1,5 +1,5 @@
-import Input from '../../inputs';
-import Label from '../../labels';
+import Input from '../../inputs/Input';
+import Label from '../../labels/Label';
 
 export type InputTextFieldProps = {
   type?: string;

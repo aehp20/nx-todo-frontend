@@ -7,7 +7,7 @@ import {
   NavArrowLeftIcon,
   NavArrowRightIcon,
 } from '../../icons';
-import Input from '../../inputs';
+import Input from '../../inputs/Input';
 
 export type PaginationProps<T> = {
   paginationMeta?: PaginationMeta;

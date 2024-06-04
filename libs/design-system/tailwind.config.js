@@ -1,6 +1,32 @@
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
 
+const colors = [
+  'bg-Alabaster',
+  'bg-MediumJungleGreen',
+  'bg-MetallicSeaweed',
+  'bg-MetallicSeaweedHover',
+  'bg-MetallicSeaweedActive',
+  'bg-BeauBlue',
+  'bg-BlueCola',
+  'bg-Kurotobi',
+  'bg-PenguinWhite',
+  'bg-ChromeYellow',
+  'bg-ChromeYellowHover',
+  'bg-ChromeYellowActive',
+  'bg-Caramel',
+  'bg-Black',
+  'bg-Blue',
+  'bg-White',
+  'bg-Red',
+  'bg-Eggshell',
+  'bg-Pearl',
+  'bg-DarkLava',
+  'bg-DarkSienna',
+  'bg-Liver',
+  'bg-Bole',
+  'bg-Grilled',
+];
 const buttonSafelist = [
   'bg-MetallicSeaweed',
   'text-Alabaster',
@@ -144,6 +170,7 @@ const fontCardSafelist = [
   'font-[Poppins]',
 ];
 const safelist = [
+  ...colors,
   ...toggleSafelist,
   ...buttonSafelist,
   ...labelSafelist,

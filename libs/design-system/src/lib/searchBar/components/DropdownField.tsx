@@ -1,5 +1,5 @@
-import { Dropdown, Option } from '../../dropdown';
-import Label from '../../labels';
+import { Dropdown, Option } from '../../dropdown/Dropdown';
+import Label from '../../labels/Label';
 
 export type DropdownFieldProps = {
   name: string;

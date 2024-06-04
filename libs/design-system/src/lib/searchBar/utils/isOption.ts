@@ -1,4 +1,4 @@
-import { Option } from '../../dropdown';
+import { Option } from '../../dropdown/Dropdown';
 import { QueryValueType } from '../types';
 
 export function isOption(value: QueryValueType): value is Option {

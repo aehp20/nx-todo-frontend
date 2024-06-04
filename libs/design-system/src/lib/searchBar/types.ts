@@ -1,4 +1,4 @@
-import { Option } from '../dropdown';
+import { Option } from '../dropdown/Dropdown';
 
 export type QueryValueType =
   | string

@@ -1,4 +1,4 @@
-import { Dropdown, Option } from '../../dropdown';
+import { Dropdown, Option } from '../../dropdown/Dropdown';
 
 type ItemsPerPageProps = {
   pageSize: number;

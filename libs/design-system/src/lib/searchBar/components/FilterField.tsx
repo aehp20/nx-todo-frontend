@@ -1,4 +1,4 @@
-import { Option } from '../../dropdown';
+import { Option } from '../../dropdown/Dropdown';
 import { FilterConfig, Query, QueryValueType } from '../types';
 
 import DropdownField from './DropdownField';

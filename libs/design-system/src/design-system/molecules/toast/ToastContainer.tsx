@@ -1,17 +1,40 @@
-import { useThemeContext } from '@nx-todo-frontend/theme';
+import { componentsName, useThemeStyles } from '@nx-todo-frontend/theme';
 
-import { lazy, Suspense } from 'react';
+import classNames from 'classnames';
+import { ToastContainer as ToastContainerReactToastify } from 'react-toastify';
 
-const LightToastContainer = lazy(() => import('./lightToast'));
-const DarkToastContainer = lazy(() => import('./darkToast'));
+import CloseButton from './CloseButton';
+import Icon from './Icon';
+
+import 'react-toastify/dist/ReactToastify.css';
+import '../../../styles.css';
 
 export function ToastContainer() {
-  const { isLightTheme, isDarkTheme } = useThemeContext();
+  const { styles, stylesPropertiesName } = useThemeStyles(componentsName.toast);
+
+  const { BG_COLOR, COLOR, PROGRESS_BAR_BG_COLOR, BORDER_COLOR } =
+    stylesPropertiesName;
+
+  const bgColor = `bg-${styles[BG_COLOR]}`;
+  const color = `text-${styles[COLOR]}`;
+  const progressBarBgColor = `${styles[PROGRESS_BAR_BG_COLOR]}`;
+  const borderBgColor = `border-${styles[BORDER_COLOR]}`;
 
   return (
-    <Suspense>
-      {isLightTheme && <LightToastContainer />}
-      {isDarkTheme && <DarkToastContainer />}
-    </Suspense>
+    <ToastContainerReactToastify
+      toastClassName={() =>
+        classNames(
+          'relative flex p-2 min-h-10 border rounded-md justify-between overflow-hidden cursor-pointer',
+          bgColor,
+          color,
+          borderBgColor,
+        )
+      }
+      position="top-right"
+      autoClose={3000}
+      icon={<Icon />}
+      closeButton={(props) => <CloseButton closeToast={props.closeToast} />}
+      progressStyle={{ background: progressBarBgColor }}
+    />
   );
 }

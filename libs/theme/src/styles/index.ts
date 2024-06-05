@@ -19,6 +19,7 @@ import { stylesNavBar, stylesNavBarPropertiesName } from './navBar';
 import { stylesTable, stylesTablePropertiesName } from './table';
 import { stylesTextDelete, stylesTextDeletePropertiesName } from './textDelete';
 import { stylesTitle, stylesTitlePropertiesName } from './title';
+import { stylesToast, stylesToastPropertiesName } from './toast';
 import { stylesToggle, stylesTogglePropertiesName } from './toggle';
 
 export type StylesProps = {
@@ -51,6 +52,7 @@ export const styles: ThemesProps = {
     [componentsName.link]: stylesLink[themes.light],
     [componentsName.errorBoundaryUI]: stylesErrorBoundaryUI[themes.light],
     [componentsName.fontCard]: stylesFontCard[themes.light],
+    [componentsName.toast]: stylesToast[themes.light],
   },
   [themes.dark]: {
     [componentsName.app]: stylesApp[themes.dark],
@@ -69,6 +71,7 @@ export const styles: ThemesProps = {
     [componentsName.link]: stylesLink[themes.dark],
     [componentsName.errorBoundaryUI]: stylesErrorBoundaryUI[themes.dark],
     [componentsName.fontCard]: stylesFontCard[themes.dark],
+    [componentsName.toast]: stylesToast[themes.dark],
   },
 };
 
@@ -89,4 +92,5 @@ export const stylesPropertiesName: StylesPropertiesNameProps = {
   [componentsName.link]: stylesLinkPropertiesName,
   [componentsName.errorBoundaryUI]: stylesErrorBoundaryUIPropertiesName,
   [componentsName.fontCard]: stylesFontCardPropertiesName,
+  [componentsName.toast]: stylesToastPropertiesName,
 };

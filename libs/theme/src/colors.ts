@@ -23,4 +23,5 @@ export const colors: { [key: string]: string } = {
   Liver: '#884d49',
   Bole: '#774440',
   Grilled: '#634130',
+  KellyGreen: '#07bc0c',
 };

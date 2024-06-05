@@ -15,4 +15,5 @@ export const componentsName = {
   link: 'link',
   errorBoundaryUI: 'errorBoundaryUI',
   fontCard: 'fontCard',
+  toast: 'toast',
 };

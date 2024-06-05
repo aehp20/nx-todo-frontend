@@ -169,6 +169,19 @@ const fontCardSafelist = [
   'font-[Mina]',
   'font-[Poppins]',
 ];
+const toastSafelist = [
+  'bg-Alabaster',
+  'text-MediumJungleGreen',
+  'hover-text-MediumJungleGreen',
+  'focus-text-MediumJungleGreen',
+  'bg-Kurotobi',
+  'text-PenguinWhite',
+  'hover:text-PenguinWhite',
+  'focus:text-PenguinWhite',
+  'text-KellyGreen',
+  'border-MetallicSeaweed',
+  'border-ChromeYellow',
+];
 const safelist = [
   ...colors,
   ...toggleSafelist,
@@ -185,6 +198,7 @@ const safelist = [
   ...tableSafelist,
   ...errorBoundaryUISafelist,
   ...fontCardSafelist,
+  ...toastSafelist,
 ];
 
 /** @type {import('tailwindcss').Config} */
@@ -224,6 +238,7 @@ module.exports = {
         Liver: '#884d49',
         Bole: '#774440',
         Grilled: '#634130',
+        KellyGreen: '#07bc0c',
       },
     },
   },

@@ -4,6 +4,7 @@ export type SVGIcon = SVGProps<SVGSVGElement> & {
   title?: string;
 };
 
+export { default as CheckCircleSolidIcon } from './CheckCircleSolidIcon';
 export { default as ClipboardCheckIcon } from './ClipboardCheckIcon';
 export { default as CloudXMarkIcon } from './CloudXMarkIcon';
 export { default as FastArrowLeftIcon } from './FastArrowLeftIcon';

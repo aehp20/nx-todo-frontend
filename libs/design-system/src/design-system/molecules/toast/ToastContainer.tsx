@@ -35,6 +35,10 @@ export function ToastContainer() {
       icon={<Icon />}
       closeButton={(props) => <CloseButton closeToast={props.closeToast} />}
       progressStyle={{ background: progressBarBgColor }}
+      className={String.raw`[&_.Toastify\_\_progress-bar--bg]:bg-[--bg]`}
+      style={{
+        '--bg': progressBarBgColor,
+      }}
     />
   );
 }

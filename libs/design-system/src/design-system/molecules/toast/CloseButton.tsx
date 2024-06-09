@@ -27,6 +27,7 @@ export default function CloseButton(props: CloseButtonProps) {
     <div
       onClick={closeToast}
       className={classNames(color, hoverColor, focusColor)}
+      role="button"
     >
       <XMarkIcon width="20px" height="20px" />
     </div>

@@ -14,7 +14,7 @@ export type PageProps = {
 export default function Page(props: Readonly<PageProps>) {
   const { children, title, headerContent, mainClassName } = props;
 
-  useTitle(title || '');
+  useTitle(title ?? '');
 
   return (
     <>

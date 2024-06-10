@@ -53,6 +53,31 @@ const columns = [
   }),
 ];
 
+const ComponentOnList = (props: { row: Row<Person> }) => {
+  const { row } = props;
+  const { id, name, email, phone } = row.original;
+
+  const actions = [
+    { onClick: () => console.log('Rename'), content: 'Rename' },
+    { onClick: () => console.log('Duplicate'), content: 'Duplicate' },
+    {
+      onClick: () => console.log('Delete'),
+      content: <TextDelete>Delete</TextDelete>,
+    },
+  ];
+
+  return (
+    <CardWithActions actions={actions}>
+      <div className="flex flex-col gap-2">
+        <div className="font-bold">{name}</div>
+        <div>
+          {id} {email} {phone}
+        </div>
+      </div>
+    </CardWithActions>
+  );
+};
+
 const CustomTable = () => {
   const [data] = useState(() => [...mockData]);
 
@@ -74,31 +99,6 @@ const CustomTable = () => {
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
-
-  const actions = [
-    { onClick: () => console.log('Rename'), content: 'Rename' },
-    { onClick: () => console.log('Duplicate'), content: 'Duplicate' },
-    {
-      onClick: () => console.log('Delete'),
-      content: <TextDelete>Delete</TextDelete>,
-    },
-  ];
-
-  const ComponentOnList = (props: { row: Row<Person> }) => {
-    const { row } = props;
-    const { id, name, email, phone } = row.original;
-
-    return (
-      <CardWithActions actions={actions}>
-        <div className="flex flex-col gap-2">
-          <div className="font-bold">{name}</div>
-          <div>
-            {id} {email} {phone}
-          </div>
-        </div>
-      </CardWithActions>
-    );
-  };
 
   return (
     <Table

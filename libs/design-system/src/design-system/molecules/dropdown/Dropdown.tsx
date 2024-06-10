@@ -123,7 +123,7 @@ export function Dropdown({
       onChange={(newValue: unknown) => onChange(newValue as Option)}
       closeMenuOnSelect={false}
       hideSelectedOptions={false}
-      noOptionsMessage={() => noOptionsMessage || 'No options'}
+      noOptionsMessage={() => noOptionsMessage ?? 'No options'}
       isDisabled={isDisabled}
       isSearchable={isSearchable}
       blurInputOnSelect={blurInputOnSelect}

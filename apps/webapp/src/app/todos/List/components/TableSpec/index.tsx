@@ -9,7 +9,7 @@ import { useI18NContext } from '@nx-todo-frontend/i18n';
 import { PaginationResponse, Todo } from '@nx-todo-frontend/models';
 import { useDeleteTodo } from '@nx-todo-frontend/query';
 
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -46,6 +46,10 @@ export default function TableSpec(props: Readonly<TableSpecProps>) {
 
   const { successToast } = useToast();
 
+  const cellName = (info: CellContext<Todo, string>) => (
+    <CellName info={info} />
+  );
+
   const columns = [
     columnHelper.accessor('id', {
       header: () => _('ID'),
@@ -53,7 +57,7 @@ export default function TableSpec(props: Readonly<TableSpecProps>) {
     }),
     columnHelper.accessor('name', {
       header: () => _('NAME'),
-      cell: (info) => <CellName info={info} />,
+      cell: cellName,
     }),
     columnHelper.accessor('isDoneStringFormat', {
       header: () => _('IS DONE?'),
@@ -136,9 +140,9 @@ function generateComponentOnList(handleDelete: (id: number) => void) {
   return ComponentOnList;
 }
 
-const CellName = ({ info }: { info: CellContext<Todo, string> }) => (
+const CellName = memo(({ info }: { info: CellContext<Todo, string> }) => (
   <Link to={`/todos/update/${info.row.original.id}`}>{info.getValue()}</Link>
-);
+));
 
 const CellIsDone = ({
   info,

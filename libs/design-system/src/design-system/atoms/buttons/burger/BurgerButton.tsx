@@ -9,7 +9,7 @@ export type BurgerButtonProps = {
   className?: string;
 };
 
-export default function BurgerButton(props: BurgerButtonProps) {
+export default function BurgerButton(props: Readonly<BurgerButtonProps>) {
   const { isOpen, onClick, className } = props;
 
   const Icon = isOpen ? XMarkIcon : MenuIcon;

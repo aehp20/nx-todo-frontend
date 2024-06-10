@@ -49,6 +49,9 @@ export default function TableSpec(props: Readonly<TableSpecProps>) {
   const cellName = (info: CellContext<Todo, string>) => (
     <CellName info={info} />
   );
+  const cellIsDone = (info: CellContext<Todo, boolean | undefined>) => (
+    <CellIsDone info={info} handleDelete={handleDelete} _={_} />
+  );
 
   const columns = [
     columnHelper.accessor('id', {
@@ -66,9 +69,7 @@ export default function TableSpec(props: Readonly<TableSpecProps>) {
     columnHelper.accessor('isDone', {
       id: 'action',
       header: () => _('ACTION'),
-      cell: (info) => (
-        <CellIsDone info={info} handleDelete={handleDelete} _={_} />
-      ),
+      cell: cellIsDone,
     }),
   ];
 
@@ -144,30 +145,32 @@ const CellName = memo(({ info }: { info: CellContext<Todo, string> }) => (
   <Link to={`/todos/update/${info.row.original.id}`}>{info.getValue()}</Link>
 ));
 
-const CellIsDone = ({
-  info,
-  handleDelete,
-  _,
-}: {
-  info: CellContext<Todo, boolean | undefined>;
-  handleDelete: (id: number) => void;
-  _: (...originalArguments: unknown[]) => string;
-}) => {
-  const id = info.row.original.id;
-  return id ? (
-    <Confirmation
-      title={_('Delete Todo?')}
-      content={_('Are you sure you want to delete this todo?')}
-      onConfirm={() => handleDelete(id)}
-      labelNoButton={_('No')}
-      labelYesButton={_('Yes')}
-    >
-      {({ displayConfirmation }) => (
-        <TrashIcon
-          className="cursor-pointer"
-          onClick={() => displayConfirmation(true)}
-        />
-      )}
-    </Confirmation>
-  ) : null;
-};
+const CellIsDone = memo(
+  ({
+    info,
+    handleDelete,
+    _,
+  }: {
+    info: CellContext<Todo, boolean | undefined>;
+    handleDelete: (id: number) => void;
+    _: (...originalArguments: unknown[]) => string;
+  }) => {
+    const id = info.row.original.id;
+    return id ? (
+      <Confirmation
+        title={_('Delete Todo?')}
+        content={_('Are you sure you want to delete this todo?')}
+        onConfirm={() => handleDelete(id)}
+        labelNoButton={_('No')}
+        labelYesButton={_('Yes')}
+      >
+        {({ displayConfirmation }) => (
+          <TrashIcon
+            className="cursor-pointer"
+            onClick={() => displayConfirmation(true)}
+          />
+        )}
+      </Confirmation>
+    ) : null;
+  },
+);

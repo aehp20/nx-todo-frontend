@@ -20,6 +20,10 @@ export function ToastContainer() {
   const progressBarBgColor = `${styles[PROGRESS_BAR_BG_COLOR]}`;
   const borderBgColor = `border-${styles[BORDER_COLOR]}`;
 
+  const closeButton = (props: {
+    closeToast: (e: React.MouseEvent<HTMLElement>) => void;
+  }) => <CloseButton closeToast={props.closeToast} />;
+
   return (
     <ToastContainerReactToastify
       toastClassName={() =>
@@ -33,7 +37,7 @@ export function ToastContainer() {
       position="top-right"
       autoClose={3000}
       icon={<Icon />}
-      closeButton={(props) => <CloseButton closeToast={props.closeToast} />}
+      closeButton={closeButton}
       progressStyle={{ background: progressBarBgColor }}
       className={String.raw`[&_.Toastify\_\_progress-bar--bg]:bg-[--bg]`}
       style={{

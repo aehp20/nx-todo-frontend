@@ -8,7 +8,7 @@ type CloseButtonProps = {
   closeToast: (e: React.MouseEvent<HTMLElement>) => void;
 };
 
-export default function CloseButton(props: CloseButtonProps) {
+export default function CloseButton(props: Readonly<CloseButtonProps>) {
   const { closeToast } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(componentsName.toast);

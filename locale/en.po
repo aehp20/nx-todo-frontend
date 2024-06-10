@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-25 23:02+0200\n"
+"POT-Creation-Date: 2024-06-10 16:26+0200\n"
 "PO-Revision-Date: 2024-05-11 23:01+0200\n"
 "Last-Translator: Aron <aronherrera2009@gmail.com>\n"
 "Language-Team: English\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/settings/index.tsx:13 common/Layout.tsx:22
+#: app/settings/index.tsx:12 common/Layout.tsx:22
 msgid "Settings"
 msgstr "Settings"
 
@@ -29,19 +29,19 @@ msgstr "Cache"
 msgid "Clear Cache"
 msgstr "Clear Cache"
 
-#: app/settings/language/index.tsx:13 app/settings/language/index.tsx:35
+#: app/settings/language/index.tsx:13 app/settings/language/index.tsx:28
 msgid "English"
 msgstr "English"
 
-#: app/settings/language/index.tsx:17 app/settings/language/index.tsx:38
+#: app/settings/language/index.tsx:17 app/settings/language/index.tsx:30
 msgid "French"
 msgstr "French"
 
-#: app/settings/language/index.tsx:21 app/settings/language/index.tsx:37
+#: app/settings/language/index.tsx:21 app/settings/language/index.tsx:29
 msgid "Spanish"
 msgstr "Spanish"
 
-#: app/settings/language/index.tsx:46
+#: app/settings/language/index.tsx:49
 msgid "Language"
 msgstr "Language"
 
@@ -61,11 +61,11 @@ msgstr "Theme"
 msgid "Font"
 msgstr "Font"
 
-#: app/home/index.tsx:8 common/Layout.tsx:19
+#: app/home/index.tsx:7 common/Layout.tsx:19
 msgid "Home"
 msgstr "Home"
 
-#: app/home/index.tsx:12
+#: app/home/index.tsx:17
 msgid ""
 "Welcome to our Todo List application using React! React, a JavaScript "
 "library developed by Facebook, is widely recognized for its efficiency and "
@@ -79,11 +79,11 @@ msgstr ""
 "application, we use essential React concepts, including components, state "
 "management, props, event handling, and styling."
 
-#: app/home/index.tsx:17
+#: app/home/index.tsx:23
 msgid "The importance of a Todo List application"
 msgstr "The importance of a Todo List application"
 
-#: app/home/index.tsx:21
+#: app/home/index.tsx:27
 msgid ""
 "A Todo List app serves as an ideal project to grasp the fundamentals of a "
 "new programming language or framework quickly. It provides a practical "
@@ -95,23 +95,23 @@ msgstr ""
 "context for learning essential concepts while working towards a tangible "
 "outcome."
 
-#: app/home/index.tsx:26
+#: app/home/index.tsx:34
 msgid "The objective"
 msgstr "The objective"
 
-#: app/home/index.tsx:29
+#: app/home/index.tsx:37
 msgid "The goal is to create a simple Todo List application with features."
 msgstr "The goal is to create a simple Todo List application with features."
 
-#: app/home/index.tsx:32
+#: app/home/index.tsx:44
 msgid "Here's what we'll be aiming for:"
 msgstr "Here's what we'll be aiming for:"
 
-#: app/home/index.tsx:35
+#: app/home/index.tsx:47
 msgid "Adding New Todos: Enable users to add new tasks to the list."
 msgstr "Adding New Todos: Enable users to add new tasks to the list."
 
-#: app/home/index.tsx:40
+#: app/home/index.tsx:52
 msgid ""
 "Editing and Deleting Todos: Provide functionality to modify or remove "
 "existing tasks."
@@ -119,17 +119,17 @@ msgstr ""
 "Editing and Deleting Todos: Provide functionality to modify or remove "
 "existing tasks."
 
-#: app/home/index.tsx:46
+#: app/home/index.tsx:58
 msgid ""
 "Marking Todos as Completed: Allow users to indicate when tasks are finished."
 msgstr ""
 "Marking Todos as Completed: Allow users to indicate when tasks are finished."
 
-#: app/about/index.tsx:8
+#: app/about/index.tsx:7
 msgid "Aron Elias HERRERA PONTE"
 msgstr "Aron Elias HERRERA PONTE"
 
-#: app/about/index.tsx:11
+#: app/about/index.tsx:13
 msgid ""
 "Lead developer with over 10 years' experience, specializing in frontend "
 "development with ReactJS: Web and Mobile."
@@ -137,7 +137,7 @@ msgstr ""
 "Lead developer with over 10 years' experience, specializing in frontend "
 "development with ReactJS: Web and Mobile."
 
-#: app/about/index.tsx:17
+#: app/about/index.tsx:19
 msgid ""
 "As a senior developer my main objective is to design, develop and maintain "
 "web applications. Implement new web technologies that will make the product "
@@ -151,19 +151,19 @@ msgstr ""
 "fast, intuitive and powerful user interfaces and experiences by solving "
 "complex underlying technical challenges."
 
-#: app/about/index.tsx:22
+#: app/about/index.tsx:24
 msgid "Coordinates"
 msgstr "Coordinates"
 
-#: app/about/index.tsx:25
+#: app/about/index.tsx:27
 msgid "Paris - France"
 msgstr "Paris - France"
 
-#: app/about/index.tsx:30
+#: app/about/index.tsx:32
 msgid "Full LinkedIn profile"
 msgstr "Full LinkedIn profile"
 
-#: app/about/index.tsx:45
+#: app/about/index.tsx:47
 msgid "Social networks"
 msgstr "Social networks"
 
@@ -190,27 +190,27 @@ msgstr "Name"
 msgid "Enter a name"
 msgstr "Enter a name"
 
-#: app/todos/Form/index.tsx:79
+#: app/todos/Form/index.tsx:78
 msgid "Is Done?"
 msgstr "Is Done?"
 
-#: app/todos/Form/index.tsx:85
+#: app/todos/Form/index.tsx:84
 msgid "Select an element"
 msgstr "Select an element"
 
-#: app/todos/Form/index.tsx:94
+#: app/todos/Form/index.tsx:93
 msgid "Save"
 msgstr "Save"
 
-#: app/todos/Form/Update.tsx:31
+#: app/todos/Form/Update.tsx:29
 msgid "Update Todo"
 msgstr "Update Todo"
 
-#: app/todos/Form/Update.tsx:32 app/todos/Form/Create.tsx:21
+#: app/todos/Form/Update.tsx:34 app/todos/Form/Create.tsx:23
 msgid "Back to Home page"
 msgstr "Back to Home page"
 
-#: app/todos/Form/Create.tsx:20
+#: app/todos/Form/Create.tsx:18
 msgid "Create Todo"
 msgstr "Create Todo"
 
@@ -222,11 +222,11 @@ msgstr "Created at:"
 msgid "Updated at:"
 msgstr "Updated at:"
 
-#: app/todos/Form/hooks/useCreate.ts:23
+#: app/todos/Form/hooks/useCreate.ts:22
 msgid "The create action has been completed successfully."
 msgstr "The create action has been completed successfully."
 
-#: app/todos/Form/hooks/useUpdate.ts:46
+#: app/todos/Form/hooks/useUpdate.ts:48
 msgid "The update action has been completed successfully."
 msgstr "The update action has been completed successfully."
 
@@ -238,64 +238,64 @@ msgstr "Add"
 msgid "Search by name"
 msgstr "Search by name"
 
-#: app/todos/List/components/SearchBarSpec/index.tsx:38
+#: app/todos/List/components/SearchBarSpec/index.tsx:37
 msgid "Search by status"
 msgstr "Search by status"
 
-#: app/todos/List/components/SearchBarSpec/index.tsx:41
+#: app/todos/List/components/SearchBarSpec/index.tsx:40
 msgid "Select a status"
 msgstr "Select a status"
 
-#: app/todos/List/components/SearchBarSpec/index.tsx:42
+#: app/todos/List/components/SearchBarSpec/index.tsx:41
 msgid "No options"
 msgstr "No options"
 
-#: app/todos/List/components/TableSpec/index.tsx:50
+#: app/todos/List/components/TableSpec/index.tsx:58
 msgid "ID"
 msgstr "ID"
 
-#: app/todos/List/components/TableSpec/index.tsx:54
+#: app/todos/List/components/TableSpec/index.tsx:62
 msgid "NAME"
 msgstr "NAME"
 
-#: app/todos/List/components/TableSpec/index.tsx:62
+#: app/todos/List/components/TableSpec/index.tsx:66
 #: app/todos/List/components/TableSpec/Card.tsx:36
 msgid "IS DONE?"
 msgstr "IS DONE?"
 
-#: app/todos/List/components/TableSpec/index.tsx:67
+#: app/todos/List/components/TableSpec/index.tsx:71
 msgid "ACTION"
 msgstr "ACTION"
 
-#: app/todos/List/components/TableSpec/index.tsx:72
+#: app/todos/List/components/TableSpec/index.tsx:97
+msgid "The delete action has been completed successfully."
+msgstr "The delete action has been completed successfully."
+
+#: app/todos/List/components/TableSpec/index.tsx:110
+msgid "Items per page"
+msgstr "Items per page"
+
+#: app/todos/List/components/TableSpec/index.tsx:161
 #: app/todos/List/components/TableSpec/Dialog.tsx:18
 msgid "Delete Todo?"
 msgstr "Delete Todo?"
 
-#: app/todos/List/components/TableSpec/index.tsx:73
+#: app/todos/List/components/TableSpec/index.tsx:162
 #: app/todos/List/components/TableSpec/Dialog.tsx:25
 msgid "Are you sure you want to delete this todo?"
 msgstr "Are you sure you want to delete this todo?"
 
-#: app/todos/List/components/TableSpec/index.tsx:75
+#: app/todos/List/components/TableSpec/index.tsx:164
 #: app/todos/List/components/TableSpec/Card.tsx:36
 #: app/todos/List/components/TableSpec/Dialog.tsx:22
 msgid "No"
 msgstr "No"
 
-#: app/todos/List/components/TableSpec/index.tsx:76
+#: app/todos/List/components/TableSpec/index.tsx:165
 #: app/todos/List/components/TableSpec/Card.tsx:36
 #: app/todos/List/components/TableSpec/Dialog.tsx:23
 msgid "Yes"
 msgstr "Yes"
-
-#: app/todos/List/components/TableSpec/index.tsx:111
-msgid "The delete action has been completed successfully."
-msgstr "The delete action has been completed successfully."
-
-#: app/todos/List/components/TableSpec/index.tsx:124
-msgid "Items per page"
-msgstr "Items per page"
 
 #: app/todos/List/components/TableSpec/Card.tsx:25
 msgid "Delete"
@@ -315,15 +315,15 @@ msgstr "Todos"
 msgid "Error"
 msgstr "Error"
 
-#: common/ErrorBoundary/ErrorBoundaryUI.tsx:27
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:30
 msgid "Whoops, something went wrong."
 msgstr "Whoops, something went wrong."
 
-#: common/ErrorBoundary/ErrorBoundaryUI.tsx:29
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:32
 msgid "Please either refresh the page or return home to try again."
 msgstr "Please either refresh the page or return home to try again."
 
-#: common/ErrorBoundary/ErrorBoundaryUI.tsx:40
+#: common/ErrorBoundary/ErrorBoundaryUI.tsx:43
 msgid "Return to home"
 msgstr "Return to home"
 
@@ -335,14 +335,14 @@ msgstr "About me"
 msgid "Loading..."
 msgstr "Loading..."
 
-#: common/NoMatch.tsx:10
+#: common/NoMatch.tsx:9
 msgid "Page does not exist"
 msgstr "Page does not exist"
 
-#: common/NoMatch.tsx:13
+#: common/NoMatch.tsx:15
 msgid "Nothing to see here!"
 msgstr "Nothing to see here!"
 
-#: common/NoMatch.tsx:15
+#: common/NoMatch.tsx:17
 msgid "Click here to go the Home page"
 msgstr "Click here to go the Home page"

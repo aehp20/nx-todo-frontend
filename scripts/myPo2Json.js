@@ -1,6 +1,6 @@
 const lineReader = require('line-reader');
 const parseArgs = require('minimist');
-const execSync = require('child_process').execSync;
+const cp = require('child_process');
 const fs = require('fs');
 const path = require("path");
 
@@ -44,7 +44,7 @@ locales.forEach(locale => {
       newText += "\n";
     } else {
       fs.writeFile(`${folder}${tmpFile}`, newText, (err) => {
-        execSync(`node_modules/gettext.js/bin/po2json ${folder}${tmpFile}  ${folder}${jsonFile}`, { encoding: 'utf-8' });
+        cp.execSync(`node_modules/gettext.js/bin/po2json ${folder}${tmpFile}  ${folder}${jsonFile}`, { encoding: 'utf-8', shell: false });
         if (err) { throw err; }
         fs.unlink(`${folder}${tmpFile}`, function (err) {
           if (err) throw err;

@@ -10,7 +10,7 @@ export type CardProps = {
   className?: string;
 };
 
-export default function Card(props: CardProps) {
+export default function Card(props: Readonly<CardProps>) {
   const { children, className } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(componentsName.card);

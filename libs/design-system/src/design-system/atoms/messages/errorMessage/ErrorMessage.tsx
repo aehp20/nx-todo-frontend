@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 import { Message } from '..';
 import { isMessageError } from './isMessageError';
 import { MessageError } from './types';
@@ -15,10 +13,9 @@ export default function ErrorMessage(props: Readonly<ErrorMessageProps>) {
   const { error, className } = props;
 
   if (error) {
-    const errorMessage = useMemo(
-      () => (isMessageError(error) ? error.message : JSON.stringify(error)),
-      [error],
-    );
+    const errorMessage = isMessageError(error)
+      ? error.message
+      : JSON.stringify(error);
 
     return (
       <Message type="error" className={className}>

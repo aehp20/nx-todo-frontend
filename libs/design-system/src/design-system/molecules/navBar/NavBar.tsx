@@ -14,7 +14,7 @@ export type NavBarProps = {
   items: ItemNavBar[];
 };
 
-export default function NavBar(props: NavBarProps) {
+export default function NavBar(props: Readonly<NavBarProps>) {
   const { title, items } = props;
 
   const [isOpen, setIsOpen] = useState(false);

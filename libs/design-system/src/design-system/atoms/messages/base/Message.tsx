@@ -11,7 +11,7 @@ export type MessageProps = {
   className?: string;
 };
 
-export default function Message(props: MessageProps) {
+export default function Message(props: Readonly<MessageProps>) {
   const { type = 'info', children, className } = props;
 
   return (

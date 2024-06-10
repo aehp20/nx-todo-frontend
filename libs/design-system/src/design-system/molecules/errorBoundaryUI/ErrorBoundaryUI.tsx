@@ -8,7 +8,7 @@ export type ErrorBoundaryUIProps = {
   className?: string;
 };
 
-export default function ErrorBoundaryUI(props: ErrorBoundaryUIProps) {
+export default function ErrorBoundaryUI(props: Readonly<ErrorBoundaryUIProps>) {
   const { error, className } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(

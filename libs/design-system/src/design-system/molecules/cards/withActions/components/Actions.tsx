@@ -15,7 +15,7 @@ type ActionsProps = {
   stylesPropertiesName: Record<string, string>;
 };
 
-export function Actions(props: ActionsProps) {
+export function Actions(props: Readonly<ActionsProps>) {
   const { nodeRef, actions, isOpen, setIsOpen, styles, stylesPropertiesName } =
     props;
 

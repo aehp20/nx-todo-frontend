@@ -11,7 +11,7 @@ export type BackLinkProps = {
   content: ReactNode;
 };
 
-export default function BackLink(props: BackLinkProps) {
+export default function BackLink(props: Readonly<BackLinkProps>) {
   const { to, content } = props;
 
   return (

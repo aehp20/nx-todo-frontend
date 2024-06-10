@@ -24,12 +24,11 @@ export default function CloseButton(props: CloseButtonProps) {
   const focusColor = `focus:text-${styles[CLOSE_BUTTON_FOCUS_COLOR]}`;
 
   return (
-    <div
+    <button
       onClick={closeToast}
       className={classNames(color, hoverColor, focusColor)}
-      role="button"
     >
       <XMarkIcon width="20px" height="20px" />
-    </div>
+    </button>
   );
 }

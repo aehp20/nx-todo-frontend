@@ -14,7 +14,7 @@ export type CardWithActionsProps = {
   actions: ActionItem[];
 };
 
-export default function CardWithActions(props: CardWithActionsProps) {
+export default function CardWithActions(props: Readonly<CardWithActionsProps>) {
   const { children, className, actions } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(componentsName.card);

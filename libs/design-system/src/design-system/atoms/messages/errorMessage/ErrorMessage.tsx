@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { Message } from '..';
 import { isMessageError } from './isMessageError';
 import { MessageError } from './types';
@@ -5,20 +7,21 @@ import { MessageError } from './types';
 import '../../../../styles.css';
 
 export type ErrorMessageProps = {
-  error?: MessageError | string | unknown;
+  error?: MessageError | string;
   className?: string;
 };
 
-export default function ErrorMessage(props: ErrorMessageProps) {
+export default function ErrorMessage(props: Readonly<ErrorMessageProps>) {
   const { error, className } = props;
+
+  const errorMessage = useMemo(
+    () => (isMessageError(error) ? error.message : JSON.stringify(error)),
+    [error],
+  );
 
   return (
     <Message type="error" className={className}>
-      {error
-        ? isMessageError(error)
-          ? error.message
-          : JSON.stringify(error)
-        : 'An error has occurred'}
+      {error ? errorMessage : 'An error has occurred'}
     </Message>
   );
 }

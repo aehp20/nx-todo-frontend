@@ -9,7 +9,7 @@ export type TextDeleteProps = {
   children: ReactNode;
 };
 
-export default function TextDelete(props: TextDeleteProps) {
+export default function TextDelete(props: Readonly<TextDeleteProps>) {
   const { children } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(

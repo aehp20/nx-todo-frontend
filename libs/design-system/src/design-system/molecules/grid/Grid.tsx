@@ -7,7 +7,9 @@ export type GridProps<T extends { id: string }> = {
   Component: React.FunctionComponent<{ item: T }>;
 };
 
-export default function Grid<T extends { id: string }>(props: GridProps<T>) {
+export default function Grid<T extends { id: string }>(
+  props: Readonly<GridProps<T>>,
+) {
   const { nbColumns, gap, items, Component } = props;
 
   return (

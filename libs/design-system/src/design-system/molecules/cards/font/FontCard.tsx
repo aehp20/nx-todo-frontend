@@ -10,7 +10,7 @@ export type FontCardProps = {
   onClick: () => void;
 };
 
-export default function FontCard(props: FontCardProps) {
+export default function FontCard(props: Readonly<FontCardProps>) {
   const { fontName, isSelected, onClick } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(
@@ -24,7 +24,7 @@ export default function FontCard(props: FontCardProps) {
 
   return (
     <Card className="!p-0 !w-fit">
-      <div
+      <button
         className={classNames(
           `flex flex-col gap-2 cursor-pointer font-[${fontName}]`,
           'justify-content items-center',
@@ -35,7 +35,7 @@ export default function FontCard(props: FontCardProps) {
       >
         <div className={classNames('text-4xl', isSelected && agColor)}>Ag</div>
         <div className={classNames('text-sm', nameColor)}>{fontName}</div>
-      </div>
+      </button>
     </Card>
   );
 }

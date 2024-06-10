@@ -4,8 +4,9 @@ const execSync = require('child_process').execSync;
 const fs = require('fs');
 const path = require("path");
 
+const opts = {};
 const args = process.argv.slice(2);
-const argv = parseArgs(args, opts={});
+const argv = parseArgs(args, opts);
 
 const locale = argv.locale || "en";
 const locales = locale.split(",");

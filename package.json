@@ -49,7 +49,7 @@
     "@nx/js": "19.2.0",
     "@nx/playwright": "19.2.0",
     "@nx/react": "19.2.0",
-    "@nx/storybook": "19.2.0",
+    "@nx/storybook": "19.2.2",
     "@nx/vite": "19.2.0",
     "@nx/web": "19.2.0",
     "@nx/workspace": "19.2.0",

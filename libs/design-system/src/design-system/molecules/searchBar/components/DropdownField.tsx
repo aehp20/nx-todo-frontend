@@ -12,7 +12,7 @@ export type DropdownFieldProps = {
   noOptionsMessage?: string;
 };
 
-export default function DropdownField(props: DropdownFieldProps) {
+export default function DropdownField(props: Readonly<DropdownFieldProps>) {
   const {
     name,
     label,

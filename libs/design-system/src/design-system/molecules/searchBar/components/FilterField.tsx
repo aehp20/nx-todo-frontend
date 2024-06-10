@@ -10,7 +10,7 @@ type FilterFieldProps = {
   query: Query | undefined;
 };
 
-export function FilterField(props: FilterFieldProps) {
+export function FilterField(props: Readonly<FilterFieldProps>) {
   const { filtersConfig, handleChange, query } = props;
 
   const {

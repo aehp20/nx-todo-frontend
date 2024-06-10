@@ -17,7 +17,7 @@ export type SearchBarProps = {
   filtersConfig: FilterConfig[];
 };
 
-const SearchBar = memo(function SearchBar(props: SearchBarProps) {
+const SearchBar = memo(function SearchBar(props: Readonly<SearchBarProps>) {
   const { updateQuery, filtersConfig } = props;
 
   const { query, handleChange } = useSearchBar(updateQuery, filtersConfig);
@@ -28,7 +28,7 @@ const SearchBar = memo(function SearchBar(props: SearchBarProps) {
         {filtersConfig
           .map((filtersConfig, index) => (
             <FilterField
-              key={index}
+              key={JSON.stringify(filtersConfig)}
               filtersConfig={filtersConfig}
               handleChange={handleChange}
               query={query}

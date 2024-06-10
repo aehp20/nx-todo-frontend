@@ -12,7 +12,7 @@ type MenuProps = {
   items: ItemNavBar[];
 };
 
-export default function Menu(props: MenuProps) {
+export default function Menu(props: Readonly<MenuProps>) {
   const { isOpen, setIsOpen, items } = props;
 
   const navigate = useNavigate();

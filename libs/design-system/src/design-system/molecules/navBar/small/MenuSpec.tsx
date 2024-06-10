@@ -16,7 +16,7 @@ type MenuSpecProps = {
   };
 };
 
-export function MenuSpec(props: MenuSpecProps) {
+export function MenuSpec(props: Readonly<MenuSpecProps>) {
   const { isOpen, items, handleTo, styles } = props;
   const { bgColor, colorItem, colorItemHover } = styles;
 
@@ -47,7 +47,7 @@ type ContainerProps = {
   };
 };
 
-export function Container(props: ContainerProps) {
+export function Container(props: Readonly<ContainerProps>) {
   const { children, isOpen, styles } = props;
   const { bgColor } = styles;
 
@@ -73,7 +73,7 @@ type ItemsProps = {
   };
 };
 
-export function Items(props: ItemsProps) {
+export function Items(props: Readonly<ItemsProps>) {
   const { items, handleTo, styles } = props;
 
   return (
@@ -104,7 +104,7 @@ type ItemProps = {
   };
 };
 
-export function Item(props: ItemProps) {
+export function Item(props: Readonly<ItemProps>) {
   const { children, to, label, handleTo, styles } = props;
   const { colorItem, colorItemHover } = styles;
 

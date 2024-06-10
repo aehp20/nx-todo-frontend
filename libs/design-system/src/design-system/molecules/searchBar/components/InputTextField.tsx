@@ -11,7 +11,7 @@ export type InputTextFieldProps = {
   disabled?: boolean;
 };
 
-export default function InputTextField(props: InputTextFieldProps) {
+export default function InputTextField(props: Readonly<InputTextFieldProps>) {
   const {
     type = 'text',
     name,

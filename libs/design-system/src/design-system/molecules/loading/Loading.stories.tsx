@@ -15,7 +15,7 @@ export const LightLoading = {
     return (
       <ThemeProvider theme={themes.light} enabledResetTheme>
         <div className="relative">
-          {true && <Loading />}
+          {<Loading />}
           <div className="bg-yellow-100 w-full h-20">Hello</div>
         </div>
       </ThemeProvider>
@@ -29,7 +29,7 @@ export const DarkLoading = {
     return (
       <ThemeProvider theme={themes.dark} enabledResetTheme>
         <div className="relative">
-          {true && <Loading />}
+          {<Loading />}
           <div className="bg-yellow-600 w-full h-20">Hello</div>
         </div>
       </ThemeProvider>

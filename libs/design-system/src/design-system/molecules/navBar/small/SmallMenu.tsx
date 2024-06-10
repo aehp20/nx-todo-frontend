@@ -15,7 +15,7 @@ type SmallMenuProps = {
   items: ItemNavBar[];
 };
 
-export function SmallMenu(props: SmallMenuProps) {
+export function SmallMenu(props: Readonly<SmallMenuProps>) {
   const { isOpen, setIsOpen, items, title } = props;
 
   return (
@@ -37,7 +37,7 @@ type TitleProps = {
   title: ReactNode;
 };
 
-function Title(props: TitleProps) {
+function Title(props: Readonly<TitleProps>) {
   const { title } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(

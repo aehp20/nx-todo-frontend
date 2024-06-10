@@ -44,7 +44,7 @@ locales.forEach(locale => {
       newText += "\n";
     } else {
       fs.writeFile(`${folder}${tmpFile}`, newText, (err) => {
-        const output = execSync(`node_modules/gettext.js/bin/po2json ${folder}${tmpFile}  ${folder}${jsonFile}`, { encoding: 'utf-8' });
+        execSync(`node_modules/gettext.js/bin/po2json ${folder}${tmpFile}  ${folder}${jsonFile}`, { encoding: 'utf-8' });
         if (err) { throw err; }
         fs.unlink(`${folder}${tmpFile}`, function (err) {
           if (err) throw err;

@@ -14,14 +14,22 @@ export type ErrorMessageProps = {
 export default function ErrorMessage(props: Readonly<ErrorMessageProps>) {
   const { error, className } = props;
 
-  const errorMessage = useMemo(
-    () => (isMessageError(error) ? error.message : JSON.stringify(error)),
-    [error],
-  );
+  if (error) {
+    const errorMessage = useMemo(
+      () => (isMessageError(error) ? error.message : JSON.stringify(error)),
+      [error],
+    );
+
+    return (
+      <Message type="error" className={className}>
+        {errorMessage}
+      </Message>
+    );
+  }
 
   return (
     <Message type="error" className={className}>
-      {error ? errorMessage : 'An error has occurred'}
+      An error has occurred
     </Message>
   );
 }

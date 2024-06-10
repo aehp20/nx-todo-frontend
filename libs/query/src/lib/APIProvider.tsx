@@ -13,7 +13,7 @@ type APIProviderProps = {
 
 const queryClient = new QueryClient();
 
-export function APIProvider(props: APIProviderProps) {
+export function APIProvider(props: Readonly<APIProviderProps>) {
   const { httpClient, children } = props;
 
   const value = useMemo(() => {

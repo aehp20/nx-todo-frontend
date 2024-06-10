@@ -1,4 +1,4 @@
-import { Page } from '@nx-todo-frontend/design-system';
+import { Page, Title } from '@nx-todo-frontend/design-system';
 
 import { throwError } from '../../../common/throwError';
 
@@ -15,7 +15,15 @@ export default function List() {
   }
 
   return (
-    <Page title={title} actions={actions}>
+    <Page
+      title={title}
+      headerContent={
+        <div className="flex items-center justify-between">
+          <Title>{title}</Title>
+          {actions}
+        </div>
+      }
+    >
       <ListSpec data={data} isLoading={isLoading} />
     </Page>
   );

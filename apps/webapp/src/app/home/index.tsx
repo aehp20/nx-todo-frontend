@@ -1,11 +1,17 @@
-import { Page } from '@nx-todo-frontend/design-system';
+import { Page, Title } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 
 export default function Home() {
   const { _ } = useI18NContext();
 
+  const title = _('Home');
+
   return (
-    <Page title={_('Home')} mainClassName="flex flex-col gap-4">
+    <Page
+      title={title}
+      headerContent={<Title>{title}</Title>}
+      mainClassName="flex flex-col gap-4"
+    >
       <section>
         {_(
           'Welcome to our Todo List application using React! React, a JavaScript library developed by Facebook, is widely recognized for its efficiency and flexibility when it comes to building interactive user interfaces. In this application, we use essential React concepts, including components, state management, props, event handling, and styling.',

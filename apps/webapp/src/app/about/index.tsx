@@ -1,11 +1,13 @@
-import { Link, Page } from '@nx-todo-frontend/design-system';
+import { Link, Page, Title } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 
 export default function About() {
   const { _ } = useI18NContext();
 
+  const title = _('Aron Elias HERRERA PONTE');
+
   return (
-    <Page title={_('Aron Elias HERRERA PONTE')}>
+    <Page title={title} headerContent={<Title>{title}</Title>}>
       <div>
         {_(
           "Lead developer with over 10 years' experience, specializing in frontend development with ReactJS: Web and Mobile.",

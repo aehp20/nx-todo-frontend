@@ -15,7 +15,7 @@ type FontsProviderProps = {
   children: ReactNode;
 };
 
-export function FontsProvider(props: FontsProviderProps) {
+export function FontsProvider(props: Readonly<FontsProviderProps>) {
   const { urlApp, folderPath, defaultFont, children } = props;
 
   const { fontFamily, setFontFamily } = useFontsProvider(

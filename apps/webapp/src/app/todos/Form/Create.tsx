@@ -15,10 +15,12 @@ export default function Create() {
     throwError(errorOnSubmit);
   }
 
+  const title = _('Create Todo');
+
   return (
     <Page
-      title={_('Create Todo')}
-      backLink={<BackLink to="/todos" content={_('Back to Home page')} />}
+      title={title}
+      headerContent={<BackLink to="/todos" content={_('Back to Home page')} />}
     >
       <Form onSubmit={submitData} isSubmitting={isSubmitting} isNew />
     </Page>

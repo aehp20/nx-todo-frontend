@@ -26,10 +26,12 @@ export default function Update() {
     throwError(errorOnSubmit);
   }
 
+  const title = _('Update Todo');
+
   return (
     <Page
-      title={_('Update Todo')}
-      backLink={<BackLink to="/todos" content={_('Back to Home page')} />}
+      title={title}
+      headerContent={<BackLink to="/todos" content={_('Back to Home page')} />}
     >
       <div className="relative">
         {isLoading && <Loading />}

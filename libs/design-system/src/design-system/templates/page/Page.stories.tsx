@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import type { Meta } from '@storybook/react';
 
 import { Button } from '../../atoms/buttons';
+import Title from '../../atoms/title/Title';
 import BackLink from '../../molecules/backLink/BackLink';
 
 import Page, { PageProps } from './Page';
@@ -19,7 +20,9 @@ export const LightPage = {
   render: (props: PageProps) => {
     return (
       <ThemeProvider theme={themes.light} enabledResetTheme>
-        <Page title="Todo page">Content</Page>
+        <Page title="Todo page" headerContent={<Title>Todo page</Title>}>
+          Content
+        </Page>
       </ThemeProvider>
     );
   },
@@ -32,7 +35,15 @@ export const LightWithActions = {
   render: (props: PageProps) => {
     return (
       <ThemeProvider theme={themes.light} enabledResetTheme>
-        <Page title="Todo page" actions={actions}>
+        <Page
+          title="Todo page"
+          headerContent={
+            <div className="flex items-center justify-between">
+              <Title>Todo page</Title>
+              {actions}
+            </div>
+          }
+        >
           Content
         </Page>
       </ThemeProvider>
@@ -48,7 +59,9 @@ export const LightPageWithBackLink = {
         <ThemeProvider theme={themes.light} enabledResetTheme>
           <Page
             title={'Create Todo'}
-            backLink={<BackLink to="/todos" content={'Back to Home page'} />}
+            headerContent={
+              <BackLink to="/todos" content={'Back to Home page'} />
+            }
           >
             Hello
           </Page>
@@ -63,7 +76,9 @@ export const DarkPage = {
   render: (props: PageProps) => {
     return (
       <ThemeProvider theme={themes.dark} enabledResetTheme>
-        <Page title="Todo page">Content</Page>
+        <Page title="Todo page" headerContent={<Title>Todo page</Title>}>
+          Content
+        </Page>
       </ThemeProvider>
     );
   },
@@ -74,7 +89,15 @@ export const DarkWithActions = {
   render: (props: PageProps) => {
     return (
       <ThemeProvider theme={themes.dark} enabledResetTheme>
-        <Page title="Todo page" actions={actions}>
+        <Page
+          title="Todo page"
+          headerContent={
+            <div className="flex items-center justify-between">
+              <Title>Todo page</Title>
+              {actions}
+            </div>
+          }
+        >
           Content
         </Page>
       </ThemeProvider>
@@ -90,7 +113,9 @@ export const DarkPageWithBackLink = {
         <ThemeProvider theme={themes.dark} enabledResetTheme>
           <Page
             title={'Create Todo'}
-            backLink={<BackLink to="/todos" content={'Back to Home page'} />}
+            headerContent={
+              <BackLink to="/todos" content={'Back to Home page'} />
+            }
           >
             Hello
           </Page>

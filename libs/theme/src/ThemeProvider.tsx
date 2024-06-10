@@ -36,7 +36,7 @@ const ThemeContext = createContext<ThemeProviderValue>(
   {} as ThemeProviderValue,
 );
 
-export function ThemeProvider(props: ThemeProviderProps) {
+export function ThemeProvider(props: Readonly<ThemeProviderProps>) {
   const {
     theme: initialTheme = themes.light,
     enabledResetTheme = false,

@@ -1,4 +1,4 @@
-import { Page } from '@nx-todo-frontend/design-system';
+import { Page, Title } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 
 import { CacheField } from './cache';
@@ -9,8 +9,10 @@ import { ThemeField } from './theme';
 export default function Settings() {
   const { _ } = useI18NContext();
 
+  const title = _('Settings');
+
   return (
-    <Page title={_('Settings')}>
+    <Page title={title} headerContent={<Title>{title}</Title>}>
       <div className="flex flex-col gap-4">
         <LanguageField />
         <ThemeField />

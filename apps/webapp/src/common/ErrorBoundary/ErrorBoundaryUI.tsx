@@ -4,6 +4,7 @@ import {
   ErrorBoundaryUI as ErrorBoundaryUIDesignSystem,
   OpenSelectHandGestureIcon,
   Page,
+  Title,
 } from '@nx-todo-frontend/design-system';
 import { useI18NContext } from '@nx-todo-frontend/i18n';
 
@@ -20,8 +21,10 @@ export default function ErrorBoundaryUI(props: Readonly<ErrorBoundaryProps>) {
 
   const navigate = useNavigate();
 
+  const title = _('Error');
+
   return (
-    <Page title={_('Error')}>
+    <Page title={title} headerContent={<Title>{title}</Title>}>
       <Card>
         <div className="flex flex-col text-center items-center gap-2">
           <div className="font-bold">{_('Whoops, something went wrong.')}</div>

@@ -82,7 +82,7 @@ export default function Toggle(props: ToggleProps) {
           bgParentChecked,
           bgChild,
         )}
-      />
+      />{' '}
     </label>
   );
 }

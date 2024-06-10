@@ -7,7 +7,7 @@ type ItemsPerPageProps = {
   label: string;
 };
 
-export function ItemsPerPage(props: ItemsPerPageProps) {
+export function ItemsPerPage(props: Readonly<ItemsPerPageProps>) {
   const { pageSize, pageSizeOptions, setPageSize, label } = props;
 
   const value = pageSizeOptions.find((item) => Number(item.value) === pageSize);

@@ -14,7 +14,7 @@ export type PaginationProps<T> = {
   goToPage: (page: number) => void;
 };
 
-export default function Pagination<T>(props: PaginationProps<T>) {
+export default function Pagination<T>(props: Readonly<PaginationProps<T>>) {
   const { paginationMeta, goToPage } = props;
 
   const isDisabled = !paginationMeta;
@@ -55,7 +55,7 @@ export default function Pagination<T>(props: PaginationProps<T>) {
           min={1}
           max={paginationMeta?.totalPages}
           type="number"
-          value={paginationMeta?.page || 1}
+          value={paginationMeta?.page ?? 1}
           onChange={(event) => {
             const page = event.target.value ? Number(event.target.value) : 1;
             goToPage(page);

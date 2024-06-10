@@ -18,7 +18,7 @@ export type ConfirmationProps = {
   labelYesButton: string;
 };
 
-export function Confirmation(props: ConfirmationProps) {
+export function Confirmation(props: Readonly<ConfirmationProps>) {
   const [open, setOpen] = useState(false);
 
   const { title, content, children, onConfirm, labelNoButton, labelYesButton } =

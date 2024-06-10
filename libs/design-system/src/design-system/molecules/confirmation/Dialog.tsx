@@ -12,7 +12,7 @@ interface Props {
   onClose: () => void;
 }
 
-export default function Dialog(props: Props) {
+export default function Dialog(props: Readonly<Props>) {
   const { open, onClose } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(

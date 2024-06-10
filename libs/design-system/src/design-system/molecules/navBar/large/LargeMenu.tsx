@@ -13,7 +13,7 @@ type LargeMenuProps = {
   items: ItemNavBar[];
 };
 
-export function LargeMenu(props: LargeMenuProps) {
+export function LargeMenu(props: Readonly<LargeMenuProps>) {
   const { title, items } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(

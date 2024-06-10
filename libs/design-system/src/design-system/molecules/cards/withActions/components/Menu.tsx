@@ -10,7 +10,7 @@ type MenuProps = {
   stylesPropertiesName: Record<string, string>;
 };
 
-export function Menu(props: MenuProps) {
+export function Menu(props: Readonly<MenuProps>) {
   const { actions, isOpen, setIsOpen, styles, stylesPropertiesName } = props;
 
   const { BG_COLOR, BG_COLOR_HOVER, BORDER_BG_COLOR } = stylesPropertiesName;
@@ -29,25 +29,23 @@ export function Menu(props: MenuProps) {
         bgColor,
       )}
     >
-      <ul aria-labelledby="dropdownButton">
-        {actions.map((action, index) => (
-          <li
-            key={index}
-            className={classNames(
-              'block px-4 py-2 text-sm first:rounded-t-lg last:rounded-b-lg',
-              bgColorHover,
-            )}
-            onClick={(_e) => {
-              if (action.onClick) {
-                action.onClick();
-              }
-              setIsOpen(false);
-            }}
-          >
-            {action.content}
-          </li>
-        ))}
-      </ul>
+      {actions.map((action) => (
+        <button
+          key={`${action.content}`}
+          className={classNames(
+            'block px-4 py-2 text-sm first:rounded-t-lg last:rounded-b-lg w-full',
+            bgColorHover,
+          )}
+          onClick={(_e) => {
+            if (action.onClick) {
+              action.onClick();
+            }
+            setIsOpen(false);
+          }}
+        >
+          {action.content}
+        </button>
+      ))}
     </div>
   );
 }

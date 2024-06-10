@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import {
+  CellContext,
   createColumnHelper,
   getCoreRowModel,
   getSortedRowModel,
@@ -52,11 +53,7 @@ export default function TableSpec(props: Readonly<TableSpecProps>) {
     }),
     columnHelper.accessor('name', {
       header: () => _('NAME'),
-      cell: (info) => (
-        <Link to={`/todos/update/${info.row.original.id}`}>
-          {info.getValue()}
-        </Link>
-      ),
+      cell: (info) => <CellName info={info} />,
     }),
     columnHelper.accessor('isDoneStringFormat', {
       header: () => _('IS DONE?'),
@@ -65,25 +62,9 @@ export default function TableSpec(props: Readonly<TableSpecProps>) {
     columnHelper.accessor('isDone', {
       id: 'action',
       header: () => _('ACTION'),
-      cell: (info) => {
-        const id = info.row.original.id;
-        return id ? (
-          <Confirmation
-            title={_('Delete Todo?')}
-            content={_('Are you sure you want to delete this todo?')}
-            onConfirm={() => handleDelete(id)}
-            labelNoButton={_('No')}
-            labelYesButton={_('Yes')}
-          >
-            {({ displayConfirmation }) => (
-              <TrashIcon
-                className="cursor-pointer"
-                onClick={() => displayConfirmation(true)}
-              />
-            )}
-          </Confirmation>
-        ) : null;
-      },
+      cell: (info) => (
+        <CellIsDone info={info} handleDelete={handleDelete} _={_} />
+      ),
     }),
   ];
 
@@ -154,3 +135,35 @@ function generateComponentOnList(handleDelete: (id: number) => void) {
 
   return ComponentOnList;
 }
+
+const CellName = ({ info }: { info: CellContext<Todo, string> }) => (
+  <Link to={`/todos/update/${info.row.original.id}`}>{info.getValue()}</Link>
+);
+
+const CellIsDone = ({
+  info,
+  handleDelete,
+  _,
+}: {
+  info: CellContext<Todo, boolean | undefined>;
+  handleDelete: (id: number) => void;
+  _: (...originalArguments: unknown[]) => string;
+}) => {
+  const id = info.row.original.id;
+  return id ? (
+    <Confirmation
+      title={_('Delete Todo?')}
+      content={_('Are you sure you want to delete this todo?')}
+      onConfirm={() => handleDelete(id)}
+      labelNoButton={_('No')}
+      labelYesButton={_('Yes')}
+    >
+      {({ displayConfirmation }) => (
+        <TrashIcon
+          className="cursor-pointer"
+          onClick={() => displayConfirmation(true)}
+        />
+      )}
+    </Confirmation>
+  ) : null;
+};

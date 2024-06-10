@@ -23,7 +23,7 @@ export type TableProps<T> = {
   goToPage: (page: number) => void;
 };
 
-export default function Table<T>(props: TableProps<T>) {
+export default function Table<T>(props: Readonly<TableProps<T>>) {
   const {
     table,
     ComponentOnList,
@@ -41,19 +41,21 @@ export default function Table<T>(props: TableProps<T>) {
 
   const borderColor = `border-${styles[BORDER_COLOR]}`;
 
-  const borderBottom = paginationMeta
-    ? paginationMeta.page !== paginationMeta.totalPages ||
-      paginationMeta.totalItems ===
-        paginationMeta.page * paginationMeta.pageSize
+  const getBorderBottom = (paginationMeta: PaginationMeta) =>
+    paginationMeta.page !== paginationMeta.totalPages ||
+    paginationMeta.totalItems === paginationMeta.page * paginationMeta.pageSize
       ? 'border-b-0'
-      : 'border-b'
+      : 'border-b';
+
+  const borderBottom = paginationMeta
+    ? getBorderBottom(paginationMeta)
     : 'border-b';
 
   return (
     <div className="flex flex-col gap-4">
       <div className="md:hidden flex flex-col gap-2">
         {table.getRowModel().rows.map((row, index) => {
-          return <ComponentOnList key={index} row={row} />;
+          return <ComponentOnList key={JSON.stringify(index)} row={row} />;
         })}
       </div>
       <div
@@ -79,7 +81,7 @@ export default function Table<T>(props: TableProps<T>) {
                     className="px-4 pr-2 py-4 font-medium text-left"
                   >
                     {header.isPlaceholder ? null : (
-                      <div
+                      <button
                         {...{
                           className: header.column.getCanSort()
                             ? 'cursor-pointer select-none flex min-w-[36px]'
@@ -95,7 +97,7 @@ export default function Table<T>(props: TableProps<T>) {
                           asc: <span className="pl-2">↑</span>,
                           desc: <span className="pl-2">↓</span>,
                         }[header.column.getIsSorted() as string] ?? null}
-                      </div>
+                      </button>
                     )}
                   </th>
                 ))}

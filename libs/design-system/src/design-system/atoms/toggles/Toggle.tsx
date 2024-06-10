@@ -55,8 +55,9 @@ export default function Toggle(props: ToggleProps) {
   }, [isChecked]);
 
   return (
-    <label className={'relative inline-block w-12 h-7'}>
+    <label htmlFor="toggle" className={'relative inline-block w-12 h-7'}>
       <input
+        id="toggle"
         type="checkbox"
         checked={isChecked}
         disabled={isDisabled}

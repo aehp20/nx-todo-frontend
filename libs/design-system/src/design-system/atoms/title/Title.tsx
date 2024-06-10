@@ -9,7 +9,7 @@ export type TitleProps = {
   children: ReactNode;
 };
 
-export default function Title(props: TitleProps) {
+export default function Title(props: Readonly<TitleProps>) {
   const { children } = props;
 
   const { styles, stylesPropertiesName } = useThemeStyles(componentsName.title);

@@ -8,13 +8,13 @@ const { LightNavBar, DarkNavBar } = composeStories(stories);
 describe('LightNavBar', () => {
   it('should render successfully', () => {
     render(<LightNavBar />);
-    expect(screen.getByText('Docs')).not.toBeNull();
+    expect(screen.getAllByText('Docs')).not.toBeNull();
   });
 });
 
 describe('DarkNavBar', () => {
   it('should render successfully', () => {
     render(<DarkNavBar />);
-    expect(screen.getByText('Docs')).not.toBeNull();
+    expect(screen.getAllByText('Docs')).not.toBeNull();
   });
 });

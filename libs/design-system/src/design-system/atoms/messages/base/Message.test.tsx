@@ -8,13 +8,17 @@ const { LightMessages, DarkMessages } = composeStories(stories);
 describe('LightMessages', () => {
   it('should render successfully', () => {
     render(<LightMessages />);
-    expect(screen.getByText('An error has occurred')).not.toBeNull();
+    expect(
+      screen.getByText('This is a default message without type props'),
+    ).not.toBeNull();
   });
 });
 
 describe('DarkMessages', () => {
   it('should render successfully', () => {
     render(<DarkMessages />);
-    expect(screen.getByText('An error has occurred')).not.toBeNull();
+    expect(
+      screen.getByText('This is a default message without type props'),
+    ).not.toBeNull();
   });
 });

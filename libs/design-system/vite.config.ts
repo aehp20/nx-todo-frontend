@@ -47,4 +47,10 @@ export default defineConfig({
       external: ['react', 'react-dom', 'react/jsx-runtime'],
     },
   },
+
+  test: {
+    include: ['**/*.test.tsx'],
+    globals: true,
+    environment: 'jsdom',
+  },
 });

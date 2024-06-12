@@ -8,13 +8,13 @@ const { LightInputs, DarkInputs } = composeStories(stories);
 describe('LightInputs', () => {
   it('should render successfully', () => {
     render(<LightInputs />);
-    expect(screen.getByRole('textbox')).not.toBeNull();
+    expect(screen.getAllByRole('textbox')).not.toBeNull();
   });
 });
 
 describe('DarkInputs', () => {
   it('should render successfully', () => {
     render(<DarkInputs />);
-    expect(screen.getByRole('textbox')).not.toBeNull();
+    expect(screen.getAllByRole('textbox')).not.toBeNull();
   });
 });

@@ -57,7 +57,7 @@
     "@playwright/test": "^1.44.1",
     "@storybook/addon-essentials": "^8.1.7",
     "@storybook/addon-interactions": "^8.1.7",
-    "@storybook/addon-mdx-gfm": "^8.1.7",
+    "@storybook/addon-mdx-gfm": "^8.1.9",
     "@storybook/core-server": "^8.1.7",
     "@storybook/react-vite": "^8.1.7",
     "@storybook/test": "^8.1.7",

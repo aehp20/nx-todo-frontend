@@ -42,7 +42,7 @@
     "@eslint/js": "~8.57.0",
     "@nrwl/eslint-plugin-nx": "19.2.3",
     "@nrwl/linter": "19.2.3",
-    "@nx/cypress": "19.2.3",
+    "@nx/cypress": "19.3.0",
     "@nx/devkit": "19.2.3",
     "@nx/eslint": "19.2.3",
     "@nx/eslint-plugin": "19.2.3",

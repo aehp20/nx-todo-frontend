@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@storybook/testing-react": "^2.0.1",
-    "@tanstack/react-query": "^5.45.1",
+    "@tanstack/react-query": "^5.48.0",
     "@tanstack/react-table": "^8.17.3",
     "child_process": "^1.0.2",
     "class-transformer": "^0.5.1",
@@ -71,7 +71,7 @@
     "@types/gettext.js": "^1.0.3",
     "@types/jest": "^29.5.12",
     "@types/jest-axe": "^3.5.9",
-    "@types/node": "20.14.8",
+    "@types/node": "20.14.9",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "^6.13.2",

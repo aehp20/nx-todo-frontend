@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "test": "vitest",
-    "prepare": "husky install",
+    "prepare": "husky",
     "po2jsonEN": "node scripts/myPo2Json --locale=en",
     "po2jsonES": "node scripts/myPo2Json --locale=es",
     "po2jsonFR": "node scripts/myPo2Json --locale=fr"

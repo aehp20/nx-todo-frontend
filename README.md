@@ -152,6 +152,11 @@ Use the codegen command to run the test generator followed by the URL of the web
 npx playwright codegen http://localhost:4200/
 ```
 
+Specify where is the configuration file
+```
+npx playwright test --config=apps/webapp/playwright.config.ts
+```
+
 ## Design System
 Run `nx run design-system:storybook` to see the Design System components in storybook app.
 

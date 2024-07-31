@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@storybook/testing-react": "^2.0.1",
-    "@tanstack/react-query": "^5.51.15",
+    "@tanstack/react-query": "^5.51.16",
     "@tanstack/react-table": "^8.19.3",
     "child_process": "^1.0.2",
     "class-transformer": "^0.5.1",
@@ -65,7 +65,7 @@
     "@storybook/test-runner": "^0.19.1",
     "@swc-node/register": "1.10.9",
     "@swc/cli": "0.4.0",
-    "@swc/core": "1.7.3",
+    "@swc/core": "1.7.4",
     "@swc/helpers": "0.5.12",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "16.0.0",

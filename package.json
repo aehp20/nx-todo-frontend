@@ -48,7 +48,7 @@
     "@nx/eslint": "19.6.3",
     "@nx/eslint-plugin": "19.6.3",
     "@nx/jest": "19.6.3",
-    "@nx/js": "19.6.2",
+    "@nx/js": "19.6.3",
     "@nx/playwright": "19.6.2",
     "@nx/react": "19.6.2",
     "@nx/storybook": "19.6.2",

@@ -68,7 +68,7 @@
     "@swc/core": "^1.7.21",
     "@swc/helpers": "^0.5.12",
     "@testing-library/jest-dom": "^6.5.0",
-    "@testing-library/react": "^16.0.0",
+    "@testing-library/react": "^16.0.1",
     "@types/gettext.js": "^1.0.3",
     "@types/jest": "29.5.12",
     "@types/jest-axe": "^3.5.9",

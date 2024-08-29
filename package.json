@@ -52,7 +52,7 @@
     "@nx/playwright": "19.6.4",
     "@nx/react": "19.6.4",
     "@nx/storybook": "19.6.4",
-    "@nx/vite": "19.6.3",
+    "@nx/vite": "19.6.4",
     "@nx/web": "19.6.3",
     "@nx/workspace": "19.6.3",
     "@playwright/test": "^1.46.1",

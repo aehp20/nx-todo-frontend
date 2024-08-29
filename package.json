@@ -45,7 +45,7 @@
     "@nrwl/linter": "19.6.4",
     "@nx/cypress": "19.6.4",
     "@nx/devkit": "19.6.4",
-    "@nx/eslint": "19.6.3",
+    "@nx/eslint": "19.6.4",
     "@nx/eslint-plugin": "19.6.3",
     "@nx/jest": "19.6.3",
     "@nx/js": "19.6.3",

@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "format": "prettier --write apps/webapp/**/*.{js,jsx,ts,tsx}",
     "test": "vitest",
     "prepare": "husky",
     "po2jsonEN": "node scripts/myPo2Json --locale=en",

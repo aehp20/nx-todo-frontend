@@ -129,6 +129,7 @@ msgmerge locale/es.po locale/translations.pot -o locale/es.po
 Manually updating the PO files translation by language
 
 Generate the JSON files translation by language
+
 ```
 npm run po2jsonEN
 npm run po2jsonES

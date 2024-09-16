@@ -71,7 +71,7 @@
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@types/gettext.js": "^1.0.3",
-    "@types/jest": "29.5.12",
+    "@types/jest": "29.5.13",
     "@types/jest-axe": "^3.5.9",
     "@types/node": "^22.5.1",
     "@types/react": "^18.3.5",

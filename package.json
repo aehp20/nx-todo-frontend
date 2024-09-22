@@ -47,7 +47,7 @@
     "@nx/cypress": "19.8.0",
     "@nx/devkit": "19.8.0",
     "@nx/eslint": "19.8.0",
-    "@nx/eslint-plugin": "19.7.3",
+    "@nx/eslint-plugin": "19.8.0",
     "@nx/jest": "19.7.3",
     "@nx/js": "19.7.3",
     "@nx/playwright": "19.7.3",

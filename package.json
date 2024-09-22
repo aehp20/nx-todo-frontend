@@ -55,7 +55,7 @@
     "@nx/storybook": "19.8.0",
     "@nx/vite": "19.8.0",
     "@nx/web": "19.8.0",
-    "@nx/workspace": "19.7.3",
+    "@nx/workspace": "19.8.0",
     "@playwright/test": "^1.46.1",
     "@storybook/addon-essentials": "8.2.9",
     "@storybook/addon-interactions": "8.2.9",
